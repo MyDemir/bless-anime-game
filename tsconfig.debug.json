@@ -1,26 +1,12 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
-    "src/core/Game.ts",
-    "src/core/MenuManager.ts",
-    "src/utils/EventEmitter.ts",
-    "src/utils/loadModels.ts",
-    "src/main.ts"
+    "src/**/*.ts",
+    "tests/**/*.ts"
   ]
 }
