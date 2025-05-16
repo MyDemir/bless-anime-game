@@ -1,1 +1,9 @@
-
+{
+  "scripts": {
+    "dev": "vite",
+    "build:debug": "tsc -p tsconfig.debug.json && vite build",
+    "build:release": "tsc -p tsconfig.release.json && vite build",
+    "preview": "vite preview",
+    "test": "jest"
+  }
+}
