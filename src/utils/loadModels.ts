@@ -18,8 +18,8 @@ export class ModelsLoader {
             
             // Model yolları
             const modelPaths = {
-                ninja: './models/character/character-female-a.glb',
-                samurai: './models/character/character-male-a.glb'
+                ninja: '/models/character/character-female-a.glb',
+                samurai: '/models/character/character-male-a.glb'
             };
 
             console.log('Ninja modeli yükleme denemesi...');
@@ -45,7 +45,7 @@ export class ModelsLoader {
         try {
             console.log('Silah modelleri yükleme başlıyor...');
             
-            const blasterPath = './models/kit/blaster-r.glb';
+            const blasterPath = '/models/kit/blaster-r.glb';
 
             console.log('Blaster modeli yükleme denemesi...');
             const blasterModel = await this.loader.loadAsync(blasterPath);
