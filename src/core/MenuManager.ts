@@ -40,13 +40,13 @@ export class MenuManager {
             {
                 id: 'ninja',
                 name: 'Ninja',
-                modelPath: './models/character/character-female-a.glb',
+                modelPath: '/models/character/character-female-a.glb',
                 stats: { speed: 90, power: 70 }
             },
             {
                 id: 'samurai',
                 name: 'Samuray',
-                modelPath: './models/character/character-male-a.glb',
+                modelPath: '/models/character/character-male-a.glb',
                 stats: { speed: 70, power: 90 }
             }
         ];
