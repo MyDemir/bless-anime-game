@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { ModelsLoader } from './../../utils/loadModels';
-import { EventEmitter } from './../../utils/EventEmitter';
+import { ModelsLoader } from './utils/loadModels';
+import { EventEmitter } from './utils/EventEmitter';
 import { MenuManager } from './MenuManager';
 
 export class Game {
