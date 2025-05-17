@@ -36,7 +36,10 @@ class NotificationManager {
         const iconEl = notification?.querySelector('.notification-icon');
         const closeBtn = notification?.querySelector('.notification-close');
         
-        if (!notification || !messageEl || !iconEl) return;
+        if (!notification || !messageEl || !iconEl) {
+            this.isShowing = false;
+            return;
+        }
 
         // İkon ve renk ayarları
         let icon = '✓';
@@ -61,14 +64,14 @@ class NotificationManager {
         messageEl.textContent = message;
 
         // Kapat butonunu ayarla
-        if (closeBtn) {
-            closeBtn.onclick = () => {
+        if (closeBtn instanceof HTMLElement) {
+            closeBtn.addEventListener('click', () => {
                 notification.classList.add('slide-out');
                 setTimeout(() => {
                     notification.classList.remove('slide-in', 'slide-out');
                     this.processQueue();
                 }, 300);
-            };
+            });
         }
 
         // Animasyonları uygula
@@ -83,7 +86,7 @@ class NotificationManager {
                     this.processQueue();
                 }, 300);
             }
-        }, 3000);
+        }, duration);
     }
 }
 
@@ -108,8 +111,3 @@ if (canvas instanceof HTMLCanvasElement) {
     console.error('Canvas elementi bulunamadı!');
     NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
 }
-
-// Örnek kullanım:
-// showNotification('Karakter seçildi!', 'success');
-// showNotification('Lütfen bir karakter seçin!', 'error');
-// showNotification('Oyun kaydedilmedi!', 'warning');
