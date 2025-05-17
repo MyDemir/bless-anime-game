@@ -6,7 +6,6 @@
     "declarationMap": true
   },
   "include": [
-    "src/**/*.ts",
-    "tests/**/*.ts"
+    "src/**/*.ts"
   ]
 }
