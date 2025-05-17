@@ -14,13 +14,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["three"]
   },
   "include": [
-    "src/core/Game.ts",
-    "src/core/MenuManager.ts",
-    "src/utils/EventEmitter.ts",
-    "src/utils/loadModels.ts",
-    "src/main.ts"
+    "src/**/*.ts"
   ]
 }
