@@ -1,3 +1,5 @@
+https://pastebin.com/bV6mVU81
+
 bless-anime-game/
 ├── bls.toml              # Bless project config
 ├── src/                  # Source files
