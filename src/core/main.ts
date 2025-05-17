@@ -3,7 +3,7 @@ import { Game } from './Game';
 // Bildirim sistemini yönetecek sınıf
 class NotificationManager {
     private static instance: NotificationManager;
-    private queue: { message: string; type: string }[] = [];
+    private queue: { message: string; type: string; duration: number }[] = [];
     private isShowing = false;
 
     private constructor() { }
@@ -16,7 +16,7 @@ class NotificationManager {
     }
 
     show(message: string, type: 'success' | 'error' | 'warning' = 'success', duration: number = 3000): void {
-        this.queue.push({ message, type });
+        this.queue.push({ message, type, duration });
         if (!this.isShowing) {
             this.processQueue();
         }
@@ -29,7 +29,7 @@ class NotificationManager {
         }
 
         this.isShowing = true;
-        const { message, type } = this.queue.shift()!;
+        const { message, type, duration } = this.queue.shift()!;
         
         const notification = document.getElementById('notification');
         const messageEl = notification?.querySelector('.notification-message');
