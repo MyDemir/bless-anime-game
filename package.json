@@ -4,21 +4,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build:debug": "tsc -p tsconfig.debug.json && vite build",
-    "build:release": "tsc -p tsconfig.release.json && vite build",
-    "build:wasm": "mkdirp ./build && bls-sdk-ts build src/core/main.ts -o ./build -f bless-anime-game.wasm",
-    "preview": "vite preview"
+    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build src/main.ts -o dist -f bless-anime-game.wasm",
+    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build src/main.ts -o dist -f bless-anime-game.wasm",
+    "preview": "blessnet preview serve"
   },
   "dependencies": {
-    "three": "^0.150.0",
     "@blockless/sdk-ts": "^1.0.5",
+    "three": "^0.150.0",
     "mkdirp": "^3.0.1"
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.0"
+    "typescript": "^5.0.2"
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"
