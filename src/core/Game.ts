@@ -1,9 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { ModelsLoader } from '/utils/loadModels';
-import { EventEmitter } from '/utils/EventEmitter';
 import { MenuManager } from './MenuManager';
-
+import { ModelsLoader } from './../utils/loadModels';
+import { EventEmitter } from './../utils/EventEmitter';
 export class Game {
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
