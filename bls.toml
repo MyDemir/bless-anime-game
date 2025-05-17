@@ -6,7 +6,7 @@ author = "MyDemir"
 timestamp = "2025-05-16 20:15:32"
 
 [build]
-entry = "src/main.ts"    # Entry point güncellendi
+entry = "src/core/main.ts"    # Entry point güncellendi
 outDir = "dist"
 debug = "tsconfig.debug.json"
 release = "tsconfig.release.json"
