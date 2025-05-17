@@ -6,9 +6,15 @@ author = "MyDemir"
 timestamp = "2025-05-16 20:15:32"
 
 [build]
-entry = "src/core/main.ts"    # Entry point güncellendi
+entry = "src/core/main.ts"
 outDir = "dist"
+command = "npm run build:debug"
 debug = "tsconfig.debug.json"
+
+[build_release]
+entry = "src/core/main.ts"
+outDir = "dist"
+command = "npm run build:release"
 release = "tsconfig.release.json"
 
 [game]
@@ -24,3 +30,7 @@ host = "localhost"
 public = "public"
 source = "src"
 assets = "public/models"
+
+[deployment]
+permission = "public"
+nodes = 1
