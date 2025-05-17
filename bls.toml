@@ -6,13 +6,13 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "/src/core/main.ts"
+entry = "src/core/main.ts"
 outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
 
 [build_release]
-entry = "/src/core/main.ts"
+entry = "src/core/main.ts"
 outDir = "dist"
 command = "npm run build:release"
 release = "tsconfig.release.json"
