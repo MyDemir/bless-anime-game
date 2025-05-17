@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build src/main.ts -o dist -f bless-anime-game.wasm",
-    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build src/main.ts -o dist -f bless-anime-game.wasm",
+    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build src/core/main.ts -o dist -f bless-anime-game.wasm",
+    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build src/core/main.ts -o dist -f bless-anime-game.wasm",
     "preview": "blessnet preview serve"
   },
   "dependencies": {
