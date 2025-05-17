@@ -1,4 +1,3 @@
-import { EventEmitter } from '../utils/EventEmitter';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
@@ -6,7 +5,6 @@ export class MenuManager {
     private menus: Map<string, HTMLElement>;
     private activeMenu: string | null = null;
     private selectedCharacter: string | null = null;
-    private eventEmitter: EventEmitter;
     private characterPreviews: Map<string, { 
         scene: THREE.Scene,
         camera: THREE.PerspectiveCamera,
@@ -14,9 +12,8 @@ export class MenuManager {
         model?: THREE.Object3D 
     }> = new Map();
 
-    constructor(eventEmitter: EventEmitter) {
+    constructor() {
         this.menus = new Map();
-        this.eventEmitter = eventEmitter;
         this.initializeMenus();
         this.setupEventListeners();
     }
@@ -122,13 +119,15 @@ export class MenuManager {
 
     private animatePreview(characterId: string): void {
         const preview = this.characterPreviews.get(characterId);
-        if (!preview || !preview.model) return;
+        if (!preview) return;
 
         const animate = () => {
             if (!this.characterPreviews.has(characterId)) return;
 
             requestAnimationFrame(animate);
-            preview.model.rotation.y += 0.01;
+            if (preview.model) {
+                preview.model.rotation.y += 0.01;
+            }
             preview.renderer.render(preview.scene, preview.camera);
         };
 
@@ -211,4 +210,4 @@ export class MenuManager {
         });
         this.characterPreviews.clear();
     }
-    }
+            }
