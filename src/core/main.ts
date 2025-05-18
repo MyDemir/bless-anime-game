@@ -1,18 +1,13 @@
-import WebServer from '@blockless/sdk-ts/dist/lib/web';
-import { Game } from './src/core/Game';
+import { Game } from './Game';
+import { EventEmitter } from '../utils/EventEmitter';
 
-// Web sunucusunu başlat
-const server = new WebServer();
-server.statics('public', '/'); // public/ dizinini kök olarak sun
-server.start();
-
-// Bildirim sistemini yönetecek sınıf
+// Bildirim sistemi
 class NotificationManager {
     private static instance: NotificationManager;
     private queue: { message: string; type: string; duration: number }[] = [];
     private isShowing = false;
 
-    private constructor() { }
+    private constructor() {}
 
     static getInstance(): NotificationManager {
         if (!NotificationManager.instance) {
@@ -47,7 +42,6 @@ class NotificationManager {
             return;
         }
 
-        // İkon ve renk ayarları
         let icon = '✓';
         notification.className = 'notification';
         switch(type) {
@@ -65,11 +59,9 @@ class NotificationManager {
                 break;
         }
 
-        // İçeriği ayarla
         iconEl.textContent = icon;
         messageEl.textContent = message;
 
-        // Kapat butonunu ayarla
         if (closeBtn instanceof HTMLElement) {
             closeBtn.addEventListener('click', () => {
                 notification.classList.add('slide-out');
@@ -80,10 +72,8 @@ class NotificationManager {
             });
         }
 
-        // Animasyonları uygula
         notification.classList.add('slide-in');
 
-        // Otomatik kapanma
         setTimeout(() => {
             if (notification.classList.contains('slide-in')) {
                 notification.classList.add('slide-out');
@@ -101,19 +91,63 @@ class NotificationManager {
     NotificationManager.getInstance().show(message, type);
 };
 
-// Ana oyun başlatma kodu
-const canvas = document.querySelector('canvas#webgl-canvas');
-if (canvas instanceof HTMLCanvasElement) {
-    const game = new Game(canvas);
-    
-    // Oyun yüklendiğinde hoş geldin bildirimi
-    setTimeout(() => {
-        NotificationManager.getInstance().show(
-            `Hoş geldin ${game.getCurrentUser()}! Son oynama: ${game.getLastPlayTime()}`,
-            'success'
-        );
-    }, 1000);
-} else {
-    console.error('Canvas elementi bulunamadı!');
-    NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
-          }
+// Menü işlemleri
+function setupMenu(emitter: EventEmitter) {
+    const startBtn = document.getElementById('startBtn');
+    const characterSelectBtn = document.getElementById('characterSelectBtn');
+    const scoreboardBtn = document.getElementById('scoreboardBtn');
+    const settingsBtn = document.getElementById('settingsBtn');
+    const mainMenu = document.getElementById('main-menu');
+    const characterSelect = document.getElementById('character-select');
+    const scoreboard = document.getElementById('scoreboard');
+    const settings = document.getElementById('settings');
+
+    startBtn?.addEventListener('click', () => {
+        mainMenu?.classList.add('hidden');
+        document.getElementById('ui')?.classList.remove('hidden');
+        emitter.emit('startGame');
+    });
+
+    characterSelectBtn?.addEventListener('click', () => {
+        mainMenu?.classList.add('hidden');
+        characterSelect?.classList.remove('hidden');
+    });
+
+    scoreboardBtn?.addEventListener('click', () => {
+        mainMenu?.classList.add('hidden');
+        scoreboard?.classList.remove('hidden');
+    });
+
+    settingsBtn?.addEventListener('click', () => {
+        mainMenu?.classList.add('hidden');
+        settings?.classList.remove('hidden');
+    });
+}
+
+// Oyun başlatma
+function startGame(emitter: EventEmitter) {
+    const canvas = document.querySelector('#webgl-canvas');
+    if (canvas instanceof HTMLCanvasElement) {
+        const game = new Game(canvas);
+        game.start();
+        NotificationManager.getInstance().show('Oyun başladı!', 'success');
+        emitter.emit('gameStarted', game);
+        setTimeout(() => {
+            NotificationManager.getInstance().show(
+                `Hoş geldin ${game.getCurrentUser()}! Son oynama: ${game.getLastPlayTime()}`,
+                'success'
+            );
+        }, 1000);
+    } else {
+        console.error('Canvas elementi bulunamadı!');
+        NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
+    }
+}
+
+// Başlat
+window.addEventListener('load', () => {
+    const emitter = new EventEmitter();
+    setupMenu(emitter);
+    emitter.on('startGame', () => startGame(emitter));
+    NotificationManager.getInstance().show('Hoş geldin!', 'success');
+});
