@@ -7,14 +7,16 @@ timestamp = "2025-05-17 23:15:00"
 
 [build]
 entry = "main.ts"
-dir = "dist"  # outDir yerine dir
+dir = "dist"  # invoke.js için eklendi
+outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
 wasm = "dist/bless-anime-game.wasm"
 
 [build_release]
 entry = "main.ts"
-dir = "dist"  # outDir yerine dir
+dir = "dist"  # invoke.js için eklendi
+outDir = "dist"
 command = "npm run build:release"
 release = "tsconfig.release.json"
 wasm = "dist/bless-anime-game.wasm"
