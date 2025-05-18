@@ -10,14 +10,14 @@ entry = "src/core/main.ts"
 outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
-wasm = "dist/bless-anime-game.wasm"  # Yeni satır
+wasm = "dist/bless-anime-game.wasm"  # Preview için WASM dosyası
 
 [build_release]
 entry = "src/core/main.ts"
 outDir = "dist"
 command = "npm run build:release"
 release = "tsconfig.release.json"
-wasm = "dist/bless-anime-game.wasm"  # Yeni satır
+wasm = "dist/bless-anime-game.wasm"
 
 [game]
 engineVersion = "1.0.0"
