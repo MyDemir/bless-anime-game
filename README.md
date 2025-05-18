@@ -1,20 +1,20 @@
-https://pastebin.com/bV6mVU81
-
 bless-anime-game/
 ├── bls.toml              # Bless project config
 ├── src/                  # Source files
-│   ├── index.ts         # Entry point
+│── main.ts               # Entry point
 │   ├── core/            # Core game systems
 │   │   ├── Game.ts      # Main game logic
 │   │   └── MenuManager.ts
 │   ├── utils/           # Utility functions
 │   │   ├── EventEmitter.ts
 │   │   └── loadModels.ts
-│   └── ui/              # UI components
-│       └── components/
 ├── public/              # Static assets
+│   └── index.html
+│   └── style.css
 │   └── models/
-├── tests/               # Test files
+│      ├── character/
+│      ├── city-kit/
+│      └── kit/
 ├── tsconfig.base.json   # Base TS config
 ├── tsconfig.debug.json  # Debug TS config
 ├── tsconfig.release.json# Release TS config
