@@ -1,5 +1,5 @@
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
-import { Game } from './Game';
+import { Game } from './src/core/Game';
 
 // Web sunucusunu başlat
 const server = new WebServer();
