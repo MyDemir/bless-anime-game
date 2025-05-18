@@ -129,7 +129,7 @@ function startGame(emitter: EventEmitter) {
     const canvas = document.querySelector('#webgl-canvas');
     if (canvas instanceof HTMLCanvasElement) {
         const game = new Game(canvas);
-        game.start();
+        game.startGame(); // Düzeltme: start yerine startGame
         NotificationManager.getInstance().show('Oyun başladı!', 'success');
         emitter.emit('gameStarted', game);
         setTimeout(() => {
