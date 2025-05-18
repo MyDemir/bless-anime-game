@@ -4,18 +4,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build main.ts -o dist -f bless-anime-game.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build main.ts -o dist -f bless-anime-game.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "preview": "blessnet preview dist/bless-anime-game.wasm"
+		"clean": "rm -rf build",
+    "build:debug": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:release": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
-    "three": "^0.150.0",
-    "mkdirp": "^3.0.1"
+    "mkdirp": "^3.0.1",
+    "three": "^0.150.0"
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
-    "typescript": "^5.0.2"
+    "esbuild": "^0.25.4"
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"

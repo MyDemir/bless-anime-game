@@ -1,10 +1,9 @@
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "outDir": "dist",
+		"outDir": "./build/debug",
         "sourceMap": true,
         "declaration": true,
         "declarationMap": true
-    },
-    "include": ["src/**/*.ts", "main.ts"]
+    }
 }
