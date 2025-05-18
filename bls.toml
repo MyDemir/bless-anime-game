@@ -6,7 +6,7 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "main.ts"
+entry = "index.ts"
 dir = "dist"
 outDir = "dist"
 command = "npm run build:debug"
@@ -14,7 +14,7 @@ debug = "tsconfig.debug.json"
 wasm = "dist/bless-anime-game.wasm"
 
 [build_release]
-entry = "main.ts"
+entry = "index.ts"
 dir = "dist"
 outDir = "dist"
 command = "npm run build:release"
