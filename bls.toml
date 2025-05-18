@@ -7,14 +7,14 @@ timestamp = "2025-05-17 23:15:00"
 
 [build]
 entry = "main.ts"
-outDir = "dist"
+dir = "dist"  # outDir yerine dir
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
 wasm = "dist/bless-anime-game.wasm"
 
 [build_release]
 entry = "main.ts"
-outDir = "dist"
+dir = "dist"  # outDir yerine dir
 command = "npm run build:release"
 release = "tsconfig.release.json"
 wasm = "dist/bless-anime-game.wasm"
