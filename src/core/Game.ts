@@ -246,7 +246,7 @@ export class Game {
         // Karakter döndürme
     }
 
-    private startGame(): void {
+    public startGame(): void {
         const selectedCharacter = this.menuManager.getSelectedCharacter();
         if (!selectedCharacter) {
             (window as any).showNotification('Lütfen bir karakter seçin!', 'error');
