@@ -1,4 +1,10 @@
+import WebServer from '@blockless/sdk-ts/dist/lib/web';
 import { Game } from './Game';
+
+// Web sunucusunu başlat
+const server = new WebServer();
+server.statics('public', '/'); // public/ dizinini kök olarak sun
+server.start();
 
 // Bildirim sistemini yönetecek sınıf
 class NotificationManager {
