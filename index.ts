@@ -1,28 +1,13 @@
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
+import { initGame } from './src/core/main'; // src/core/main.ts'den oyun başlatıcısını içe aktar
 
 const server = new WebServer();
 
-// Statik dosyaları public dizininden sun
+// Statik dosyaları sun
 server.statics('public', '/');
 
-// Test için bir temel rota ekle
-server.on('GET', '/', (req, res) => {
-  res.json({
-    status: 'success',
-    message: 'Welcome to Bless Anime Game!',
-    path: req.path,
-    method: req.method
-  });
-});
-
-// Hata ayıklama için JSON girdisini logla
-server.on('request', (req, res) => {
-  console.log('Received request:', {
-    path: req.path,
-    method: req.method,
-    body: req.body
-  });
-});
+// Oyunu başlat
+initGame(); // src/core/main.ts'deki oyun başlatma fonksiyonunu çağır
 
 // Sunucuyu başlat
 server.start();
