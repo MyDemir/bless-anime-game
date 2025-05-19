@@ -11,7 +11,7 @@ dir = "dist"
 outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
-wasm = "dist/bless-anime-game.wasm"
+wasm = "dist/debug.wasm"
 
 [build_release]
 entry = "index.ts"
@@ -38,3 +38,6 @@ assets = "public/models"
 [deployment]
 permission = "public"
 nodes = 1
+
+[preview]
+wasm = "dist/debug.wasm"
