@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build index.ts -o dist -f bless-anime-game.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
+    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build index.ts -o dist -f debug.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
     "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build index.ts -o dist -f bless-anime-game.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "preview": "blessnet preview dist/bless-anime-game.wasm"
+    "preview": "blessnet preview dist/debug.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
