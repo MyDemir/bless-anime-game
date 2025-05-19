@@ -1,10 +1,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "outDir": "build/release",
     "sourceMap": false,
     "declaration": true,
     "removeComments": true,
     "noEmitOnError": true,
-    "incremental": true
-  }
+    "incremental": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "index.ts"]
 }
