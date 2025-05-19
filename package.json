@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf build",
-    "build:debug": "esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f debug.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
-    "build:release": "esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f bless-anime-game.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "typecheck": "tsc --noEmit -p tsconfig.debug.json",
+    "build:debug": "npm run typecheck && esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f debug.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "build:release": "npm run typecheck && esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f bless-anime-game.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
     "preview": "blessnet preview build/debug.wasm"
   },
   "dependencies": {
