@@ -4,17 +4,19 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build index.ts -o dist -f debug.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build index.ts -o dist -f bless-anime-game.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "preview": "blessnet preview dist/debug.wasm"
+    "clean": "rm -rf build",
+    "build:debug": "esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f debug.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "build:release": "esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f bless-anime-game.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "preview": "blessnet preview build/debug.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
-    "three": "^0.150.0",
-    "mkdirp": "^3.0.1"
+    "mkdirp": "^3.0.1",
+    "three": "^0.150.0"
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
+    "esbuild": "^0.25.4",
     "typescript": "^5.0.2"
   },
   "bls": {
