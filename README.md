@@ -1,10 +1,11 @@
 bless-anime-game/
 ├── bls.toml              # Bless project config
+│── index.ts               # Entry point
 ├── src/                  # Source files
-│── main.ts               # Entry point
 │   ├── core/            # Core game systems
 │   │   ├── Game.ts      # Main game logic
 │   │   └── MenuManager.ts
+│   │   └── main.ts
 │   ├── utils/           # Utility functions
 │   │   ├── EventEmitter.ts
 │   │   └── loadModels.ts
