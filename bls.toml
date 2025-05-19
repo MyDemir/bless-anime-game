@@ -6,17 +6,17 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "src/index.ts"
+entry = "index.ts"
 dir = "build"
 outDir = "build"
-command = "esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser"
+command = "esbuild index.ts --bundle --outfile=build/index.js --format=iife --platform=browser"
 wasm = "build/debug.wasm"
 
 [build_release]
-entry = "src/index.ts"
+entry = "index.ts"
 dir = "build"
 outDir = "build"
-command = "esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser"
+command = "esbuild index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser"
 wasm = "build/bless-anime-game.wasm"
 
 [game]
