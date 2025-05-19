@@ -6,18 +6,18 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "index.ts"  # esbuild için TS giriş noktası
-dir = "build"       # esbuild çıktıları için yeni dizin
+entry = "src/index.ts"
+dir = "build"
 outDir = "build"
-command = "esbuild index.ts --bundle --outfile=build/debug.js --format=iife --platform=browser"  # esbuild debug komutu
-wasm = "build/debug.wasm"  # WASM çıktısı (esbuild sonrası ek işlemle üretiliyorsa)
+command = "esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser"
+wasm = "build/debug.wasm"
 
 [build_release]
-entry = "index.ts"  # esbuild için TS giriş noktası
-dir = "build"       # esbuild çıktıları için yeni dizin
+entry = "src/index.ts"
+dir = "build"
 outDir = "build"
-command = "esbuild index.ts --bundle --minify --outfile=build/bless-anime-game.js --format=iife --platform=browser"  # esbuild release komutu
-wasm = "build/bless-anime-game.wasm"  # WASM çıktısı
+command = "esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser"
+wasm = "build/bless-anime-game.wasm"
 
 [game]
 engineVersion = "1.0.0"
@@ -38,4 +38,4 @@ permission = "public"
 nodes = 1
 
 [preview]
-wasm = "build/debug.wasm"  # Önizleme için güncellenmiş WASM yolu
+wasm = "build/debug.wasm"
