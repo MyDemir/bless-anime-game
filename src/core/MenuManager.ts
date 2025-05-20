@@ -243,10 +243,6 @@ export class MenuManager {
         if (selectedCard) {
             selectedCard.classList.add('selected');
             this.selectedCharacter = characterId;
-            selectedCard.classList.add('character-selected-animation');
-            setTimeout(() => {
-                selectedCard.classList.remove('character-selected-animation');
-            }, 500);
             console.log(`Karakter seçildi: ${characterId}`);
         } else {
             console.error(`Karakter kartı bulunamadı: ${characterId}`);
