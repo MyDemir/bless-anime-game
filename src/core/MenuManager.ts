@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 export class MenuManager {
     private menus: Map<string, HTMLElement>;
     private activeMenu: string | null = null;
@@ -12,12 +13,14 @@ export class MenuManager {
     }> = new Map();
 
     constructor() {
+        console.log("MenuManager başlatılıyor");
         this.menus = new Map();
         this.initializeMenus();
         this.setupEventListeners();
     }
 
     private initializeMenus(): void {
+        console.log("Menüler başlatılıyor");
         this.menus.set('main', document.getElementById('main-menu')!);
         this.menus.set('character', document.getElementById('character-select')!);
         this.menus.set('scoreboard', document.getElementById('scoreboard')!);
@@ -29,8 +32,12 @@ export class MenuManager {
     }
 
     private createCharacterGrid(): void {
+        console.log("Karakter gridi oluşturuluyor");
         const characterGrid = document.querySelector('.character-grid');
-        if (!characterGrid) return;
+        if (!characterGrid) {
+            console.error("Karakter gridi bulunamadı (.character-grid)");
+            return;
+        }
 
         const characters = [
             {
@@ -80,8 +87,12 @@ export class MenuManager {
     }
 
     private setupCharacterPreview(characterId: string, modelPath: string): void {
+        console.log(`Karakter önizlemesi ayarlanıyor: ${characterId}`);
         const canvas = document.getElementById(`${characterId}-preview`) as HTMLCanvasElement;
-        if (!canvas) return;
+        if (!canvas) {
+            console.error(`Karakter önizleme canvas'ı bulunamadı: ${characterId}-preview`);
+            return;
+        }
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
@@ -102,6 +113,7 @@ export class MenuManager {
 
         const loader = new GLTFLoader();
         loader.load(modelPath, (gltf) => {
+            console.log(`Karakter modeli yüklendi: ${characterId}`);
             const model = gltf.scene;
             model.scale.set(1, 1, 1);
             model.position.set(0, 0, 0);
@@ -113,6 +125,9 @@ export class MenuManager {
             }
 
             this.animatePreview(characterId);
+        }, undefined, (error) => {
+            console.error(`Karakter modeli yüklenemedi: ${characterId}`, error);
+            (window as any).showNotification(`Karakter modeli yüklenemedi: ${characterId}`, 'error');
         });
     }
 
@@ -134,11 +149,13 @@ export class MenuManager {
     }
 
     private setupCharacterCardListeners(): void {
+        console.log("Karakter kartı dinleyicileri ayarlanıyor");
         const cards = document.querySelectorAll('.character-card');
         cards.forEach(card => {
             card.addEventListener('click', () => {
                 const characterId = card.getAttribute('data-character');
                 if (characterId) {
+                    console.log(`Karakter seçildi: ${characterId}`);
                     this.selectCharacter(characterId);
                 }
             });
@@ -146,28 +163,51 @@ export class MenuManager {
     }
 
     private setupEventListeners(): void {
-        document.getElementById('characterSelectBtn')?.addEventListener('click', () => this.showMenu('character'));
-        document.getElementById('scoreboardBtn')?.addEventListener('click', () => this.showMenu('scoreboard'));
-        document.getElementById('settingsBtn')?.addEventListener('click', () => this.showMenu('settings'));
+        console.log("Menü olay dinleyicileri ayarlanıyor");
+        document.getElementById('characterSelectBtn')?.addEventListener('click', () => {
+            console.log("Karakter seçimi menüsü açılıyor");
+            this.showMenu('character');
+        });
+        document.getElementById('scoreboardBtn')?.addEventListener('click', () => {
+            console.log("Skor tablosu menüsü açılıyor");
+            this.showMenu('scoreboard');
+        });
+        document.getElementById('settingsBtn')?.addEventListener('click', () => {
+            console.log("Ayarlar menüsü açılıyor");
+            this.showMenu('settings');
+        });
 
-        document.getElementById('backFromCharSelect')?.addEventListener('click', () => this.showMenu('main'));
-        document.getElementById('backFromScoreboard')?.addEventListener('click', () => this.showMenu('main'));
-        document.getElementById('backFromSettings')?.addEventListener('click', () => this.showMenu('main'));
+        document.getElementById('backFromCharSelect')?.addEventListener('click', () => {
+            console.log("Karakter seçiminden ana menüye dönülüyor");
+            this.showMenu('main');
+        });
+        document.getElementById('backFromScoreboard')?.addEventListener('click', () => {
+            console.log("Skor tablosundan ana menüye dönülüyor");
+            this.showMenu('main');
+        });
+        document.getElementById('backFromSettings')?.addEventListener('click', () => {
+            console.log("Ayarlardan ana menüye dönülüyor");
+            this.showMenu('main');
+        });
 
         document.getElementById('confirmCharacter')?.addEventListener('click', () => {
             if (this.selectedCharacter) {
+                console.log(`Karakter onaylandı: ${this.selectedCharacter}`);
                 this.showMenu('main');
             } else {
+                console.error("Karakter seçilmedi");
                 alert('Lütfen bir karakter seçin!');
             }
         });
     }
 
     public showMenu(menuId: string): void {
+        console.log(`Menü gösteriliyor: ${menuId}`);
         if (this.activeMenu) {
             const currentMenu = this.menus.get(this.activeMenu);
             if (currentMenu) {
                 currentMenu.classList.add('hidden');
+                console.log(`Önceki menü gizlendi: ${this.activeMenu}`);
             }
         }
 
@@ -176,13 +216,18 @@ export class MenuManager {
             if (newMenu) {
                 newMenu.classList.remove('hidden');
                 this.activeMenu = menuId;
+                console.log(`Yeni menü gösterildi: ${menuId}`);
+            } else {
+                console.error(`Menü bulunamadı: ${menuId}`);
             }
         } else {
             this.activeMenu = null;
+            console.log("Tüm menüler gizlendi");
         }
     }
 
     private selectCharacter(characterId: string): void {
+        console.log(`Karakter seçimi: ${characterId}`);
         document.querySelectorAll('.character-card').forEach(card => {
             card.classList.remove('selected');
         });
@@ -195,6 +240,9 @@ export class MenuManager {
             setTimeout(() => {
                 selectedCard.classList.remove('character-selected-animation');
             }, 500);
+            console.log(`Karakter seçildi: ${characterId}`);
+        } else {
+            console.error(`Karakter kartı bulunamadı: ${characterId}`);
         }
     }
 
@@ -203,10 +251,11 @@ export class MenuManager {
     }
 
     public cleanup(): void {
+        console.log("MenuManager temizleniyor");
         this.characterPreviews.forEach((preview, characterId) => {
             preview.renderer.dispose();
             preview.scene.clear();
         });
         this.characterPreviews.clear();
     }
-            }
+                }
