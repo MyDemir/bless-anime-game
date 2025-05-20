@@ -312,7 +312,7 @@ export class Game {
 
     private restartGame(): void {
         this.saveHighScore();
-        NotificationManager.getInstance().show('Oyun yeniden başlatılıyor...', 'info');
+        NotificationManager.getInstance().show('Oyun yeniden başlatılıyor...', 'success');
         this.startGame();
     }
 
@@ -320,7 +320,7 @@ export class Game {
         this.gameState.isStarted = false;
         this.gameState.isPaused = false;
         this.saveHighScore();
-        NotificationManager.getInstance().show('Ana menüye dönülüyor...', 'info');
+        NotificationManager.getInstance().show('Ana menüye dönülüyor...', 'warning');
         this.ui.uiContainer.classList.add('hidden');
         this.menuManager.showMenu('main');
     }
@@ -331,7 +331,7 @@ export class Game {
             NotificationManager.getInstance().show('Yeni yüksek skor! 🏆', 'success');
         }
         this.saveHighScore();
-        NotificationManager.getInstance().show(`Oyun bitti! Skorunuz: ${this.gameState.score}`, 'info');
+        NotificationManager.getInstance().show(`Oyun bitti! Skorunuz: ${this.gameState.score}`, 'error');
         const finalScoreElement = document.getElementById('final-score');
         const highScoreElement = document.getElementById('high-score');
         if (finalScoreElement) {
