@@ -14,6 +14,21 @@ export class MenuManager {
         renderer: THREE.WebGLRenderer,
         model?: THREE.Object3D 
     }> = new Map();
+    private currentCarouselIndex: number = 0;
+    private characters: { id: string; name: string; modelPath: string; stats: { speed: number; power: number } }[] = [
+        {
+            id: 'ninja',
+            name: 'Ninja',
+            modelPath: '/models/character/character-female-a.glb',
+            stats: { speed: 90, power: 70 }
+        },
+        {
+            id: 'samurai',
+            name: 'Samuray',
+            modelPath: '/models/character/character-male-a.glb',
+            stats: { speed: 70, power: 90 }
+        }
+    ];
 
     constructor() {
         console.log("MenuManager başlatılıyor");
@@ -31,63 +46,63 @@ export class MenuManager {
         this.menus.set('pause', document.getElementById('pause-menu')!);
         this.menus.set('gameOver', document.getElementById('game-over')!);
 
-        this.createCharacterGrid();
+        this.createCharacterCarousel();
     }
 
-    private createCharacterGrid(): void {
-        console.log("Karakter gridi oluşturuluyor");
+    private createCharacterCarousel(): void {
+        console.log("Karakter carousel'i oluşturuluyor");
         const characterGrid = document.querySelector('.character-grid');
         if (!characterGrid) {
             console.error("Karakter gridi bulunamadı (.character-grid)");
-            NotificationManager.getInstance().show('Karakter gridi yüklenemedi!', 'error');
+            NotificationManager.getInstance().show('Karakter carousel yüklenemedi!', 'error');
             return;
         }
 
-        const characters = [
-            {
-                id: 'ninja',
-                name: 'Ninja',
-                modelPath: '/models/character/character-female-a.glb',
-                stats: { speed: 90, power: 70 }
-            },
-            {
-                id: 'samurai',
-                name: 'Samuray',
-                modelPath: '/models/character/character-male-a.glb',
-                stats: { speed: 70, power: 90 }
-            }
-        ];
-
-        characterGrid.innerHTML = characters.map(char => `
-            <div class="character-card" data-character="${char.id}">
-                <div class="character-preview">
-                    <canvas id="${char.id}-preview" class="character-canvas"></canvas>
-                </div>
-                <div class="character-info">
-                    <h3>${char.name}</h3>
-                    <div class="character-stats">
-                        <div class="stat">
-                            <span class="stat-label">Hız</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: ${char.stats.speed}%"></div>
+        characterGrid.innerHTML = `
+            <div class="character-carousel-container">
+                <div class="character-carousel">
+                    <div class="character-cards-wrapper">
+                        ${this.characters.map(char => `
+                            <div class="character-card" data-character="${char.id}">
+                                <div class="character-preview">
+                                    <canvas id="${char.id}-preview" class="character-canvas"></canvas>
+                                </div>
+                                <div class="character-info">
+                                    <h3>${char.name}</h3>
+                                    <div class="character-stats">
+                                        <div class="stat">
+                                            <span class="stat-label">Hız</span>
+                                            <div class="stat-bar">
+                                                <div class="stat-fill" style="width: ${char.stats.speed}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label">Güç</span>
+                                            <div class="stat-bar">
+                                                <div class="stat-fill" style="width: ${char.stats.power}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label">Güç</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: ${char.stats.power}%"></div>
-                            </div>
-                        </div>
+                        `).join('')}
                     </div>
                 </div>
+                <button class="carousel-button prev">◄</button>
+                <button class="carousel-button next">►</button>
+                <div class="character-nav-dots">
+                    ${this.characters.map((_, i) => `<span class="nav-dot${i === 0 ? ' active' : ''}" data-index="${i}"></span>`).join('')}
+                </div>
             </div>
-        `).join('');
+        `;
 
-        characters.forEach(char => {
+        this.characters.forEach(char => {
             this.setupCharacterPreview(char.id, char.modelPath);
         });
 
         this.setupCharacterCardListeners();
+        this.setupCarouselListeners();
+        this.updateCarousel();
     }
 
     private setupCharacterPreview(characterId: string, modelPath: string): void {
@@ -167,6 +182,64 @@ export class MenuManager {
         });
     }
 
+    private setupCarouselListeners(): void {
+        console.log("Carousel dinleyicileri ayarlanıyor");
+        const prevBtn = document.querySelector('.carousel-button.prev');
+        const nextBtn = document.querySelector('.carousel-button.next');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                console.log("Önceki karaktere geçiş");
+                this.currentCarouselIndex = (this.currentCarouselIndex - 1 + this.characters.length) % this.characters.length;
+                this.updateCarousel();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                console.log("Sonraki karaktere geçiş");
+                this.currentCarouselIndex = (this.currentCarouselIndex + 1) % this.characters.length;
+                this.updateCarousel();
+            });
+        }
+
+        navDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index') || '0');
+                console.log(`Nav dot tıklandı: ${index}`);
+                this.currentCarouselIndex = index;
+                this.updateCarousel();
+            });
+        });
+    }
+
+    private updateCarousel(): void {
+        console.log(`Carousel güncelleniyor: index ${this.currentCarouselIndex}`);
+        const wrapper = document.querySelector('.character-cards-wrapper') as HTMLElement;
+        if (wrapper) {
+            wrapper.style.transform = `translateX(-${this.currentCarouselIndex * (100 / this.characters.length)}%)`;
+        }
+
+        const cards = document.querySelectorAll('.character-card');
+        cards.forEach((card, index) => {
+            if (index === this.currentCarouselIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+
+        const navDots = document.querySelectorAll('.nav-dot');
+        navDots.forEach((dot, index) => {
+            if (index === this.currentCarouselIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
     private setupEventListeners(): void {
         console.log("Menü olay dinleyicileri ayarlanıyor");
         document.getElementById('characterSelectBtn')?.addEventListener('click', () => {
@@ -223,6 +296,9 @@ export class MenuManager {
                 newMenu.classList.remove('hidden');
                 this.activeMenu = menuId;
                 console.log(`Yeni menü gösterildi: ${menuId}`);
+                if (menuId === 'character') {
+                    this.updateCarousel(); // Karakter seçimi açıldığında carousel'i güncelle
+                }
             } else {
                 console.error(`Menü bulunamadı: ${menuId}`);
                 NotificationManager.getInstance().show(`Menü bulunamadı: ${menuId}`, 'error');
@@ -244,22 +320,5 @@ export class MenuManager {
             selectedCard.classList.add('selected');
             this.selectedCharacter = characterId;
             console.log(`Karakter seçildi: ${characterId}`);
-        } else {
-            console.error(`Karakter kartı bulunamadı: ${characterId}`);
-            NotificationManager.getInstance().show(`Karakter kartı bulunamadı: ${characterId}`, 'error');
-        }
-    }
-
-    public getSelectedCharacter(): string | null {
-        return this.selectedCharacter;
-    }
-
-    public cleanup(): void {
-        console.log("MenuManager temizleniyor");
-        this.characterPreviews.forEach((preview, characterId) => {
-            preview.renderer.dispose();
-            preview.scene.clear();
-        });
-        this.characterPreviews.clear();
-    }
-}
+            // Carousel'i seçilen karaktere göre güncelle
+            const index = this.characters.findIndex(char => char.id === characterId
