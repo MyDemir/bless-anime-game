@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf build",
     "build:debug": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
-    "build:release": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
+    "build:release": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm",
+    "preview": "npx blessnet preview" # Bu scripti manuel olarak ekledik
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
@@ -15,7 +16,8 @@
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.4",
+    "typescript": "^5.0.2" # Bu geliştiricinin önerisinde yoktu, ancak TypeScript projesi için gereklidir, bu yüzden tutuyorum.
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"
