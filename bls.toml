@@ -11,7 +11,7 @@ dir = "dist"
 outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
-wasm = "dist/bless-anime-game.wasm"
+wasm = "dist/debug.wasm"
 
 [build_release]
 entry = "index.ts"
@@ -19,7 +19,7 @@ dir = "dist"
 outDir = "dist"
 command = "npm run build:release"
 release = "tsconfig.release.json"
-wasm = "dist/bless-anime-game.wasm"
+wasm = "dist/debug.wasm"
 
 [game]
 engineVersion = "1.0.0"
