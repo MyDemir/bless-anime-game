@@ -6,14 +6,20 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-dir = "build"
-entry = "debug.wasm"
+entry = "index.ts"
+dir = "dist"
+outDir = "dist"
 command = "npm run build:debug"
+debug = "tsconfig.debug.json"
+wasm = "dist/bless-anime-game.wasm"
 
 [build_release]
-dir = "build"
-entry = "release.wasm"
+entry = "index.ts"
+dir = "dist"
+outDir = "dist"
 command = "npm run build:release"
+release = "tsconfig.release.json"
+wasm = "dist/bless-anime-game.wasm"
 
 [game]
 engineVersion = "1.0.0"
@@ -32,6 +38,3 @@ assets = "public/models"
 [deployment]
 permission = "public"
 nodes = 1
-
-[preview]
-wasm = "build/debug.wasm"
