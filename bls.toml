@@ -6,17 +6,19 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "index.ts"
-dir = "build"
+entry = "src/core/main.ts"  # index.ts yerine tam yol
+dir = "build"              # fix/path-run önerisi, package.json ile uyumlu
 outDir = "build"
-command = "esbuild src/core/main.ts --bundle --outfile=build/index.js --format=iife --platform=browser --sourcemap"
+command = "npm run build:debug"
+debug = "tsconfig.debug.json"
 wasm = "build/debug.wasm"
 
 [build_release]
-entry = "index.ts"
+entry = "src/core/main.ts"
 dir = "build"
 outDir = "build"
-command = "esbuild src/core/main.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser --sourcemap"
+command = "npm run build:release"
+release = "tsconfig.release.json"
 wasm = "build/bless-anime-game.wasm"
 
 [game]
