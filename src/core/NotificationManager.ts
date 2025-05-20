@@ -1,11 +1,10 @@
+// src/core/NotificationManager.ts
 export class NotificationManager {
     private static instance: NotificationManager;
     private queue: { message: string; type: string; duration: number }[] = [];
     private isShowing = false;
 
-    private constructor() {
-        console.log("NotificationManager başlatılıyor");
-    }
+    private constructor() {}
 
     static getInstance(): NotificationManager {
         if (!NotificationManager.instance) {
@@ -85,3 +84,8 @@ export class NotificationManager {
         }, duration);
     }
 }
+
+// Global bildirim fonksiyonu
+(window as any).showNotification = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
+    NotificationManager.getInstance().show(message, type);
+};
