@@ -17,6 +17,7 @@ class NotificationManager {
     }
 
     show(message: string, type: 'success' | 'error' | 'warning' = 'success', duration: number = 3000): void {
+        console.log(`Bildirim: ${message}, Tip: ${type}, Süre: ${duration}`);
         this.queue.push({ message, type, duration });
         if (!this.isShowing) {
             this.processQueue();
@@ -38,6 +39,7 @@ class NotificationManager {
         const closeBtn = notification?.querySelector('.notification-close');
         
         if (!notification || !messageEl || !iconEl) {
+            console.error('Bildirim elementi eksik!');
             this.isShowing = false;
             return;
         }
@@ -93,6 +95,7 @@ class NotificationManager {
 
 // Menü işlemleri
 function setupMenu(emitter: EventEmitter) {
+    console.log("Menü ayarlanıyor");
     const startBtn = document.getElementById('startBtn');
     const characterSelectBtn = document.getElementById('characterSelectBtn');
     const scoreboardBtn = document.getElementById('scoreboardBtn');
@@ -103,22 +106,26 @@ function setupMenu(emitter: EventEmitter) {
     const settings = document.getElementById('settings');
 
     startBtn?.addEventListener('click', () => {
+        console.log("Oyun başlat düğmesine tıklandı");
         mainMenu?.classList.add('hidden');
         document.getElementById('ui')?.classList.remove('hidden');
         emitter.emit('startGame');
     });
 
     characterSelectBtn?.addEventListener('click', () => {
+        console.log("Karakter seçimi açılıyor");
         mainMenu?.classList.add('hidden');
         characterSelect?.classList.remove('hidden');
     });
 
     scoreboardBtn?.addEventListener('click', () => {
+        console.log("Skor tablosu açılıyor");
         mainMenu?.classList.add('hidden');
         scoreboard?.classList.remove('hidden');
     });
 
     settingsBtn?.addEventListener('click', () => {
+        console.log("Ayarlar açılıyor");
         mainMenu?.classList.add('hidden');
         settings?.classList.remove('hidden');
     });
@@ -126,10 +133,11 @@ function setupMenu(emitter: EventEmitter) {
 
 // Oyun başlatma
 function startGame(emitter: EventEmitter) {
+    console.log("Oyun başlatılıyor");
     const canvas = document.querySelector('#webgl-canvas');
     if (canvas instanceof HTMLCanvasElement) {
         const game = new Game(canvas);
-        game.startGame(); // Düzeltme: start yerine startGame
+        game.startGame();
         NotificationManager.getInstance().show('Oyun başladı!', 'success');
         emitter.emit('gameStarted', game);
         setTimeout(() => {
@@ -146,6 +154,7 @@ function startGame(emitter: EventEmitter) {
 
 // Başlat
 window.addEventListener('load', () => {
+    console.log("Sayfa yüklendi");
     const emitter = new EventEmitter();
     setupMenu(emitter);
     emitter.on('startGame', () => startGame(emitter));
