@@ -6,20 +6,20 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "src/core/main.ts"  # index.ts yerine tam yol
-dir = "build"              # fix/path-run önerisi, package.json ile uyumlu
-outDir = "build"
+entry = "index.ts"
+dir = "dist"
+outDir = "dist"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
-wasm = "build/debug.wasm"
+wasm = "dist/debug.wasm"
 
 [build_release]
-entry = "src/core/main.ts"
-dir = "build"
-outDir = "build"
+entry = "index.ts"
+dir = "dist"
+outDir = "dist"
 command = "npm run build:release"
 release = "tsconfig.release.json"
-wasm = "build/bless-anime-game.wasm"
+wasm = "dist/bless-anime-game.wasm"
 
 [game]
 engineVersion = "1.0.0"
@@ -40,4 +40,4 @@ permission = "public"
 nodes = 1
 
 [preview]
-wasm = "build/debug.wasm"
+wasm = "dist/debug.wasm"
