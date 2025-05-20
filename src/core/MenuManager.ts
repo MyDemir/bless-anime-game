@@ -1,5 +1,8 @@
+// src/core/MenuManager.ts
+
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { NotificationManager } from './NotificationManager';
 
 export class MenuManager {
     private menus: Map<string, HTMLElement>;
@@ -36,6 +39,7 @@ export class MenuManager {
         const characterGrid = document.querySelector('.character-grid');
         if (!characterGrid) {
             console.error("Karakter gridi bulunamadı (.character-grid)");
+            NotificationManager.getInstance().show('Karakter gridi yüklenemedi!', 'error');
             return;
         }
 
@@ -91,6 +95,7 @@ export class MenuManager {
         const canvas = document.getElementById(`${characterId}-preview`) as HTMLCanvasElement;
         if (!canvas) {
             console.error(`Karakter önizleme canvas'ı bulunamadı: ${characterId}-preview`);
+            NotificationManager.getInstance().show(`Karakter önizlemesi yüklenemedi: ${characterId}`, 'error');
             return;
         }
 
@@ -127,7 +132,7 @@ export class MenuManager {
             this.animatePreview(characterId);
         }, undefined, (error) => {
             console.error(`Karakter modeli yüklenemedi: ${characterId}`, error);
-            (window as any).showNotification(`Karakter modeli yüklenemedi: ${characterId}`, 'error');
+            NotificationManager.getInstance().show(`Karakter modeli yüklenemedi: ${characterId}`, 'error');
         });
     }
 
@@ -193,10 +198,11 @@ export class MenuManager {
         document.getElementById('confirmCharacter')?.addEventListener('click', () => {
             if (this.selectedCharacter) {
                 console.log(`Karakter onaylandı: ${this.selectedCharacter}`);
+                NotificationManager.getInstance().show(`Karakter onaylandı: ${this.selectedCharacter}`, 'success');
                 this.showMenu('main');
             } else {
                 console.error("Karakter seçilmedi");
-                alert('Lütfen bir karakter seçin!');
+                NotificationManager.getInstance().show('Lütfen bir karakter seçin!', 'error');
             }
         });
     }
@@ -219,6 +225,7 @@ export class MenuManager {
                 console.log(`Yeni menü gösterildi: ${menuId}`);
             } else {
                 console.error(`Menü bulunamadı: ${menuId}`);
+                NotificationManager.getInstance().show(`Menü bulunamadı: ${menuId}`, 'error');
             }
         } else {
             this.activeMenu = null;
@@ -243,6 +250,7 @@ export class MenuManager {
             console.log(`Karakter seçildi: ${characterId}`);
         } else {
             console.error(`Karakter kartı bulunamadı: ${characterId}`);
+            NotificationManager.getInstance().show(`Karakter kartı bulunamadı: ${characterId}`, 'error');
         }
     }
 
@@ -258,4 +266,4 @@ export class MenuManager {
         });
         this.characterPreviews.clear();
     }
-                }
+}
