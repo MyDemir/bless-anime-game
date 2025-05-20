@@ -12,7 +12,7 @@ command = "npm run build:debug"
 
 [build_release]
 dir = "build"
-entry = "release.wasm" # öneri denemesi 
+entry = "release.wasm"
 command = "npm run build:release"
 
 [game]
