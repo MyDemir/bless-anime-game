@@ -6,18 +6,21 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "index.ts"
+# Bu komut, package.json'daki "build:debug" script'ini çağıracak
+# Bu script hem JS hem de WASM dosyalarını üretecektir.
+command = "npm run build:debug"
 dir = "build"
-outDir = "build"
-command = "esbuild index.ts --bundle --outfile=build/index.js --format=iife --platform=browser"
-wasm = "build/debug.wasm"
+entry = "debug.wasm" # Üretilen WASM dosyasının adını buraya yazın. package.json'daki -f bayrağıyla aynı olmalı.
+# outDir = "build" # Bu satırın burada olmasına gerek yok, 'dir' yeterli.
+# wasm = "build/debug.wasm" # Bu satır da gereksiz, 'entry' ve 'dir' ile yol otomatik oluşur.
 
 [build_release]
-entry = "index.ts"
+# Bu komut, package.json'daki "build:release" script'ini çağıracak
+command = "npm run build:release"
 dir = "build"
-outDir = "build"
-command = "esbuild index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser"
-wasm = "build/bless-anime-game.wasm"
+entry = "bless-anime-game.wasm" # Üretilen WASM dosyasının adını buraya yazın.
+# outDir = "build" # Bu satırın burada olmasına gerek yok, 'dir' yeterli.
+# wasm = "build/bless-anime-game.wasm" # Bu satır da gereksiz.
 
 [game]
 engineVersion = "1.0.0"
@@ -38,4 +41,4 @@ permission = "public"
 nodes = 1
 
 [preview]
-wasm = "build/debug.wasm"
+wasm = "build/debug.wasm" # Bu yol doğru olmalı.
