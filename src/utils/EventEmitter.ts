@@ -1,9 +1,12 @@
+// src/utils/EventEmitter.ts
+
 type EventCallback = (...args: any[]) => void;
 
 export class EventEmitter {
     private events: Map<string, EventCallback[]>;
 
     constructor() {
+        console.log("EventEmitter başlatılıyor");
         this.events = new Map();
     }
 

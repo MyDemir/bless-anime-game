@@ -32,3 +32,6 @@ assets = "public/models"
 [deployment]
 permission = "public"
 nodes = 1
+
+[preview]
+wasm = "build/debug.wasm"

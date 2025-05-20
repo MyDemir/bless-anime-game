@@ -2,8 +2,7 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bless Anime Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +19,7 @@
     </div>
 
     <!-- Ana Menü -->
-    <div id="main-menu" class="menu-screen">
+    <div id="main-menu" class="menu-screen hidden">
       <div class="menu-content">
         <div class="game-logo">
           <h1>Bless Anime Game</h1>
@@ -50,16 +49,7 @@
     <div id="character-select" class="menu-screen hidden">
       <div class="menu-content">
         <h2>Karakter Seçimi</h2>
-        <div class="character-carousel-container">
-          <button class="carousel-button prev">❮</button>
-          <div class="character-carousel">
-            <div class="character-cards-wrapper">
-              <!-- Karakterler dinamik olarak eklenecek -->
-            </div>
-          </div>
-          <button class="carousel-button next">❯</button>
-        </div>
-        <div class="character-nav-dots"></div>
+        <div class="character-grid"></div>
         <div class="menu-buttons">
           <button id="backFromCharSelect" class="menu-button back-button">
             <span class="button-icon">◀</span>
@@ -144,11 +134,11 @@
           <div id="high-score">En Yüksek Skor: 0</div>
         </div>
         <div class="menu-buttons">
-          <button id="playAgainBtn" class="menu-button">
+          <button id="restartBtn" class="menu-button">
             <span class="button-text">Tekrar Oyna</span>
             <span class="button-icon">🔄</span>
           </button>
-          <button id="exitToMainFromGameOver" class="menu-button">
+          <button id="exitToMainBtn" class="menu-button">
             <span class="button-text">Ana Menüye Dön</span>
             <span class="button-icon">🏠</span>
           </button>
@@ -161,7 +151,7 @@
       <div class="ui-panel">
         <div id="score">Skor: 0</div>
         <div id="health">Can: 100</div>
-        <div id="ammo">Mermi: 50</div>
+        <div id="ammo">Mermi: 30</div>
       </div>
       <div class="crosshair"></div>
     </div>
@@ -179,7 +169,6 @@
 
     <!-- WebGL sahnesi -->
     <canvas id="webgl-canvas"></canvas>
-
     <!-- Vite ile modül giriş dosyası -->
     <script type="module" src="index.js"></script>
   </body>

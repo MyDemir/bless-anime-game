@@ -1,5 +1,8 @@
+// src/utils/loadModels.ts
+
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Scene } from 'three';
+import { NotificationManager } from '../core/NotificationManager';
 
 export class ModelsLoader {
     private loader: GLTFLoader;
@@ -7,6 +10,7 @@ export class ModelsLoader {
     private models: Map<string, GLTF>;
 
     constructor(scene: Scene) {
+        console.log("ModelsLoader başlatılıyor");
         this.loader = new GLTFLoader();
         this.scene = scene;
         this.models = new Map();
@@ -38,6 +42,7 @@ export class ModelsLoader {
             samuraiModel.scene.scale.set(1, 1, 1);
         } catch (error) {
             console.error('Karakter modelleri yüklenirken spesifik hata:', error);
+            NotificationManager.getInstance().show('Karakter modelleri yüklenemedi!', 'error');
             if (error instanceof Error) {
                 throw new Error(`Karakter modelleri yüklenemedi: ${error.message}`);
             }
@@ -60,6 +65,7 @@ export class ModelsLoader {
             blasterModel.scene.scale.set(1, 1, 1);
         } catch (error) {
             console.error('Silah modeli yüklenirken spesifik hata:', error);
+            NotificationManager.getInstance().show('Silah modeli yüklenemedi!', 'error');
             if (error instanceof Error) {
                 throw new Error(`Silah modeli yüklenemedi: ${error.message}`);
             }
@@ -70,4 +76,4 @@ export class ModelsLoader {
     getModel(modelId: string): GLTF | undefined {
         return this.models.get(modelId);
     }
-        }
+}

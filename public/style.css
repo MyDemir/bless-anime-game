@@ -1,3 +1,5 @@
+/* public/style.css */
+
 /* Reset ve Temel Stiller */
 * {
     margin: 0;
@@ -150,6 +152,15 @@ body, html {
     box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
 }
 
+.back-button {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #4b5359 100%);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
 .button-icon {
     font-size: 20px;
     margin-left: 10px;
@@ -157,23 +168,95 @@ body, html {
 
 /* Character Selection */
 .character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: block; /* Carousel için grid yerine block */
+}
+
+.character-carousel-container {
+    position: relative;
+    width: 100%;
     margin: 30px 0;
 }
 
+.character-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.character-cards-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin: 0 -10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(74, 144, 226, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: rgba(74, 144, 226, 0.4);
+}
+
+.carousel-button.prev {
+    left: -20px;
+}
+
+.carousel-button.next {
+    right: -20px;
+}
+
+.character-nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+    background: #4a90e2;
+    transform: scale(1.2);
+}
+
 .character-card {
+    flex: 0 0 300px;
+    margin: 0 10px;
+    transform: scale(0.9);
+    opacity: 0.7;
+    transition: all 0.3s ease;
     background: rgba(40, 40, 40, 0.8);
     padding: 20px;
     border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
     border: 2px solid transparent;
 }
 
+.character-card.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
 .character-card:hover {
-    transform: translateY(-5px);
+    transform: scale(0.95); /* Aktif kartta hover efekti daha hafif */
     box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
 }
 
@@ -182,7 +265,7 @@ body, html {
     box-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
 }
 
-.character-image {
+.character-preview {
     width: 100%;
     height: 200px;
     margin-bottom: 15px;
@@ -191,10 +274,9 @@ body, html {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.character-image img {
+.character-canvas {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .character-info h3 {
@@ -383,13 +465,25 @@ input[type="range"]::-webkit-slider-thumb:hover {
         font-size: 14px;
     }
 
-    .character-grid {
-        grid-template-columns: 1fr;
+    .character-card {
+        flex: 0 0 260px;
+    }
+
+    .carousel-button {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
     }
 
     .ui-panel {
         padding: 15px;
         font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .character-card {
+        flex: 0 0 220px;
     }
 }
 
@@ -405,105 +499,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .user-info div {
     margin-bottom: 5px;
 }
-/* Karakter Seçim Carousel Stilleri */
-.character-carousel-container {
-    position: relative;
-    width: 100%;
-    margin: 30px 0;
-}
 
-.character-carousel {
-    width: 100%;
-    overflow: hidden;
-}
-
-.character-cards-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-    margin: 0 -10px;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(74, 144, 226, 0.2);
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2;
-    transition: all 0.3s ease;
-}
-
-.carousel-button:hover {
-    background: rgba(74, 144, 226, 0.4);
-}
-
-.carousel-button.prev {
-    left: -20px;
-}
-
-.carousel-button.next {
-    right: -20px;
-}
-
-.character-nav-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.nav-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.nav-dot.active {
-    background: #4a90e2;
-    transform: scale(1.2);
-}
-
-/* Karakter Kartı Güncellemeleri */
-.character-card {
-    flex: 0 0 300px;
-    margin: 0 10px;
-    transform: scale(0.9);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.character-card.active {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* Mobil Uyumluluk */
-@media (max-width: 768px) {
-    .character-card {
-        flex: 0 0 260px;
-    }
-    
-    .carousel-button {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .character-card {
-        flex: 0 0 220px;
-    }
-}
 /* Modern Bildirim Sistemi */
 .notification-container {
     position: fixed;
@@ -610,4 +606,4 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .notification.slide-out {
     animation: slideOut 0.3s forwards;
-}
+    }

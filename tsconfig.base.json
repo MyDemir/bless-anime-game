@@ -8,9 +8,6 @@
     "resolveJsonModule": true,
     "strict": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "noEmit": true
   },
   "include": [
