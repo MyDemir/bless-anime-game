@@ -6,17 +6,14 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-# Bu komut, package.json'daki "build:debug" script'ini çağıracak.
-# Bu script, hem JS hem de WASM dosyalarını üretecektir.
-command = "npm run build:debug"
 dir = "build"
-entry = "debug.wasm" # package.json'daki bls-sdk-ts komutunun -f bayrağıyla aynı olmalı
+entry = "debug.wasm"
+command = "npm run build:debug"
 
 [build_release]
-# Bu komut, package.json'daki "build:release" script'ini çağıracak.
-command = "npm run build:release"
 dir = "build"
-entry = "bless-anime-game.wasm" # package.json'daki bls-sdk-ts komutunun -f bayrağıyla aynı olmalı
+entry = "release.wasm" # öneri denemesi 
+command = "npm run build:release"
 
 [game]
 engineVersion = "1.0.0"
@@ -37,5 +34,4 @@ permission = "public"
 nodes = 1
 
 [preview]
-# `blessnet preview` komutu doğrudan bu WASM dosyasını kullanacak.
 wasm = "build/debug.wasm"
