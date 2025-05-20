@@ -1,11 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "build/debug",
+    "outDir": "./build/debug",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "noEmit": true
-  },
-  "include": ["src/**/*.ts", "index.ts"]
+    "noEmit": true  // Bu mevcut yapimdan
+  }
 }
