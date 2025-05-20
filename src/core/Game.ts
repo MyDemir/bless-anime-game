@@ -113,7 +113,7 @@ export class Game {
                 this.ui.loadingScreen.classList.add('fade-out');
                 setTimeout(() => {
                     if (this.ui.loadingScreen) {
-                        this.ui.loadingScreen.style.display = 'none';
+                        this.ui.loadingScreen.classList.add('hidden');
                         console.log("Yükleme ekranı gizlendi");
                     }
                     this.menuManager.showMenu('main');
@@ -437,4 +437,4 @@ export class Game {
     showMenu(menuId: string): void {
         this.menuManager.showMenu(menuId);
     }
-}
+                                      }
