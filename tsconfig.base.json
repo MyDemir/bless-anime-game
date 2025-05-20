@@ -8,10 +8,12 @@
     "resolveJsonModule": true,
     "strict": true,
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "noEmit": true
   },
   "include": [
     "src/**/*.ts"
-  ],
-	"exclude": ["node_modules", "dist"]
+  ]
 }
