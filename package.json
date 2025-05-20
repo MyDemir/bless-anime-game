@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf build",
-    "build:debug": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
-    "build:release": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
+    "build:debug": "esbuild index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:release": "esbuild index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
