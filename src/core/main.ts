@@ -1,6 +1,12 @@
 // src/core/main.ts
+
 import { Game } from './Game';
 import { NotificationManager } from './NotificationManager';
+
+// Global bildirim fonksiyonu
+(window as any).showNotification = (message: string, type: 'success' | 'error' | 'warning' = 'success', duration: number = 3000) => {
+    NotificationManager.getInstance().show(message, type, duration);
+};
 
 // Oyun başlatma
 window.addEventListener('load', () => {
