@@ -6,19 +6,17 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-# Bu komut, package.json'daki "build:debug" script'ini çağıracak.
-# Bu script, hem tarayıcı JS'ini hem de Blockless WASM'i üretecek.
+# Bu komut, package.json'daki "build:debug" script'ini çağıracak
+# Bu script, hem tarayıcı için JS hem de Blockless için WASM'i üretecektir.
 command = "npm run build:debug"
 dir = "build"
-# Buradaki "entry" alanı, 'command' ile üretilen WASM dosyasının adını belirtir.
-entry = "debug.wasm"
+entry = "debug.wasm" # package.json'daki bls-sdk-ts build komutunun -f bayrağıyla aynı olmalı
 
 [build_release]
-# Bu komut, package.json'daki "build:release" script'ini çağıracak.
+# Bu komut, package.json'daki "build:release" script'ini çağıracak
 command = "npm run build:release"
 dir = "build"
-# Buradaki "entry" alanı, 'command' ile üretilen WASM dosyasının adını belirtir.
-entry = "bless-anime-game.wasm"
+entry = "bless-anime-game.wasm" # package.json'daki bls-sdk-ts build komutunun -f bayrağıyla aynı olmalı
 
 [game]
 engineVersion = "1.0.0"
@@ -39,5 +37,5 @@ permission = "public"
 nodes = 1
 
 [preview]
-# `bls preview` komutu bu WASM dosyasını kullanacak.
+# Preview için WASM dosyasının doğru yolu
 wasm = "build/debug.wasm"
