@@ -6,6 +6,7 @@ bless-anime-game/
 │   │   ├── Game.ts      # Main game logic
 │   │   └── MenuManager.ts
 │   │   └── main.ts
+│   │   └── Notification.ts
 │   ├── utils/           # Utility functions
 │   │   ├── EventEmitter.ts
 │   │   └── loadModels.ts
