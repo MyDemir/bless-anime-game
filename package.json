@@ -1,28 +1,25 @@
 {
   "name": "bless-anime-game",
+  "private": true,
   "version": "1.0.0",
-  "description": "Bless Anime Game",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "clean": "rm -rf build",
-    "build:esbuild": "esbuild src/core/main.ts --bundle --outfile=build/index.js --format=iife --sourcemap --target=es2020",
-    "build:debug": "tsc --project tsconfig.debug.json && npm run build:esbuild",
-    "build:release": "tsc --project tsconfig.release.json && npm run build:esbuild",
-    "build:copy": "cp -r public/* build/",
-    "build": "npm run clean && npm run build:debug && npm run build:copy",
-    "serve": "http-server build -p 8080 -c-1",
-    "start": "npm run build && npm run serve"
+    "build:debug": "esbuild src/index.ts --bundle --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f debug.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "build:release": "esbuild src/index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build src/index.ts -o build -f bless-anime-game.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
+    "preview": "blessnet preview build/debug.wasm"
   },
-  "keywords": [],
-  "author": "MyDemir",
-  "license": "ISC",
   "dependencies": {
-    "three": "^0.169.0"
+    "@blockless/sdk-ts": "^1.0.5",
+    "mkdirp": "^3.0.1",
+    "three": "^0.150.0"
   },
   "devDependencies": {
-    "@types/three": "^0.169.0",
-    "esbuild": "^0.24.0",
-    "http-server": "^14.1.1",
-    "typescript": "^5.6.2"
+    "@types/three": "^0.150.1",
+    "esbuild": "^0.25.4",
+    "typescript": "^5.0.2"
+  },
+  "bls": {
+    "functionId": "bless-function_bless-anime-game-1.0.0"
   }
 }
