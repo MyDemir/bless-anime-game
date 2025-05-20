@@ -1,7 +1,7 @@
 import { Game } from './Game';
-import { EventEmitter } from '../utils/EventEmitter';
+import { NotificationManager } from './NotificationManager';
 
-// Bildirim sistemi
+// Bildirim sistemi (ayrı bir dosya olarak taşındı)
 class NotificationManager {
     private static instance: NotificationManager;
     private queue: { message: string; type: string; duration: number }[] = [];
@@ -93,70 +93,15 @@ class NotificationManager {
     NotificationManager.getInstance().show(message, type);
 };
 
-// Menü işlemleri
-function setupMenu(emitter: EventEmitter) {
-    console.log("Menü ayarlanıyor");
-    const startBtn = document.getElementById('startBtn');
-    const characterSelectBtn = document.getElementById('characterSelectBtn');
-    const scoreboardBtn = document.getElementById('scoreboardBtn');
-    const settingsBtn = document.getElementById('settingsBtn');
-    const mainMenu = document.getElementById('main-menu');
-    const characterSelect = document.getElementById('character-select');
-    const scoreboard = document.getElementById('scoreboard');
-    const settings = document.getElementById('settings');
-
-    startBtn?.addEventListener('click', () => {
-        console.log("Oyun başlat düğmesine tıklandı");
-        mainMenu?.classList.add('hidden');
-        document.getElementById('ui')?.classList.remove('hidden');
-        emitter.emit('startGame');
-    });
-
-    characterSelectBtn?.addEventListener('click', () => {
-        console.log("Karakter seçimi açılıyor");
-        mainMenu?.classList.add('hidden');
-        characterSelect?.classList.remove('hidden');
-    });
-
-    scoreboardBtn?.addEventListener('click', () => {
-        console.log("Skor tablosu açılıyor");
-        mainMenu?.classList.add('hidden');
-        scoreboard?.classList.remove('hidden');
-    });
-
-    settingsBtn?.addEventListener('click', () => {
-        console.log("Ayarlar açılıyor");
-        mainMenu?.classList.add('hidden');
-        settings?.classList.remove('hidden');
-    });
-}
-
 // Oyun başlatma
-function startGame(emitter: EventEmitter) {
-    console.log("Oyun başlatılıyor");
+window.addEventListener('load', () => {
+    console.log("Sayfa yüklendi");
     const canvas = document.querySelector('#webgl-canvas');
     if (canvas instanceof HTMLCanvasElement) {
         const game = new Game(canvas);
-        game.startGame();
-        NotificationManager.getInstance().show('Oyun başladı!', 'success');
-        emitter.emit('gameStarted', game);
-        setTimeout(() => {
-            NotificationManager.getInstance().show(
-                `Hoş geldin ${game.getCurrentUser()}! Son oynama: ${game.getLastPlayTime()}`,
-                'success'
-            );
-        }, 1000);
+        NotificationManager.getInstance().show('Hoş geldin!', 'success');
     } else {
         console.error('Canvas elementi bulunamadı!');
         NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
     }
-}
-
-// Başlat
-window.addEventListener('load', () => {
-    console.log("Sayfa yüklendi");
-    const emitter = new EventEmitter();
-    setupMenu(emitter);
-    emitter.on('startGame', () => startGame(emitter));
-    NotificationManager.getInstance().show('Hoş geldin!', 'success');
 });
