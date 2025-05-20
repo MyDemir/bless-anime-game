@@ -19,7 +19,7 @@
     </div>
 
     <!-- Ana Menü -->
-    <div id="main-menu" class="menu-screen">
+    <div id="main-menu" class="menu-screen hidden">
       <div class="menu-content">
         <div class="game-logo">
           <h1>Bless Anime Game</h1>
@@ -49,7 +49,7 @@
     <div id="character-select" class="menu-screen hidden">
       <div class="menu-content">
         <h2>Karakter Seçimi</h2>
-        <div class="character-grid"></div> <!-- MenuManager tarafından doldurulacak -->
+        <div class="character-grid"></div>
         <div class="menu-buttons">
           <button id="backFromCharSelect" class="menu-button back-button">
             <span class="button-icon">◀</span>
@@ -134,11 +134,11 @@
           <div id="high-score">En Yüksek Skor: 0</div>
         </div>
         <div class="menu-buttons">
-          <button id="playAgainBtn" class="menu-button">
+          <button id="restartBtn" class="menu-button">
             <span class="button-text">Tekrar Oyna</span>
             <span class="button-icon">🔄</span>
           </button>
-          <button id="exitToMainFromGameOver" class="menu-button">
+          <button id="exitToMainBtn" class="menu-button">
             <span class="button-text">Ana Menüye Dön</span>
             <span class="button-icon">🏠</span>
           </button>
@@ -151,7 +151,7 @@
       <div class="ui-panel">
         <div id="score">Skor: 0</div>
         <div id="health">Can: 100</div>
-        <div id="ammo">Mermi: 50</div>
+        <div id="ammo">Mermi: 30</div>
       </div>
       <div class="crosshair"></div>
     </div>
