@@ -5,10 +5,8 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf build",
-    "typecheck": "tsc --noEmit -p tsconfig.debug.json",
-    "build:debug": "npm run typecheck && esbuild index.ts --bundle --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build index.ts -o build -f debug.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
-    "build:release": "npm run typecheck && esbuild index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser && mkdirp ./build && bls-sdk-ts build index.ts -o build -f bless-anime-game.wasm && cp public/index.html build/ && cp public/style.css build/ || true",
-    "preview": "npx blessnet preview"
+    "build:debug": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:release": "esbuild src/index.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
@@ -17,8 +15,7 @@
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
-    "esbuild": "^0.25.4",
-    "typescript": "^5.0.2"
+    "esbuild": "^0.25.4"
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"
