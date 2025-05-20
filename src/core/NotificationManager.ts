@@ -1,10 +1,13 @@
 // src/core/NotificationManager.ts
+
 export class NotificationManager {
     private static instance: NotificationManager;
     private queue: { message: string; type: string; duration: number }[] = [];
     private isShowing = false;
 
-    private constructor() {}
+    private constructor() {
+        console.log("NotificationManager başlatılıyor");
+    }
 
     static getInstance(): NotificationManager {
         if (!NotificationManager.instance) {
@@ -68,7 +71,7 @@ export class NotificationManager {
                     notification.classList.remove('slide-in', 'slide-out');
                     this.processQueue();
                 }, 300);
-            });
+            }, { once: true });
         }
 
         notification.classList.add('slide-in');
@@ -84,8 +87,3 @@ export class NotificationManager {
         }, duration);
     }
 }
-
-// Global bildirim fonksiyonu
-(window as any).showNotification = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
-    NotificationManager.getInstance().show(message, type);
-};
