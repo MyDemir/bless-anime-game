@@ -611,3 +611,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .notification.slide-out {
     animation: slideOut 0.3s forwards;
 }
+
+.back-button {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+}
+.back-button:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #4b5359 100%);
+}
