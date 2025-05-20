@@ -17,7 +17,8 @@
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
     "mkdirp": "^3.0.1",
-    "three": "^0.150.0"
+    "three": "^0.150.0",
+    "three-stdlib": "^2.23.4"
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
