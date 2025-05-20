@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { MenuManager } from './MenuManager';
 import { ModelsLoader } from '../utils/loadModels';
 import { EventEmitter } from '../utils/EventEmitter';
+import { NotificationManager } from './NotificationManager';
 
 export class Game {
     private scene: THREE.Scene;
