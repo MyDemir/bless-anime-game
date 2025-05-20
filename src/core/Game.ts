@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { MenuManager } from './MenuManager';
-import { ModelsLoader } from './../utils/loadModels';
-import { EventEmitter } from './../utils/EventEmitter';
+import { ModelsLoader } from '../utils/loadModels';
+import { EventEmitter } from '../utils/EventEmitter';
+
 export class Game {
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
@@ -38,6 +39,7 @@ export class Game {
     private enemies: THREE.Object3D[] = [];
 
     constructor(canvas: HTMLCanvasElement) {
+        console.log("Game sınıfı başlatılıyor");
         this.eventEmitter = new EventEmitter();
         this.menuManager = new MenuManager();
         this.scene = new THREE.Scene();
@@ -59,11 +61,12 @@ export class Game {
         this.loadHighScore();
         this.setCurrentDateTime();
         this.loadGameModels().then(() => {
+            console.log("Modeller yüklendi, ana menü gösteriliyor");
             this.animate();
             (window as any).showNotification('Oyun yüklendi!', 'success');
         }).catch(error => {
             console.error('Oyun modelleri yüklenemedi:', error);
-            (window as any).showNotification('Oyun başlatılamadı!', 'error');
+            (window as any).showNotification('Oyun başlatılamadı! Lütfen sayfayı yenileyin.', 'error');
         });
         this.ui.uiContainer.classList.add('hidden');
     }
@@ -108,9 +111,14 @@ export class Game {
                 setTimeout(() => {
                     if (this.ui.loadingScreen) {
                         this.ui.loadingScreen.style.display = 'none';
+                        console.log("Yükleme ekranı gizlendi");
                     }
                     this.menuManager.showMenu('main');
+                    console.log("Ana menü gösterildi");
                 }, 500);
+            } else {
+                console.error("Yükleme ekranı bulunamadı");
+                this.menuManager.showMenu('main');
             }
         } catch (error) {
             console.error('Model yükleme hatası:', error);
@@ -173,15 +181,19 @@ export class Game {
             this.updateUI();
         });
         document.getElementById('startBtn')?.addEventListener('click', () => {
+            console.log("Oyun başlat düğmesine tıklandı");
             this.startGame();
         });
         document.getElementById('resumeBtn')?.addEventListener('click', () => {
+            console.log("Oyun devam ettiriliyor");
             this.resumeGame();
         });
         document.getElementById('restartBtn')?.addEventListener('click', () => {
+            console.log("Oyun yeniden başlatılıyor");
             this.restartGame();
         });
         document.getElementById('exitToMainBtn')?.addEventListener('click', () => {
+            console.log("Ana menüye dönülüyor");
             this.exitToMain();
         });
         document.getElementById('confirmCharacter')?.addEventListener('click', () => {
@@ -422,4 +434,4 @@ export class Game {
     showMenu(menuId: string): void {
         this.menuManager.showMenu(menuId);
     }
-         }
+}
