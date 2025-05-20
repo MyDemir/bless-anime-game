@@ -321,4 +321,27 @@ export class MenuManager {
             this.selectedCharacter = characterId;
             console.log(`Karakter seçildi: ${characterId}`);
             // Carousel'i seçilen karaktere göre güncelle
-            const index = this.characters.findIndex(char => char.id === characterId
+            const index = this.characters.findIndex(char => char.id === characterId);
+            if (index !== -1) {
+                this.currentCarouselIndex = index;
+                this.updateCarousel();
+            }
+        } else {
+            console.error(`Karakter kartı bulunamadı: ${characterId}`);
+            NotificationManager.getInstance().show(`Karakter kartı bulunamadı: ${characterId}`, 'error');
+        }
+    }
+
+    public getSelectedCharacter(): string | null {
+        return this.selectedCharacter;
+    }
+
+    public cleanup(): void {
+        console.log("MenuManager temizleniyor");
+        this.characterPreviews.forEach((preview, characterId) => {
+            preview.renderer.dispose();
+            preview.scene.clear();
+        });
+        this.characterPreviews.clear();
+    }
+                                           }
