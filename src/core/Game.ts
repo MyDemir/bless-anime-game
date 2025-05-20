@@ -1,3 +1,5 @@
+// src/core/Game.ts
+
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { MenuManager } from './MenuManager';
@@ -64,10 +66,10 @@ export class Game {
         this.loadGameModels().then(() => {
             console.log("Modeller yüklendi, ana menü gösteriliyor");
             this.animate();
-            (window as any).showNotification('Oyun yüklendi!', 'success');
+            NotificationManager.getInstance().show('Oyun yüklendi!', 'success');
         }).catch(error => {
             console.error('Oyun modelleri yüklenemedi:', error);
-            (window as any).showNotification('Oyun başlatılamadı! Lütfen sayfayı yenileyin.', 'error');
+            NotificationManager.getInstance().show('Oyun başlatılamadı! Lütfen sayfayı yenileyin.', 'error');
         });
         this.ui.uiContainer.classList.add('hidden');
     }
@@ -94,7 +96,7 @@ export class Game {
         if (this.gameState.score > this.gameState.highScore) {
             this.gameState.highScore = this.gameState.score;
             localStorage.setItem('highScore', this.gameState.highScore.toString());
-            (window as any).showNotification('Yeni yüksek skor kaydedildi! 🏆', 'success');
+            NotificationManager.getInstance().show('Yeni yüksek skor kaydedildi! 🏆', 'success');
         }
     }
 
@@ -106,7 +108,7 @@ export class Game {
                 this.modelsLoader.loadBlasterModels()
             ]);
             console.log('Modeller başarıyla yüklendi');
-            (window as any).showNotification('Modeller başarıyla yüklendi!', 'success');
+            NotificationManager.getInstance().show('Modeller başarıyla yüklendi!', 'success');
             if (this.ui.loadingScreen) {
                 this.ui.loadingScreen.classList.add('fade-out');
                 setTimeout(() => {
@@ -123,7 +125,7 @@ export class Game {
             }
         } catch (error) {
             console.error('Model yükleme hatası:', error);
-            (window as any).showNotification('Model yükleme hatası! Lütfen sayfayı yenileyin.', 'error');
+            NotificationManager.getInstance().show('Model yükleme hatası! Lütfen sayfayı yenileyin.', 'error');
             throw error;
         }
     }
@@ -166,18 +168,18 @@ export class Game {
         this.eventEmitter.on('playerDamage', (damage: number) => {
             this.gameState.health -= damage;
             if (this.gameState.health <= 30) {
-                (window as any).showNotification('Kritik hasar! Can düşük!', 'warning');
+                NotificationManager.getInstance().show('Kritik hasar! Can düşük!', 'warning');
             }
             this.updateUI();
             if (this.gameState.health <= 0) {
-                (window as any).showNotification('Öldünüz!', 'error');
+                NotificationManager.getInstance().show('Öldünüz!', 'error');
                 this.endGame();
             }
         });
         this.eventEmitter.on('scoreUpdate', (points: number) => {
             this.gameState.score += points;
             if (points > 0) {
-                (window as any).showNotification(`+${points} puan!`, 'success');
+                NotificationManager.getInstance().show(`+${points} puan!`, 'success');
             }
             this.updateUI();
         });
@@ -200,7 +202,7 @@ export class Game {
         document.getElementById('confirmCharacter')?.addEventListener('click', () => {
             const selectedChar = this.menuManager.getSelectedCharacter();
             if (selectedChar) {
-                (window as any).showNotification(`${selectedChar} karakteri seçildi!`, 'success');
+                NotificationManager.getInstance().show(`${selectedChar} karakteri seçildi!`, 'success');
             }
         });
     }
@@ -262,26 +264,26 @@ export class Game {
     public startGame(): void {
         const selectedCharacter = this.menuManager.getSelectedCharacter();
         if (!selectedCharacter) {
-            (window as any).showNotification('Lütfen bir karakter seçin!', 'error');
+            NotificationManager.getInstance().show('Lütfen bir karakter seçin!', 'error');
             this.menuManager.showMenu('character');
             return;
         }
 
         const characterModel = this.modelsLoader.getModel(selectedCharacter);
         if (!characterModel || !characterModel.scene) {
-            (window as any).showNotification(`Karakter modeli yüklenemedi: ${selectedCharacter}`, 'error');
+            NotificationManager.getInstance().show(`Karakter modeli yüklenemedi: ${selectedCharacter}`, 'error');
             this.menuManager.showMenu('character');
             return;
         }
 
-        (window as any).showNotification(`${this.gameState.currentUser} olarak oyuna başlandı!`, 'success');
+        NotificationManager.getInstance().show(`${this.gameState.currentUser} olarak oyuna başlandı!`, 'success');
 
         if (this.player) {
             this.scene.remove(this.player);
         }
         const newPlayer = characterModel.scene.clone();
         if (!newPlayer) {
-            (window as any).showNotification('Karakter modeli klonlanamadı!', 'error');
+            NotificationManager.getInstance().show('Karakter modeli klonlanamadı!', 'error');
             return;
         }
         this.player = newPlayer;
@@ -304,13 +306,13 @@ export class Game {
 
     private resumeGame(): void {
         this.gameState.isPaused = false;
-        (window as any).showNotification('Oyun devam ediyor', 'success');
+        NotificationManager.getInstance().show('Oyun devam ediyor', 'success');
         this.menuManager.showMenu('none');
     }
 
     private restartGame(): void {
         this.saveHighScore();
-        (window as any).showNotification('Oyun yeniden başlatılıyor...', 'info');
+        NotificationManager.getInstance().show('Oyun yeniden başlatılıyor...', 'info');
         this.startGame();
     }
 
@@ -318,7 +320,7 @@ export class Game {
         this.gameState.isStarted = false;
         this.gameState.isPaused = false;
         this.saveHighScore();
-        (window as any).showNotification('Ana menüye dönülüyor...', 'info');
+        NotificationManager.getInstance().show('Ana menüye dönülüyor...', 'info');
         this.ui.uiContainer.classList.add('hidden');
         this.menuManager.showMenu('main');
     }
@@ -326,10 +328,10 @@ export class Game {
     private endGame(): void {
         this.gameState.isStarted = false;
         if (this.gameState.score > this.gameState.highScore) {
-            (window as any).showNotification('Yeni yüksek skor! 🏆', 'success');
+            NotificationManager.getInstance().show('Yeni yüksek skor! 🏆', 'success');
         }
         this.saveHighScore();
-        (window as any).showNotification(`Oyun bitti! Skorunuz: ${this.gameState.score}`, 'info');
+        NotificationManager.getInstance().show(`Oyun bitti! Skorunuz: ${this.gameState.score}`, 'info');
         const finalScoreElement = document.getElementById('final-score');
         const highScoreElement = document.getElementById('high-score');
         if (finalScoreElement) {
@@ -343,13 +345,13 @@ export class Game {
 
     private shoot(): void {
         if (this.gameState.ammo <= 0) {
-            (window as any).showNotification('Mermi bitti!', 'error');
+            NotificationManager.getInstance().show('Mermi bitti!', 'error');
             this.eventEmitter.emit('outOfAmmo');
             return;
         }
         this.gameState.ammo--;
         if (this.gameState.ammo <= 5) {
-            (window as any).showNotification('Mermi azalıyor!', 'warning');
+            NotificationManager.getInstance().show('Mermi azalıyor!', 'warning');
         }
         this.eventEmitter.emit('weaponFired', this.gameState.ammo);
         this.updateUI();
@@ -358,10 +360,10 @@ export class Game {
     private togglePause(): void {
         this.gameState.isPaused = !this.gameState.isPaused;
         if (this.gameState.isPaused) {
-            (window as any).showNotification('Oyun duraklatıldı', 'warning');
+            NotificationManager.getInstance().show('Oyun duraklatıldı', 'warning');
             this.menuManager.showMenu('pause');
         } else {
-            (window as any).showNotification('Oyun devam ediyor', 'success');
+            NotificationManager.getInstance().show('Oyun devam ediyor', 'success');
             this.menuManager.showMenu('none');
         }
     }
