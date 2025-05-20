@@ -6,11 +6,11 @@
   "scripts": {
     "clean": "rm -rf build",
     "typecheck": "tsc --noEmit -p tsconfig.debug.json && tsc --noEmit -p tsconfig.release.json",
-    "build:esbuild": "esbuild index.ts --bundle --outfile=build/index.js --format=iife --platform=browser --sourcemap",
+    "build:esbuild": "esbuild src/core/main.ts --bundle --outfile=build/index.js --format=iife --platform=browser --sourcemap",
     "build:wasm": "bls-sdk-ts build index.ts -o build -f debug.wasm",
     "build:copy": "mkdirp ./build && cp public/index.html build/ && cp public/style.css build/",
     "build:debug": "npm run clean && npm run typecheck && npm run build:esbuild && npm run build:wasm && npm run build:copy || true",
-    "build:release": "npm run clean && npm run typecheck && esbuild index.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser --sourcemap && bls-sdk-ts build index.ts -o build -f bless-anime-game.wasm && npm run build:copy || true",
+    "build:release": "npm run clean && npm run typecheck && esbuild src/core/main.ts --bundle --minify --outfile=build/index.js --format=iife --platform=browser --sourcemap && bls-sdk-ts build index.ts -o build -f bless-anime-game.wasm && npm run build:copy || true",
     "preview": "blessnet preview build/debug.wasm",
     "serve": "http-server build/ -p 8080"
   },
