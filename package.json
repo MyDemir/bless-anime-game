@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "tsc -p tsconfig.debug.json && bls-sdk-ts build index.ts -o dist -f debug.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
-    "build:release": "tsc -p tsconfig.release.json && bls-sdk-ts build index.ts -o dist -f debug.wasm && cp public/index.html dist/ && cp public/style.css dist/ || true",
+    "build:debug": "esbuild src/core/main.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:release": "esbuild src/core/main.ts --bundle --outfile=public/index.js && mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm",
     "preview": "blessnet preview dist/debug.wasm"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/three": "^0.150.1",
-    "typescript": "^5.0.2"
+    "esbuild": "^0.25.4"
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"

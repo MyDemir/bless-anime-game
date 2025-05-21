@@ -6,20 +6,14 @@ author = "MyDemir"
 timestamp = "2025-05-17 23:15:00"
 
 [build]
-entry = "index.ts"
-dir = "dist"
-outDir = "dist"
+dir = "build"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
-wasm = "dist/debug.wasm"
 
 [build_release]
-entry = "index.ts"
-dir = "dist"
-outDir = "dist"
+dir = "build"
 command = "npm run build:release"
 release = "tsconfig.release.json"
-wasm = "dist/debug.wasm"
 
 [game]
 engineVersion = "1.0.0"
@@ -27,7 +21,7 @@ renderEngine = "three.js"
 aiSystem = true
 
 [server]
-port = 3000
+port = 3_000
 host = "localhost"
 
 [paths]
