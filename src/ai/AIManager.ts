@@ -1,7 +1,9 @@
 import { trainModels } from './trainModel';
+import * as THREE from 'three';
 import * as tf from '@tensorflow/tfjs';
 import { ModelsLoader } from '../utils/loadModels';
 import { NotificationManager } from '../core/NotificationManager';
+import { ErrorManager } from './../core/ErrorManager';
 
 interface Task {
   id: number;
@@ -69,7 +71,7 @@ export class AIManager {
       console.log('Modeller yüklendi');
     } catch (error) {
       console.warn('Modeller bulunamadı, eğitim başlatılacak:', error);
-      NotificationManager.getInstance().show('AI modelleri eğitiliyor...', 'info');
+      NotificationManager.getInstance().show('AI modelleri eğitiliyor...', 'success');
       await trainModels();
     }
   }
