@@ -1,4 +1,3 @@
-// src/utils/loadModels.ts
 import * as THREE from 'three';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
@@ -95,14 +94,18 @@ export class ModelsLoader extends EventEmitter {
 
     public async initialize(): Promise<void> {
         try {
-            await Promise.all([this.loadCharacterData(), this.loadKitData(), this.loadCityData()]);
+            await Promise.all([
+                this.loadCharacterData(),
+                this.loadKitData(),
+                this.loadCityData()
+            ]);
             this.isDataLoaded = true;
             console.log(`Veri yükleme tamamlandı: ${this.characterData.length} karakter, ${this.kitData.length} silah, şehir verileri yüklendi`);
             NotificationManager.getInstance().show('Veriler yüklendi!', 'success');
         } catch (error) {
             console.error('Veri yükleme hatası:', error);
-            NotificationManager.getInstance().show('Veriler yüklenemedi!', 'error');
-            throw error;
+            NotificationManager.getInstance().show(`Veriler yüklenemedi: ${error}`, 'error');
+            throw error; // Yedek veri yok, hata fırlat
         }
     }
 
@@ -110,49 +113,43 @@ export class ModelsLoader extends EventEmitter {
         return this.isDataLoaded;
     }
 
-    private async loadCharacterData(): Promise<void> {
+    private async loadData<T>(file: string): Promise<T> {
         try {
-            const response = await fetch('/data/characters.json', { cache: 'no-cache' });
+            const response = await fetch(`/data/${file}`, { cache: 'no-cache' });
             if (!response.ok) {
-                throw new Error(`Characters.json dosyası bulunamadı: ${response.status}`);
+                throw new Error(`Dosya yüklenemedi: ${file} (${response.status})`);
             }
-            this.characterData = await response.json();
-            console.log('Karakter verileri yüklendi:', this.characterData.length, 'karakter');
+            const text = await response.text();
+            try {
+                const data = JSON.parse(text);
+                console.log(`${file} yüklendi`);
+                return data;
+            } catch (e) {
+                console.error(`${file} ayrıştırma hatası:`, e);
+                console.log('Problematik içerik:', text.slice(-200));
+                NotificationManager.getInstance().show(`${file} sözdizimi hatası!`, 'error');
+                throw e;
+            }
         } catch (error) {
-            console.error('Karakter verileri yüklenemedi:', error);
-            NotificationManager.getInstance().show('Karakter verileri yüklenemedi!', 'error');
+            console.error(`${file} yükleme hatası:`, error);
+            NotificationManager.getInstance().show(`${file} yüklenemedi!`, 'error');
             throw error;
         }
+    }
+
+    private async loadCharacterData(): Promise<void> {
+        this.characterData = await this.loadData<CharacterData[]>('characters.json');
+        console.log('Karakter verileri yüklendi:', this.characterData.length, 'karakter');
     }
 
     private async loadKitData(): Promise<void> {
-        try {
-            const response = await fetch('/data/kits.json', { cache: 'no-cache' });
-            if (!response.ok) {
-                throw new Error(`Kits.json dosyası bulunamadı: ${response.status}`);
-            }
-            this.kitData = await response.json();
-            console.log('Silah verileri yüklendi:', this.kitData.length, 'silah');
-        } catch (error) {
-            console.error('Silah verileri yüklenemedi:', error);
-            NotificationManager.getInstance().show('Silah verileri yüklenemedi!', 'error');
-            throw error;
-        }
+        this.kitData = await this.loadData<KitData[]>('kits.json');
+        console.log('Silah verileri yüklendi:', this.kitData.length, 'silah');
     }
 
     private async loadCityData(): Promise<void> {
-        try {
-            const response = await fetch('/data/citys.json', { cache: 'no-cache' });
-            if (!response.ok) {
-                throw new Error(`Citys.json dosyası bulunamadı: ${response.status}`);
-            }
-            this.cityData = await response.json();
-            console.log('Şehir verileri yüklendi:', this.cityData.buildings.length, 'bina,', this.cityData.roads.length, 'yol,', this.cityData.props.length, 'çevre elemanı');
-        } catch (error) {
-            console.error('Şehir verileri yüklenemedi:', error);
-            NotificationManager.getInstance().show('Şehir verileri yüklenemedi!', 'error');
-            throw error;
-        }
+        this.cityData = await this.loadData<CityData>('citys.json');
+        console.log('Şehir verileri yüklendi:', this.cityData.buildings.length, 'bina,', this.cityData.roads.length, 'yol,', this.cityData.props.length, 'çevre elemanı');
     }
 
     private async loadModelWithRetry(modelPath: string, retryCount = 0): Promise<GLTF> {
@@ -187,14 +184,15 @@ export class ModelsLoader extends EventEmitter {
 
             if (!this.characterData.length) {
                 await this.loadCharacterData();
-                if (!this.characterData.length) {
-                    throw new Error('Karakter verileri yüklenemedi');
-                }
             }
 
             const modelsToLoad = characters 
                 ? this.characterData.filter(char => characters.includes(char.id))
                 : this.characterData;
+
+            if (!modelsToLoad.length) {
+                throw new Error('Yüklenecek karakter bulunamadı');
+            }
 
             const totalCharacters = modelsToLoad.length;
             let loadedCount = 0;
@@ -234,7 +232,7 @@ export class ModelsLoader extends EventEmitter {
             console.log('Tüm karakter modelleri yüklendi');
             NotificationManager.getInstance().show('Tüm karakterler yüklendi!', 'success');
         } catch (error) {
-            console.error('Karakter modelleri yüklenirken genel hata:', error);
+            console.error('Karakter modelleri yüklenirken hata:', error);
             NotificationManager.getInstance().show('Karakter modelleri yüklenemedi!', 'error');
             this.emit(MODEL_EVENTS.LOAD_ERROR, 'all', error);
             throw error;
@@ -248,14 +246,15 @@ export class ModelsLoader extends EventEmitter {
 
             if (!this.kitData.length) {
                 await this.loadKitData();
-                if (!this.kitData.length) {
-                    throw new Error('Silah verileri yüklenemedi');
-                }
             }
 
             const kitsToLoad = kits 
                 ? this.kitData.filter(kit => kits.includes(kit.id))
                 : this.kitData;
+
+            if (!kitsToLoad.length) {
+                throw new Error('Yüklenecek silah bulunamadı');
+            }
 
             const totalKits = kitsToLoad.length;
             let loadedCount = 0;
@@ -295,7 +294,7 @@ export class ModelsLoader extends EventEmitter {
             console.log('Tüm silah modelleri yüklendi');
             NotificationManager.getInstance().show('Tüm silahlar yüklendi!', 'success');
         } catch (error) {
-            console.error('Silah modelleri yüklenirken genel hata:', error);
+            console.error('Silah modelleri yüklenirken hata:', error);
             NotificationManager.getInstance().show('Silah modelleri yüklenemedi!', 'error');
             this.emit(MODEL_EVENTS.LOAD_ERROR, 'all', error);
             throw error;
@@ -309,9 +308,6 @@ export class ModelsLoader extends EventEmitter {
 
             if (!this.cityData.buildings.length && !this.cityData.roads.length && !this.cityData.props.length) {
                 await this.loadCityData();
-                if (!this.cityData.buildings.length && !this.cityData.roads.length && !this.cityData.props.length) {
-                    throw new Error('Şehir verileri yüklenemedi');
-                }
             }
 
             const modelsToLoad = [
@@ -319,6 +315,10 @@ export class ModelsLoader extends EventEmitter {
                 ...this.cityData.roads.map(r => ({ id: r.id, path: r.modelPath, name: r.name })),
                 ...this.cityData.props.map(p => ({ id: p.id, path: p.modelPath, name: p.name })),
             ];
+
+            if (!modelsToLoad.length) {
+                throw new Error('Yüklenecek şehir modeli bulunamadı');
+            }
 
             const totalModels = modelsToLoad.length;
             let loadedCount = 0;
