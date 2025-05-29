@@ -81,86 +81,86 @@ export class AIManager {
     }
 
     async spawnEnemy(level: number, enemyCount: number, mapDensity: number): Promise<Enemy[]> {
-        if (!this.enemyModel || this.enemies.length >= this.MAX_ENEMIES) return [];
+    if (!this.enemyModel || this.enemies.length >= this.MAX_ENEMIES) return [];
 
-        const startTime = performance.now();
-        const cacheKey = `enemy_${level}_${enemyCount}_${mapDensity}`;
-        const spawnedEnemies: Enemy[] = [];
+    const startTime = performance.now();
+    const cacheKey = `enemy_${level}_${enemyCount}_${mapDensity}`;
+    const spawnedEnemies: Enemy[] = [];
 
-        try {
-            let prediction: tf.Tensor;
-            const cached = this.modelCache.get(cacheKey);
+    try {
+        let prediction: tf.Tensor;
+        const cached = this.modelCache.get(cacheKey);
 
-            if (cached && (Date.now() - cached.timestamp) < this.CACHE_TTL) {
-                prediction = cached.prediction;
-                this.metrics.cacheHits++;
-            } else {
-                const input = tf.tensor2d([[
-                    level / 10,
-                    enemyCount / this.MAX_ENEMIES,
-                    mapDensity
-                ]]);
-                prediction = this.enemyModel.predict(input) as tf.Tensor;
-                input.dispose();
+        if (cached && (Date.now() - cached.timestamp) < this.CACHE_TTL) {
+            prediction = cached.prediction;
+            this.metrics.cacheHits++;
+        } else {
+            const input = tf.tensor2d([[
+                level / 10,
+                enemyCount / this.MAX_ENEMIES,
+                mapDensity
+            ]]);
+            prediction = this.enemyModel.predict(input) as tf.Tensor;
+            input.dispose();
 
-                this.modelCache.set(cacheKey, {
-                    prediction,
-                    timestamp: Date.now()
-                });
-                this.metrics.cacheMisses++;
+            this.modelCache.set(cacheKey, {
+                prediction,
+                timestamp: Date.now()
+            });
+            this.metrics.cacheMisses++;
 
-                if (this.modelCache.size > this.MAX_CACHE_SIZE) {
-                    const oldestKey = Array.from(this.modelCache.keys())[0];
-                    this.modelCache.get(oldestKey)?.prediction.dispose();
-                    this.modelCache.delete(oldestKey);
-                }
+            if (this.modelCache.size > this.MAX_CACHE_SIZE) {
+                const oldestKey = Array.from(this.modelCache.keys())[0];
+                this.modelCache.get(oldestKey)?.prediction.dispose();
+                this.modelCache.delete(oldestKey);
             }
-
-            const [enemyType, spawnCount] = await prediction.data();
-            const characterData = this.modelsLoader.getAllCharacterData();
-            const characterIds = characterData.map(c => c.id);
-
-            for (let i = 0; i < Math.round(spawnCount); i++) {
-                if (this.enemies.length >= this.MAX_ENEMIES) break;
-
-                const id = characterIds[Math.floor(Math.random() * characterIds.length)];
-                const model = this.modelsLoader.getModel(id);
-                if (!model) {
-                    console.warn(`Karakter modeli eksik: ${id}`);
-                    continue;
-                }
-
-                const instance = model.scene.clone();
-                const position = this.findSafeSpawnPosition();
-                instance.position.copy(position);
-
-                const enemy: Enemy = {
-                    id: `${id}_${Date.now()}_${i}`,
-                    model: instance,
-                    health: level * 50,
-                    speed: enemyType > 0.5 ? 80 : 50,
-                    damage: enemyType > 0.5 ? 15 : 20,
-                    type: enemyType > 0.5 ? 'fast' : 'basic',
-                    lastUpdate: Date.now(),
-                    created: new Date().toISOString()
-                };
-
-                if (enemy.type === 'fast') {
-                    this.applyZigzagMovement(enemy.id, level);
-                }
-
-                this.enemies.push(enemy);
-                this.scene.add(instance);
-                spawnedEnemies.push(enemy);
-            }
-
-            this.updateMetrics(startTime);
-            return spawnedEnemies;
-        } catch (error) {
-            ErrorManager.getInstance().handleError(error as Error, 'AIManager.spawnEnemy');
-            return spawnedEnemies;
         }
+
+        const [enemyType, spawnCount] = await prediction.data();
+        const characterData = this.modelsLoader.getAllCharacterData();
+        const characterIds = characterData.map(c => c.id);
+
+        for (let i = 0; i < Math.round(spawnCount); i++) {
+            if (this.enemies.length >= this.MAX_ENEMIES) break;
+
+            const id = characterIds[Math.floor(Math.random() * characterIds.length)];
+            const model = this.modelsLoader.getModel(id);
+            if (!model) {
+                console.warn(`Karakter modeli eksik: ${id}`);
+                continue;
+            }
+
+            const instance = model.scene.clone();
+            const position = this.findSafeSpawnPosition();
+            instance.position.copy(position);
+
+            const enemy: Enemy = {
+                id: `${id}_${Date.now()}_${i}`,
+                model: instance,
+                health: level * 50,
+                speed: enemyType > 0.5 ? 80 : 50,
+                damage: enemyType > 0.5 ? 15 : 20,
+                type: enemyType > 0.5 ? 'fast' : 'basic',
+                lastUpdate: Date.now(),
+                created: new Date().toISOString()
+            };
+
+            if (enemy.type === 'fast') {
+                this.applyZigzagMovement(enemy.id, level);
+            }
+
+            this.enemies.push(enemy);
+            this.scene.add(instance);
+            spawnedEnemies.push(enemy);
+        }
+
+        this.updateMetrics(startTime);
+        return spawnedEnemies;
+    } catch (error) {
+        ErrorManager.getInstance().handleError(error as Error, 'AIManager.spawnEnemy');
+        return spawnedEnemies;
     }
+}
 
     private findSafeSpawnPosition(): THREE.Vector3 {
         const maxAttempts = 10;
