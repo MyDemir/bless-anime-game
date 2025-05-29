@@ -6,6 +6,7 @@ import { ModelsLoader, CharacterData, KitData } from '../utils/loadModels';
 import { AIManager } from '../ai/AIManager';
 import { EventEmitter } from '../utils/EventEmitter';
 import { NotificationManager } from './NotificationManager';
+import { ErrorManager } from './ErrorManager';
 
 interface GameState {
     isStarted: boolean;
