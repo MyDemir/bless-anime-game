@@ -8,9 +8,8 @@
     "resolveJsonModule": true,
     "strict": true,
     "baseUrl": ".",
-    "noEmit": true
+    "noEmit": true,
+  "types": ["node", "@tensorflow/tfjs"]
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+    "include": ["src/**/*.ts"]
 }
