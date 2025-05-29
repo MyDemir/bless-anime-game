@@ -352,77 +352,80 @@ export class Game extends EventEmitter {
     }
 
     private setupWorld(): THREE.Mesh {
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  this.resources.scene.add(ambientLight);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    this.resources.scene.add(ambientLight);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-  dirLight.position.set(50, 100, 50);
-  dirLight.castShadow = true;
-  dirLight.shadow.mapSize.width = 2048;
-  dirLight.shadow.mapSize.height = 2048;
-  dirLight.shadow.camera.near = 0.5;
-  dirLight.shadow.camera.far = 500;
-  dirLight.shadow.camera.left = -250;
-  dirLight.shadow.camera.right = 250;
-  dirLight.shadow.camera.top = 250;
-  dirLight.shadow.camera.bottom = -250;
-  this.resources.scene.add(dirLight);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(50, 100, 50);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.width = 2048;
+    dirLight.shadow.mapSize.height = 2048;
+    dirLight.shadow.camera.near = 0.5;
+    dirLight.shadow.camera.far = 500;
+    dirLight.shadow.camera.left = -250;
+    dirLight.shadow.camera.right = 250;
+    dirLight.shadow.camera.top = 250;
+    dirLight.shadow.camera.bottom = -250;
+    this.resources.scene.add(dirLight);
 
-  const platform = new THREE.Mesh(
-    new THREE.BoxGeometry(500, 0.5, 500),
-    new THREE.MeshStandardMaterial({
-      color: 0x808080,
-      roughness: 0.7,
-      metalness: 0.1
-    })
-  );
-  platform.receiveShadow = true;
-  platform.position.y = -0.25;
-  this.resources.scene.add(platform);
+    const platform = new THREE.Mesh(
+        new THREE.BoxGeometry(500, 0.5, 500),
+        new THREE.MeshStandardMaterial({
+            color: 0x808080,
+            roughness: 0.7,
+            metalness: 0.1
+        })
+    );
+    platform.receiveShadow = true;
+    platform.position.y = -0.25;
+    this.resources.scene.add(platform);
 
-  const cityData = this.modelsLoader.getCityData();
-  if (!cityData.buildings.length) {
-    console.warn('Şehir verileri eksik, yedek bina ekleniyor');
-    NotificationManager.getInstance().show('Şehir verileri eksik!', 'warning');
-    cityData.buildings.push({
-      id: 'building-type-a',
-      modelPath: '/models/city-kit/building-type-a.glb',
-      size: { width: 10, depth: 10 }
+    const cityData = this.modelsLoader.getCityData();
+    if (!cityData.buildings.length && !cityData.roads.length && !cityData.props.length) {
+        console.error('Şehir verileri eksik!');
+        NotificationManager.getInstance().show('Şehir verileri eksik, oyun başlatılamadı!', 'error');
+        throw new Error('Şehir verileri yüklenemedi');
+    }
+
+    cityData.buildings.forEach(data => {
+        const model = this.modelsLoader.getModel(data.id)?.scene.clone();
+        if (model) {
+            model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
+            model.scale.setScalar(3);
+            model.userData = { type: 'building' };
+            this.resources.scene.add(model);
+            this.aiManager.getStructures().push(model);
+        } else {
+            console.warn(`Bina modeli eksik: ${data.id}`);
+            NotificationManager.getInstance().show(`Bina yüklenemedi: ${data.name}`, 'warning');
+        }
     });
-  }
 
-  cityData.buildings.forEach(data => {
-    const model = this.modelsLoader.getModel(data.id)?.scene.clone();
-    if (model) {
-      model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
-      model.scale.setScalar(3);
-      model.userData = { type: 'building' };
-      this.resources.scene.add(model);
-      this.aiManager.getStructures().push(model);
-    }
-  });
+    cityData.roads.forEach(data => {
+        const model = this.modelsLoader.getModel(data.id)?.scene.clone();
+        if (model) {
+            model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
+            model.scale.setScalar(3);
+            model.userData = { type: 'road' };
+            this.resources.scene.add(model);
+        } else {
+            console.warn(`Yol modeli eksik: ${data.id}`);
+        }
+    });
 
-  cityData.roads.forEach(data => {
-    const model = this.modelsLoader.getModel(data.id)?.scene.clone();
-    if (model) {
-      model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
-      model.scale.setScalar(3);
-      model.userData = { type: 'road' };
-      this.resources.scene.add(model);
-    }
-  });
+    cityData.props.forEach(data => {
+        const model = this.modelsLoader.getModel(data.id)?.scene.clone();
+        if (model) {
+            model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
+            model.scale.setScalar(3);
+            model.userData = { type: 'prop', effect: data.effect, effectDescription: data.effectDescription };
+            this.resources.scene.add(model);
+        } else {
+            console.warn(`Prop modeli eksik: ${data.id}`);
+        }
+    });
 
-  cityData.props.forEach(data => {
-    const model = this.modelsLoader.getModel(data.id)?.scene.clone();
-    if (model) {
-      model.position.set(Math.random() * 500 - 250, 0, Math.random() * 500 - 250);
-      model.scale.setScalar(3);
-      model.userData = { type: 'prop', effect: data.effect, effectDescription: data.effectDescription };
-      this.resources.scene.add(model);
-    }
-  });
-
-  return platform;
+    return platform;
 }
 
     private onWindowResize(): void {
