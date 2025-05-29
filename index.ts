@@ -1,12 +1,18 @@
-import WebServer from '@blockless/sdk-ts/dist/lib/web';
+import * as tf from '@tensorflow/tfjs';
+import { setWasmPaths } from '@tensorflow/tfjs-backend-wasm';
+import { NotificationManager } from './src/core/NotificationManager';
 
-const server = new WebServer();
-
-try {
-  server.statics('public', '/');
-  server.start(); // bls.toml'deki port ile uyumlu
-  console.log('Blockless web sunucusu başlatıldı: http://localhost:3000');
-} catch (error) {
-  console.error('Web sunucusu başlatma hatası:', error);
-  throw error;
+async function initializeTfBackend(): Promise<void> {
+  try {
+    setWasmPaths('/tfjs-backend-wasm.wasm');
+    await tf.setBackend('wasm');
+    console.log('TensorFlow.js WASM backend başlatıldı');
+  } catch (error) {
+    console.error('WASM backend başlatılamadı:', error);
+    NotificationManager.getInstance().show('AI backend başlatılamadı, CPU kullanılıyor!', 'warning');
+    await tf.setBackend('cpu');
+    console.log('CPU backend aktif');
+  }
 }
+
+export { initializeTfBackend };
