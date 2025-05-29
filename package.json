@@ -11,8 +11,8 @@
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
     "mkdirp": "^3.0.1",
-    "@tensorflow/tfjs": "^4.17.0",
-    "@tensorflow/tfjs-backend-wasm": "^4.17.0",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
     "three": "^0.169.0"
   },
   "devDependencies": {
