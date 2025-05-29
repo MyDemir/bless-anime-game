@@ -558,27 +558,46 @@ export class Game extends EventEmitter {
             }
         }
     }
+    private async spawnEnemies(): Promise<void> {
+    const mapDensity = this.calculateMapDensity();
+    if (Math.random() < 0.01) {
+        const enemies = await this.aiManager.spawnEnemy(
+            this.gameState.level,
+            this.aiManager.getEnemies().length,
+            mapDensity
+        );
+        if (enemies.length > 0) {
+            NotificationManager.getInstance().show(`${enemies.length} düşman oluşturuldu!`, 'success');
+        }
+    }
+}
 
     private gameLoop(deltaTime: number): void {
-        this.updatePlayerMovement(deltaTime);
-        this.updateEnemies(deltaTime);
-        this.checkCollisions();
-        this.updateAbilities(deltaTime);
-        this.updateUI();
+    this.updatePlayerMovement(deltaTime);
+    this.updateEnemies(deltaTime);
+    this.checkCollisions();
+    this.updateAbilities(deltaTime);
+    this.updateUI();
 
-        const mapDensity = this.calculateMapDensity();
-        if (Math.random() < 0.01) {
-            this.aiManager.spawnEnemy(this.gameState.level, this.aiManager.getEnemies().length, mapDensity);
-        }
-        if (Math.random() < 0.005) {
-            this.aiManager.addStructure(this.gameState.level, this.aiManager.getStructures().length, Math.random() > 0.5 ? 'city_center' : 'suburb');
-        }
-        if (!this.aiManager.getCurrentTask()) {
-            this.aiManager.generateDynamicTask(this.gameState.level);
-        }
+    // spawnEnemy'yi ayrı bir asenkron çağrıda işle
+    this.spawnEnemies().catch(error => {
+        console.error('Düşman oluşturma hatası:', error);
+        NotificationManager.getInstance().show('Düşman oluşturulamadı!', 'error');
+    });
 
-        this.updateLevel();
+    if (Math.random() < 0.005) {
+        this.aiManager.addStructure(
+            this.gameState.level,
+            this.aiManager.getStructures().length,
+            Math.random() > 0.5 ? 'city_center' : 'suburb'
+        );
     }
+    if (!this.aiManager.getCurrentTask()) {
+        this.aiManager.generateDynamicTask(this.gameState.level);
+    }
+
+    this.updateLevel();
+}
 
     private calculateMapDensity(): number {
     const buildingCount = this.aiManager.getStructures().length;
