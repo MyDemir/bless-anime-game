@@ -1,5 +1,10 @@
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
 const server = new WebServer();
 
-server.statics('public', '/');
+// MIME türünü açıkça tanımla
+server.statics('public', '/', {
+  mimeTypes: {
+    '.wasm': 'application/wasm'
+  }
+});
 server.start();
