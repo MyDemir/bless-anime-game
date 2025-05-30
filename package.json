@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --log-level=info && mkdirp ./build && cp -r public ./build && cp node_modules/@tensorflow/tfjs-backend-wasm/dist/*.wasm build/public && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:debug": "esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --log-level=info && cp node_modules/@tensorflow/tfjs-backend-wasm/dist/*.wasm public/ && mkdirp ./build && cp -r public ./build",
     "preview": "blessnet preview build/debug.wasm",
     "build:release": "esbuild src/core/main.ts --bundle --outfile=public/index.js && mkdirp ./build && cp -r public ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
   },
