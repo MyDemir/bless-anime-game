@@ -1,4 +1,3 @@
-// src/core/main.ts
 import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-backend-wasm';
 import { setWasmPaths } from '@tensorflow/tfjs-backend-wasm';
@@ -7,7 +6,7 @@ import { NotificationManager } from './NotificationManager';
 import { trainModels } from '../ai/trainModel';
 
 // WASM backend için yolu ayarla
-setWasmPaths('/');
+setWasmPaths('.');
 
 // Global bildirim fonksiyonu
 (window as any).showNotification = (
@@ -18,16 +17,17 @@ setWasmPaths('/');
     NotificationManager.getInstance().show(message, type, duration);
 };
 
-// TensorFlow backend başlatma
+// TensorFlow backend başlatma - Sadece WASM
 async function initializeTfBackend() {
     try {
         await tf.setBackend('wasm');
+        await tf.ready();
         console.log('TensorFlow.js WASM backend başlatıldı');
+        return true;
     } catch (error) {
-        console.error('TensorFlow.js backend hatası:', error);
-        // CPU backend'e geç
-        await tf.setBackend('cpu');
-        console.log('CPU backend kullanılıyor');
+        console.error('WASM backend başlatılamadı:', error);
+        NotificationManager.getInstance().show('AI sistemi başlatılamadı!', 'error');
+        return false;
     }
 }
 
@@ -43,7 +43,6 @@ async function checkModelsExist(): Promise<boolean> {
     }
 }
 
-// Oyun başlatma
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Sayfa yüklendi");
     const canvas = document.querySelector('#webgl-canvas') as HTMLCanvasElement;
@@ -55,8 +54,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // AI sistemlerini başlat
-        await initializeTfBackend();
+        // Sadece WASM backend başlatma kontrolü
+        const backendInitialized = await initializeTfBackend();
+        if (!backendInitialized) {
+            throw new Error('AI sistemi başlatılamadı');
+        }
         
         // Model kontrolü ve eğitimi
         const modelsExist = await checkModelsExist();
@@ -68,9 +70,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             } catch (trainError) {
                 console.error('Model eğitimi hatası:', trainError);
                 NotificationManager.getInstance().show('Model eğitimi başarısız!', 'error');
+                throw trainError;
             }
-        } else {
-            console.log('AI modelleri zaten eğitilmiş');
         }
 
         // Oyunu başlat
