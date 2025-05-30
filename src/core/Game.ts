@@ -87,9 +87,6 @@ export class Game extends EventEmitter {
         super();
         console.log("Game sınıfı başlatılıyor");
 
-        this.initializeAI().catch(error => {
-        ErrorManager.getInstance().handleError(error, 'Game.initializeAI');
-        });
         this.resources = this.initializeResources(canvas);
         this.modelsLoader = new ModelsLoader(this.resources.scene);
         this.aiManager = new AIManager(this.modelsLoader, this.resources.scene);
@@ -129,27 +126,7 @@ export class Game extends EventEmitter {
 
     return { scene, camera, renderer, controls };
 }
-
-    private async initializeAI(): Promise<void> {
-    try {
-        await this.aiManager.loadModels();
-        console.log('AI modelleri başarıyla yüklendi');
-        
-        // AI event listeners
-        this.aiManager.on('enemySpawned', (enemy) => {
-            this.handleEnemySpawn(enemy);
-        });
-
-        this.aiManager.on('structurePlaced', (structure) => {
-            this.handleStructurePlacement(structure);
-        });
-
-    } catch (error) {
-        console.error('AI başlatma hatası:', error);
-        NotificationManager.getInstance().show('AI sistemi başlatılamadı!', 'error');
-        throw error;
-    }
-}
+    
     private async initializeGame(): Promise<void> {
         this.ui.uiContainer.classList.add('hidden');
 
