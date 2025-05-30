@@ -148,7 +148,7 @@ export class ModelsLoader extends EventEmitter {
     }
 
     private async loadCityData(): Promise<void> {
-        this.cityData = await this.loadData<CityData>('citys.json');
+        this.cityData = await this.loadData<CityData>('cities.json');
         console.log('Şehir verileri yüklendi:', this.cityData.buildings.length, 'bina,', this.cityData.roads.length, 'yol,', this.cityData.props.length, 'çevre elemanı');
     }
 
