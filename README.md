@@ -21,7 +21,7 @@ bless-anime-game/
 │       ├── structure_placement_data.json #Yapı ID’si ve konumu (x, z) tahmini için
 │       ├── characters.json
 │       ├── kits.json
-│       ├── citys.json
+│       ├── cities.json
 │   └── models/
 │       ├── character/
 │               ├── Textures
