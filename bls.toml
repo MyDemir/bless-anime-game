@@ -18,6 +18,7 @@ release = "tsconfig.release.json"
 [game]
 engineVersion = "1.0.0"
 renderEngine = "three.js"
+aiSystem = true
 
 [server]
 port = 3_000
@@ -27,8 +28,7 @@ host = "localhost"
 public = "public"
 source = "src"
 assets = "public/models"
-data = "public/data"
 
 [deployment]
 permission = "public"
-nodes = 10
+nodes = 3

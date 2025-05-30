@@ -4,21 +4,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:debug": "esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --log-level=info && cp node_modules/@tensorflow/tfjs-backend-wasm/dist/*.wasm public/ && mkdirp ./build && cp -r public ./build",
+    "build:debug": "esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --log-level=info && mkdirp ./build && cp -r public ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
     "preview": "blessnet preview build/debug.wasm",
     "build:release": "esbuild src/core/main.ts --bundle --outfile=public/index.js && mkdirp ./build && cp -r public ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm"
   },
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
-    "mkdirp": "^3.0.1",
-    "@tensorflow/tfjs": "^4.22.0",
-    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
-    "three": "^0.169.0"
+    "three": "^0.169.0",
+    "mkdirp": "^3.0.1"
   },
   "devDependencies": {
-    "@types/three": "^0.169.0",
-    "esbuild": "^0.25.4",
-    "@types/node": "^22.7.4"
+    "@types/three": "^0.150.1",
+    "esbuild": "^0.25.4"
   },
   "bls": {
     "functionId": "bless-function_bless-anime-game-1.0.0"
