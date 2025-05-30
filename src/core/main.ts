@@ -6,7 +6,7 @@ import { NotificationManager } from './NotificationManager';
 import { trainModels } from '../ai/trainModel';
 
 // WASM backend için yolu ayarla
-setWasmPaths('.');
+setWasmPaths('/public/');
 
 // Global bildirim fonksiyonu
 (window as any).showNotification = (
