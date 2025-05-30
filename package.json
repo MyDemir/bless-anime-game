@@ -11,10 +11,12 @@
   "dependencies": {
     "@blockless/sdk-ts": "^1.0.5",
     "three": "^0.169.0",
-    "mkdirp": "^3.0.1"
+    "mkdirp": "^3.0.1",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
   },
   "devDependencies": {
-    "@types/three": "^0.150.1",
+    "@types/three": "^0.169.0",
     "esbuild": "^0.25.4"
   },
   "bls": {
