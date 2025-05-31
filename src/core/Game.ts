@@ -560,17 +560,21 @@ existingUserInfo.innerHTML = userInfoDiv.innerHTML;
 }
 }
 private async spawnEnemies(): Promise<void> {
-const mapDensity = this.calculateMapDensity();
-if (Math.random() < 0.01) {
-const enemies = await this.aiManager.spawnEnemy(
-this.gameState.level,
-this.aiManager.getEnemies().length,
-mapDensity
-);
-if (enemies.length > 0) {
-NotificationManager.getInstance().show(`${enemies.length} düşman oluşturuldu!`, 'success');
-}
-}
+  const mapDensity = this.calculateMapDensity();
+  if (Math.random() < 0.01) {
+    const enemies = await this.aiManager.spawnEnemy(
+      this.gameState.level,
+      this.aiManager.getEnemies().length,
+      mapDensity,
+      {
+        health: this.gameState.health,
+        power: this.characterStats?.power || 50
+      }
+    );
+    if (enemies.length > 0) {
+      NotificationManager.getInstance().show(`${enemies.length} düşman oluşturuldu!`, 'success');
+    }
+  }
 }
 
 private gameLoop(deltaTime: number): void {
