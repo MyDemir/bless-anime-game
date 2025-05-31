@@ -96,7 +96,7 @@ async function trainEnemyModel(modelsLoader: ModelsLoader): Promise<tf.LayersMod
   ys.dispose();
 
   // Modeli kaydet
-  await model.save('localstorage://enemy-selection-model');
+  await model.save(''file://./public/enemy-selection-model'');
 
   // Modeli ModelsLoader'a manuel olarak ekle
   modelsLoader.getAIModel('enemy-selection-model');
@@ -150,7 +150,7 @@ async function trainStructureModel(modelsLoader: ModelsLoader): Promise<tf.Layer
 
   xs.dispose();
   ys.dispose();
-  await model.save('localstorage://structure-placement-model');
+  await model.save('file://./public/structure-placement-model');
   // ModelsLoader'a bildir
   await modelsLoader.initialize(); // Mevcut örneği yeniden başlat
 
