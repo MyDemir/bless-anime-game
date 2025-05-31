@@ -94,9 +94,12 @@ async function trainEnemyModel(modelsLoader: ModelsLoader): Promise<tf.LayersMod
 
   xs.dispose();
   ys.dispose();
+
+  // Modeli kaydet
   await model.save('localstorage://enemy-selection-model');
-  // ModelsLoader'a bildir
-  await modelsLoader.initialize(); // Mevcut örneği yeniden başlat
+
+  // Modeli ModelsLoader'a manuel olarak ekle
+  modelsLoader.getAIModel('enemy-selection-model');
 
   return model;
 }
