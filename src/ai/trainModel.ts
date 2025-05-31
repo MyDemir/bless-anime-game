@@ -1,5 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
 import { NotificationManager } from '../core/NotificationManager';
+import { ModelsLoader } from '../utils/loadModels'; // ModelsLoader'ı import et
 
 interface EnemyData {
   level: number;
@@ -48,7 +49,7 @@ function validateData(data: any[], file: string): void {
   });
 }
 
-async function trainEnemyModel(): Promise<tf.LayersModel> {
+async function trainEnemyModel(modelsLoader: ModelsLoader): Promise<tf.LayersModel> {
   const data: EnemyData[] = await loadData<EnemyData>('enemy_selection_data.json', [
     { level: 1, enemy_count: 1, map_density: 0.3, player_health: 100, player_power: 70, enemy_type: 0, spawn_count: 1 }
   ]);
@@ -65,14 +66,14 @@ async function trainEnemyModel(): Promise<tf.LayersModel> {
     d.player_power / 100
   ]));
   const ys = tf.tensor2d(data.map(d => [
-    ...tf.oneHot([d.enemy_type], 4).dataSync(), // 4 düşman türü
+    ...tf.oneHot([d.enemy_type], 4).dataSync(),
     d.spawn_count / 5
   ]));
 
   const model = tf.sequential();
   model.add(tf.layers.dense({ units: 64, activation: 'relu', inputShape: [5] }));
   model.add(tf.layers.dense({ units: 32, activation: 'relu' }));
-  model.add(tf.layers.dense({ units: 5, activation: 'softmax' })); // 4 enemy_type + 1 spawn_count
+  model.add(tf.layers.dense({ units: 5, activation: 'softmax' }));
 
   model.compile({
     optimizer: 'adam',
@@ -94,10 +95,13 @@ async function trainEnemyModel(): Promise<tf.LayersModel> {
   xs.dispose();
   ys.dispose();
   await model.save('localstorage://enemy-selection-model');
+  // ModelsLoader'a bildir
+  await modelsLoader.initialize(); // Mevcut örneği yeniden başlat
+
   return model;
 }
 
-async function trainStructureModel(): Promise<tf.LayersModel> {
+async function trainStructureModel(modelsLoader: ModelsLoader): Promise<tf.LayersModel> {
   const data: StructureData[] = await loadData<StructureData>('structure_placement_data.json', [
     { level: 1, building_count: 1, region: 0, building_id: 'building-type-a', x: 0, z: 0 }
   ]);
@@ -115,7 +119,7 @@ async function trainStructureModel(): Promise<tf.LayersModel> {
   const xs = tf.tensor2d(data.map(d => [d.level / 10, d.building_count / 10, d.region]));
   const ys = tf.tensor2d(data.map(d => [
     buildingIdMap[d.building_id] / 3,
-    (d.x + 50) / 100, // -50 to 50 -> 0 to 1
+    (d.x + 50) / 100,
     (d.z + 50) / 100
   ]));
 
@@ -144,12 +148,18 @@ async function trainStructureModel(): Promise<tf.LayersModel> {
   xs.dispose();
   ys.dispose();
   await model.save('localstorage://structure-placement-model');
+  // ModelsLoader'a bildir
+  await modelsLoader.initialize(); // Mevcut örneği yeniden başlat
+
   return model;
 }
 
-async function trainModels(): Promise<void> {
+async function trainModels(modelsLoader: ModelsLoader): Promise<void> {
   try {
-    await Promise.all([trainEnemyModel(), trainStructureModel()]);
+    await Promise.all([
+      trainEnemyModel(modelsLoader),
+      trainStructureModel(modelsLoader)
+    ]);
     console.log('Modeller eğitildi ve kaydedildi');
     NotificationManager.getInstance().show('AI modelleri eğitildi!', 'success');
   } catch (error) {
