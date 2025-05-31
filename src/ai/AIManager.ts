@@ -64,19 +64,22 @@ export class AIManager {
   }
 
   public async loadModels(): Promise<void> {
-    try {
-      const [enemyModel, structureModel] = await trainModels();
-      this.enemyModel = enemyModel;
-      this.structureModel = structureModel;
-      console.log('AI modelleri yüklendi');
-      NotificationManager.getInstance().show('AI modelleri yüklendi!', 'success');
-    } catch (error) {
-      console.error('AI modelleri yüklenemedi:', error);
-      NotificationManager.getInstance().show('AI modelleri yüklenemedi!', 'error');
-      ErrorManager.getInstance().handleError(error as Error, 'AIManager.loadModels');
-      throw error;
+  try {
+    this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model');
+    this.structureModel = this.modelsLoader.getAIModel('structure-placement-model');
+    if (!this.enemyModel || !this.structureModel) {
+      await trainModels(); // Model yoksa eğit
+      this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model');
+      this.structureModel = this.modelsLoader.getAIModel('structure-placement-model');
     }
+    console.log('AI modelleri yüklendi');
+    NotificationManager.getInstance().show('AI modelleri yüklendi!', 'success');
+  } catch (error) {
+    console.error('AI modelleri yüklenemedi:', error);
+    NotificationManager.getInstance().show('AI modelleri yüklenemedi!', 'error');
+    throw error;
   }
+}
 
   async spawnEnemy(level: number, enemyCount: number, mapDensity: number, playerStats: { health: number; power: number }): Promise<Enemy[]> {
     if (!this.enemyModel || this.enemies.length >= this.MAX_ENEMIES) return [];
