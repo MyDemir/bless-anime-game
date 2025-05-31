@@ -65,13 +65,13 @@ export class AIManager {
 
  public async loadModels(): Promise<void> {
   try {
-    this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model') ?? null;
-    this.structureModel = this.modelsLoader.getAIModel('structure-placement-model') ?? null;
+    this.enemyModel = await tf.loadLayersModel('file://./public/enemy-selection-model/model.json') ?? null;
+    this.structureModel = await tf.loadLayersModel('file://./public/structure-placement-model/model.json') ?? null;
 
     if (!this.enemyModel || !this.structureModel) {
-      await trainModels(this.modelsLoader); // Eksik parametre düzeltildi
-      this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model') ?? null;
-      this.structureModel = this.modelsLoader.getAIModel('structure-placement-model') ?? null;
+      await trainModels(this.modelsLoader);
+      this.enemyModel = await tf.loadLayersModel('file://./public/enemy-selection-model/model.json') ?? null;
+      this.structureModel = await tf.loadLayersModel('file://./public/structure-placement-model/model.json') ?? null;
     }
 
     console.log('AI modelleri yüklendi');
