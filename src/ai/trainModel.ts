@@ -96,7 +96,7 @@ async function trainEnemyModel(modelsLoader: ModelsLoader): Promise<tf.LayersMod
   ys.dispose();
 
   // Modeli kaydet
-  await model.save(''file://./public/enemy-selection-model'');
+  await model.save('file://./public/enemy-selection-model');
 
   // Modeli ModelsLoader'a manuel olarak ekle
   modelsLoader.getAIModel('enemy-selection-model');
