@@ -63,15 +63,17 @@ export class AIManager {
     this.startPerformanceMonitoring();
   }
 
-  public async loadModels(): Promise<void> {
+ public async loadModels(): Promise<void> {
   try {
-    this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model');
-    this.structureModel = this.modelsLoader.getAIModel('structure-placement-model');
+    this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model') ?? null;
+    this.structureModel = this.modelsLoader.getAIModel('structure-placement-model') ?? null;
+
     if (!this.enemyModel || !this.structureModel) {
-      await trainModels(); // Model yoksa eğit
-      this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model');
-      this.structureModel = this.modelsLoader.getAIModel('structure-placement-model');
+      await trainModels(this.modelsLoader); // Eksik parametre düzeltildi
+      this.enemyModel = this.modelsLoader.getAIModel('enemy-selection-model') ?? null;
+      this.structureModel = this.modelsLoader.getAIModel('structure-placement-model') ?? null;
     }
+
     console.log('AI modelleri yüklendi');
     NotificationManager.getInstance().show('AI modelleri yüklendi!', 'success');
   } catch (error) {
