@@ -2,7 +2,7 @@
   "buildings": [
     {
       "id": "building-type-a",
-      "name": "Küçük Ev",
+      "name": "Small House",
       "modelPath": "/models/city-kit/building-type-a.glb",
       "type": "house",
       "size": { "width": 5, "height": 3, "depth": 5 },
@@ -18,7 +18,7 @@
     },
     {
       "id": "building-type-c",
-      "name": "Modern Bina",
+      "name": "Modern Building",
       "modelPath": "/models/city-kit/building-type-c.glb",
       "type": "building",
       "size": { "width": 8, "height": 10, "depth": 8 },
@@ -26,7 +26,7 @@
     },
     {
       "id": "building-type-d",
-      "name": "Ofis Binası",
+      "name": "Office Building",
       "modelPath": "/models/city-kit/building-type-d.glb",
       "type": "building",
       "size": { "width": 10, "height": 12, "depth": 10 },
@@ -36,7 +36,7 @@
   "roads": [
     {
       "id": "path-long",
-      "name": "Uzun Yol",
+      "name": "Long Road",
       "modelPath": "/models/city-kit/path-long.glb",
       "type": "road",
       "size": { "width": 4, "height": 0.2, "depth": 10 },
@@ -44,7 +44,7 @@
     },
     {
       "id": "path-short",
-      "name": "Kısa Yol",
+      "name": "Short Road",
       "modelPath": "/models/city-kit/path-short.glb",
       "type": "road",
       "size": { "width": 4, "height": 0.2, "depth": 8 },
@@ -54,7 +54,7 @@
   "props": [
     {
       "id": "tree-small",
-      "name": "Küçük Ağaç",
+      "name": "Small Tree",
       "modelPath": "/models/city-kit/tree-small.glb",
       "type": "prop",
       "size": { "width": 2, "height": 4, "depth": 2 },
@@ -62,7 +62,7 @@
     },
     {
       "id": "tree-large",
-      "name": "Büyük Ağaç",
+      "name": "Large Tree",
       "modelPath": "/models/city-kit/tree-large.glb",
       "type": "prop",
       "size": { "width": 2, "height": 4, "depth": 2 },
@@ -70,23 +70,23 @@
     },
     {
       "id": "detail-parasol",
-      "name": "Sağlık Kiti Sandığı",
+      "name": "Health Kit Box",
       "modelPath": "/models/city-kit/cityv2/detail-parasol-a.glb",
       "type": "prop",
       "size": { "width": 1, "height": 1, "depth": 1 },
       "region": ["city_center", "suburb"],
       "effect": "health_kit",
-      "effectDescription": "20 sağlık puanı yeniler."
+      "effectDescription": "Restores 20 health points."
     },
     {
       "id": "building-h",
-      "name": "Dükkan",
+      "name": "Shop",
       "modelPath": "/models/city-kit/cityv2/building-h.glb",
       "type": "prop",
       "size": { "width": 6, "height": 4, "depth": 6 },
       "region": ["city_center"],
       "effect": "quest",
-      "effectDescription": "Görev verir (örneğin, 3 düşman yen, 50 XP)."
+      "effectDescription": "Gives a quest (e.g., defeat 3 enemies, 50 XP)."
     }
   ]
 }

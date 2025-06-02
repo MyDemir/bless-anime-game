@@ -1,7 +1,7 @@
 [
   {
     "id": "female_a",
-    "name": "Ninja Kızı",
+    "name": "Ninja Girl",
     "modelPath": "/models/character/character-female-a.glb",
     "photoPath": "/models/character/photo/character-female-a.png",
     "stats": {
@@ -9,12 +9,12 @@
       "power": 70,
       "health": 100,
       "ability": "invisibility",
-      "abilityDescription": "3 saniye görünmez olur, düşmanlar hedef alamaz, hız +20%."
+      "abilityDescription": "Becomes invisible for 3 seconds, enemies can't target, speed +20%."
     }
   },
   {
     "id": "male_a",
-    "name": "Samuray Adam",
+    "name": "Samurai Warrior",
     "modelPath": "/models/character/character-male-a.glb",
     "photoPath": "/models/character/photo/character-male-a.png",
     "stats": {
@@ -22,12 +22,12 @@
       "power": 90,
       "health": 110,
       "ability": "sword_slash",
-      "abilityDescription": "Yakındaki tüm düşmanlara 150% güç hasarı verir (3 birim yarıçap)."
+      "abilityDescription": "Deals 150% power damage to all nearby enemies (3 unit radius)."
     }
   },
   {
     "id": "female_b",
-    "name": "Mini Karakter A",
+    "name": "Mini Character A",
     "modelPath": "/models/character/character-female-b.glb",
     "photoPath": "/models/character/photo/character-female-b.png",
     "stats": {
@@ -35,12 +35,12 @@
       "power": 75,
       "health": 95,
       "ability": "dash_leap",
-      "abilityDescription": "5 birim ileri sıçrar, 1 saniye düşman hasarından korunur."
+      "abilityDescription": "Leaps forward 5 units, immune to enemy damage for 1 second."
     }
   },
   {
     "id": "female_c",
-    "name": "Mini Karakter B",
+    "name": "Mini Character B",
     "modelPath": "/models/character/character-female-c.glb",
     "photoPath": "/models/character/photo/character-female-c.png",
     "stats": {
@@ -48,12 +48,12 @@
       "power": 85,
       "health": 100,
       "ability": "energy_burst",
-      "abilityDescription": "2 birim yarıçapta alan hasarı (100% güç), düşmanları 1 saniye yavaşlatır."
+      "abilityDescription": "Area damage in 2 unit radius (100% power), slows enemies for 1 second."
     }
   },
   {
     "id": "female_d",
-    "name": "Mini Karakter C",
+    "name": "Mini Character C",
     "modelPath": "/models/character/character-female-d.glb",
     "photoPath": "/models/character/photo/character-female-d.png",
     "stats": {
@@ -61,12 +61,12 @@
       "power": 65,
       "health": 90,
       "ability": "trap_setup",
-      "abilityDescription": "Yere 5 saniye süren bir tuzak kurar, düşmanlar temas ederse 50 hasar alır."
+      "abilityDescription": "Sets a trap that lasts 5 seconds, deals 50 damage when enemies touch."
     }
   },
   {
     "id": "female_e",
-    "name": "Mini Karakter D",
+    "name": "Mini Character D",
     "modelPath": "/models/character/character-female-e.glb",
     "photoPath": "/models/character/photo/character-female-e.png",
     "stats": {
@@ -74,12 +74,12 @@
       "power": 95,
       "health": 105,
       "ability": "power_shield",
-      "abilityDescription": "5 saniye boyunca gelen hasarı %50 azaltır."
+      "abilityDescription": "Reduces incoming damage by 50% for 5 seconds."
     }
   },
   {
     "id": "female_f",
-    "name": "Mini Karakter E",
+    "name": "Mini Character E",
     "modelPath": "/models/character/character-female-f.glb",
     "photoPath": "/models/character/photo/character-female-f.png",
     "stats": {
@@ -87,12 +87,12 @@
       "power": 70,
       "health": 100,
       "ability": "double_shot",
-      "abilityDescription": "Bir sonraki blaster atışı 2 mermi ateşler, her biri %75 hasar verir."
+      "abilityDescription": "Next blaster shot fires 2 projectiles, each dealing 75% damage."
     }
   },
   {
     "id": "male_b",
-    "name": "Mini Karakter F",
+    "name": "Mini Character F",
     "modelPath": "/models/character/character-male-b.glb",
     "photoPath": "/models/character/photo/character-male-b.png",
     "stats": {
@@ -100,12 +100,12 @@
       "power": 80,
       "health": 110,
       "ability": "seismic_strike",
-      "abilityDescription": "Yere vurarak 3 birim yarıçapta 120% güç hasarı verir, düşmanları sersemletir (1 sn)."
+      "abilityDescription": "Strikes the ground dealing 120% power damage in 3 unit radius, stuns enemies (1 sec)."
     }
   },
   {
     "id": "male_c",
-    "name": "Mini Karakter G",
+    "name": "Mini Character G",
     "modelPath": "/models/character/character-male-c.glb",
     "photoPath": "/models/character/photo/character-male-c.png",
     "stats": {
@@ -113,12 +113,12 @@
       "power": 60,
       "health": 95,
       "ability": "speed_surge",
-      "abilityDescription": "5 saniye boyunca hız +50%, ancak güç -20%."
+      "abilityDescription": "Speed +50% for 5 seconds, but power -20%."
     }
   },
   {
     "id": "male_d",
-    "name": "Mini Karakter H",
+    "name": "Mini Character H",
     "modelPath": "/models/character/character-male-d.glb",
     "photoPath": "/models/character/photo/character-male-d.png",
     "stats": {
@@ -126,12 +126,12 @@
       "power": 90,
       "health": 115,
       "ability": "heavy_strike",
-      "abilityDescription": "Tek bir düşmana 200% güç hasarı verir, ancak 2 saniye hareketsiz kalır."
+      "abilityDescription": "Deals 200% power damage to a single enemy but immobilized for 2 seconds."
     }
   },
   {
     "id": "male_e",
-    "name": "Mini Karakter I",
+    "name": "Mini Character I",
     "modelPath": "/models/character/character-male-e.glb",
     "photoPath": "/models/character/photo/character-male-e.png",
     "stats": {
@@ -139,12 +139,12 @@
       "power": 65,
       "health": 100,
       "ability": "smoke_bomb",
-      "abilityDescription": "3 birim yarıçapta duman bulutu oluşturur, düşmanlar 3 saniye hedef alamaz."
+      "abilityDescription": "Creates a smoke cloud in 3 unit radius, enemies can't target for 3 seconds."
     }
   },
   {
     "id": "male_f",
-    "name": "Mini Karakter J",
+    "name": "Mini Character J",
     "modelPath": "/models/character/character-male-f.glb",
     "photoPath": "/models/character/photo/character-male-f.png",
     "stats": {
@@ -152,7 +152,7 @@
       "power": 85,
       "health": 105,
       "ability": "life_steal",
-      "abilityDescription": "Bir düşmana 100% güç hasarı verir, hasarın %50’si sağlık olarak geri döner."
+      "abilityDescription": "Deals 100% power damage to an enemy, 50% of damage returns as health."
     }
   }
 ]

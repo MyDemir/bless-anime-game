@@ -6,10 +6,10 @@ export class NotificationManager {
     private isShowing = false;
     private lastMessage: string | null = null;
     private lastMessageTime: number = 0;
-    private readonly DEBOUNCE_TIME = 3000; // Aynı mesaj için 3 saniye bekle
+    private readonly DEBOUNCE_TIME = 3000; // Wait 3 seconds for the same message
 
     private constructor() {
-        console.log("NotificationManager başlatılıyor");
+        console.log("Initializing NotificationManager");
     }
 
     static getInstance(): NotificationManager {

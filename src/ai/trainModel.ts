@@ -24,7 +24,7 @@ interface StructureData {
 async function loadData<T>(file: string, fallbackData: T[] = []): Promise<T[]> {
   try {
     const response = await fetch(`/data/${file}`, { cache: 'no-cache' });
-    if (!response.ok) throw new Error(`Veri dosyası yüklenemedi: ${file} (${response.status})`);
+    if (!response.ok) throw new Error(`Failed to load data file: ${file} (${response.status})`);
     const text = await response.text();
     try {
       const data = JSON.parse(text);
@@ -63,8 +63,8 @@ async function loadData<T>(file: string, fallbackData: T[] = []): Promise<T[]> {
       return fallbackData;
     }
   } catch (error) {
-    console.error(`Veri yükleme hatası (${file}):`, error);
-    NotificationManager.getInstance().show(`${file} yüklenemedi!`, 'error');
+    console.error(`Error loading ${file}:`, error);
+    NotificationManager.getInstance().show(`Using fallback data for ${file}`, 'warning');
     return fallbackData;
   }
 }

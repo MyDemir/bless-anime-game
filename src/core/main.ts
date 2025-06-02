@@ -9,10 +9,10 @@ import { ErrorManager } from './ErrorManager';
 import { trainModels } from '../ai/trainModel';
 import { ModelsLoader } from '../utils/loadModels';
 
-// WASM yapılandırması
+// WASM configuration
 setWasmPaths('/');
 
-// Global bildirim fonksiyonu
+// Global notification function
 (window as any).showNotification = (
   message: string,
   type: 'success' | 'error' | 'warning' = 'success',
@@ -21,61 +21,61 @@ setWasmPaths('/');
   NotificationManager.getInstance().show(message, type, duration);
 };
 
-// WASM backend'i başlat
+// Initialize WASM backend
 async function initTensorFlow() {
   try {
-    // WASM backend'i yükle
+    // Load WASM backend
     await tf.setBackend('wasm');
     await tf.ready();
     
-    // Backend durumunu kontrol et
+    // Backend status check
     const backend = tf.getBackend();
     if (backend !== 'wasm') {
-      console.warn('WASM backend aktif değil, alternatif backend kullanılıyor:', backend);
-      NotificationManager.getInstance().show('AI sistemi yedek modda çalışıyor', 'warning');
+      console.warn('WASM backend inactive, using fallback backend:', backend);
+      NotificationManager.getInstance().show('AI system running in fallback mode', 'warning');
     } else {
-      console.log('TensorFlow.js WASM backend başarıyla başlatıldı');
+      console.log('TensorFlow.js WASM backend successfully initialized');
     }
     
     return true;
   } catch (error) {
-    console.error('WASM backend başlatma hatası:', error);
-    NotificationManager.getInstance().show('AI sistemi yedek moda geçti', 'warning');
+    console.error('WASM backend initialization error:', error);
+    NotificationManager.getInstance().show('AI system switched to fallback mode', 'warning');
     
-    // CPU backend'e geç
+    // Switch to CPU backend
     try {
       await tf.setBackend('cpu');
       await tf.ready();
       return true;
     } catch (fallbackError) {
-      console.error('Yedek backend başlatılamadı:', fallbackError);
+      console.error('Fallback backend initialization failed:', fallbackError);
       return false;
     }
   }
 }
 
-// Model kontrolü
+// Model check
 async function checkModels(): Promise<boolean> {
   try {
     await tf.loadLayersModel('localstorage://enemy-selection-model');
     await tf.loadLayersModel('localstorage://structure-placement-model');
-    console.log('AI modelleri yüklendi');
+    console.log('AI models loaded');
     return true;
   } catch (error) {
-    console.warn('Modeller bulunamadı, eğitim başlatılacak:', error);
+    console.warn('Models not found, training will start:', error);
     ErrorManager.getInstance().handleError(error as Error, 'checkModels');
     return false;
   }
 }
 
-// Model eğitimi
+// Model training
 async function trainModelsSafely(): Promise<boolean> {
   try {
     const canvas = document.querySelector('#webgl-canvas') as HTMLCanvasElement;
     const scene = new THREE.Scene();
     const modelsLoader = new ModelsLoader(scene);
     await trainModels(modelsLoader);
-    NotificationManager.getInstance().show('AI modelleri hazır!', 'success');
+    NotificationManager.getInstance().show('AI models ready!', 'success');
     return true;
   } catch (error) {
     ErrorManager.getInstance().handleError(error as Error, 'trainModelsSafely');
@@ -83,7 +83,7 @@ async function trainModelsSafely(): Promise<boolean> {
   }
 }
 
-// Canvas elementini bekle
+// Wait for canvas element
 function waitForCanvas(): Promise<HTMLCanvasElement> {
   return new Promise((resolve, reject) => {
     const maxAttempts = 10;
@@ -96,7 +96,7 @@ function waitForCanvas(): Promise<HTMLCanvasElement> {
       } else {
         attempts++;
         if (attempts >= maxAttempts) {
-          reject(new Error('Canvas elementi bulunamadı!'));
+          reject(new Error('Canvas element not found!'));
         } else {
           setTimeout(checkCanvas, 100);
         }
@@ -107,39 +107,39 @@ function waitForCanvas(): Promise<HTMLCanvasElement> {
   });
 }
 
-// Ana uygulama başlatma
+// Main application startup
 async function main() {
   try {
-    // Canvas elementini bekle
+    // Wait for canvas element
     const canvas = await waitForCanvas();
     
-    // WASM backend'i başlat
+    // Initialize WASM backend
     const tfInitialized = await initTensorFlow();
     if (!tfInitialized) {
-      throw new Error('TensorFlow başlatılamadı');
+      throw new Error('TensorFlow initialization failed');
     }
 
-    // Model kontrolü ve eğitimi
+    // Model check and training
     const modelsExist = await checkModels();
     if (!modelsExist) {
-      NotificationManager.getInstance().show('AI modelleri eğitiliyor...', 'warning');
+      NotificationManager.getInstance().show('AI models training...', 'warning');
       const modelsTrained = await trainModelsSafely();
       if (!modelsTrained) {
-        throw new Error('Model eğitimi başarısız');
+        throw new Error('Model training failed');
       }
     }
 
-    // Oyunu başlat
+    // Start game
     const game = new Game(canvas);
-    NotificationManager.getInstance().show('Hoş geldin!', 'success');
+    NotificationManager.getInstance().show('Welcome!', 'success');
   } catch (error) {
-    console.error('Uygulama başlatma hatası:', error);
-    NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
+    console.error('Application startup error:', error);
+    NotificationManager.getInstance().show('Game startup failed!', 'error');
     ErrorManager.getInstance().handleError(error as Error, 'main');
   }
 }
 
-// Sayfa yüklendiğinde uygulamayı başlat
+// Start application when page loads
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', main);
 } else {

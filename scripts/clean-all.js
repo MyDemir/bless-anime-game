@@ -4,7 +4,6 @@ import { join } from 'path';
 
 const cleanPaths = [
     // Bağımlılık klasörleri
-    'node_modules',
     '.npm',
     '.cache',
     

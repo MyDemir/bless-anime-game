@@ -63,25 +63,33 @@ export class AIManager {
     this.startPerformanceMonitoring();
   }
 
- public async loadModels(): Promise<void> {
-  try {
-    this.enemyModel = await tf.loadLayersModel('file://./public/enemy-selection-model/model.json') ?? null;
-    this.structureModel = await tf.loadLayersModel('file://./public/structure-placement-model/model.json') ?? null;
+  public async loadModels(): Promise<void> {
+    try {
+      // Göreceli yolları kullanarak modelleri yüklemeyi dene
+      this.enemyModel = await tf.loadLayersModel('/enemy-selection-model/model.json').catch(() => null);
+      this.structureModel = await tf.loadLayersModel('/structure-placement-model/model.json').catch(() => null);
 
-    if (!this.enemyModel || !this.structureModel) {
-      await trainModels(this.modelsLoader);
-      this.enemyModel = await tf.loadLayersModel('file://./public/enemy-selection-model/model.json') ?? null;
-      this.structureModel = await tf.loadLayersModel('file://./public/structure-placement-model/model.json') ?? null;
+      if (!this.enemyModel || !this.structureModel) {
+        console.log('AI modelleri bulunamadı, yeni modeller eğitiliyor...');
+        await trainModels(this.modelsLoader);
+        
+        // Yeni eğitilen modelleri yüklemeyi dene
+        this.enemyModel = await tf.loadLayersModel('/enemy-selection-model/model.json');
+        this.structureModel = await tf.loadLayersModel('/structure-placement-model/model.json');
+        
+        if (!this.enemyModel || !this.structureModel) {
+          throw new Error('AI modelleri yüklenemedi ve oluşturulamadı');
+        }
+      }
+
+      console.log('AI modelleri başarıyla yüklendi');
+      NotificationManager.getInstance().show('AI modelleri yüklendi!', 'success');
+    } catch (error) {
+      console.error('AI modelleri yüklenemedi:', error);
+      NotificationManager.getInstance().show('AI modelleri yüklenemedi!', 'error');
+      throw error;
     }
-
-    console.log('AI modelleri yüklendi');
-    NotificationManager.getInstance().show('AI modelleri yüklendi!', 'success');
-  } catch (error) {
-    console.error('AI modelleri yüklenemedi:', error);
-    NotificationManager.getInstance().show('AI modelleri yüklenemedi!', 'error');
-    throw error;
   }
-}
 
   async spawnEnemy(level: number, enemyCount: number, mapDensity: number, playerStats: { health: number; power: number }): Promise<Enemy[]> {
     if (!this.enemyModel || this.enemies.length >= this.MAX_ENEMIES) return [];
@@ -308,41 +316,78 @@ export class AIManager {
   }
 
   async generateMap(level: number, region: string): Promise<void> {
-    const buildingCount = Math.min(10, level * 2);
-    const regionId = region === 'suburb' ? 0 : 1;
-
-    for (let i = 0; i < buildingCount; i++) {
-      await this.addStructure(level, buildingCount, region);
-    }
-
-    const cityData = this.modelsLoader.getCityData();
-    const roads = cityData.roads.filter(r => r.region.includes(region));
-    const props = cityData.props.filter(p => p.region.includes(region));
-
-    for (let i = 0; i < Math.min(3, level); i++) {
-      const road = roads[Math.floor(Math.random() * roads.length)];
-      const model = this.modelsLoader.getModel(road.id);
-      if (model) {
-        const instance = model.scene.clone();
-        const position = this.findSafeSpawnPosition();
-        instance.position.copy(position);
-        instance.scale.setScalar(2);
-        this.scene.add(instance);
-        this.structures.push(instance);
+    try {
+      // Model yükleme kontrolü
+      if (!this.modelsLoader.isLoaded()) {
+        console.log('Modeller henüz yüklenmedi, yükleme başlatılıyor...');
+        await this.modelsLoader.initialize();
       }
-    }
 
-    for (let i = 0; i < Math.min(5, level * 2); i++) {
-      const prop = props[Math.floor(Math.random() * props.length)];
-      const model = this.modelsLoader.getModel(prop.id);
-      if (model) {
-        const instance = model.scene.clone();
-        const position = this.findSafeSpawnPosition();
-        instance.position.copy(position);
-        instance.scale.setScalar(2);
-        this.scene.add(instance);
-        this.structures.push(instance);
+      console.log(`Harita üretiliyor - Level: ${level}, Bölge: ${region}`);
+      const buildingCount = Math.min(10, level * 2);
+
+      // Mevcut yapıları temizle
+      this.structures.forEach(structure => this.scene.remove(structure));
+      this.structures = [];
+
+      const cityData = this.modelsLoader.getCityData();
+      if (!cityData) {
+        throw new Error('Şehir verileri yüklenemedi');
       }
+
+      // Binaları ekle
+      const buildings = cityData.buildings || [];
+      for (let i = 0; i < buildingCount && i < buildings.length; i++) {
+        const building = buildings[i];
+        if (building && building.id) {
+          await this.addStructure(level, buildingCount, region);
+        }
+      }
+      
+      // Yolları ekle
+      const roads = (cityData.roads || []).filter(r => r && r.region && r.region.includes(region));
+      if (roads.length > 0) {
+        for (let i = 0; i < Math.min(3, level); i++) {
+          const road = roads[Math.floor(Math.random() * roads.length)];
+          if (road && road.id) {
+            const model = this.modelsLoader.getModel(road.id);
+            if (model) {
+              const instance = model.scene.clone();
+              const position = this.findSafeSpawnPosition();
+              instance.position.copy(position);
+              instance.scale.setScalar(2);
+              this.scene.add(instance);
+              this.structures.push(instance);
+            }
+          }
+        }
+      }
+
+      // Çevre elemanlarını ekle
+      const props = (cityData.props || []).filter(p => p && p.region && p.region.includes(region));
+      if (props.length > 0) {
+        for (let i = 0; i < Math.min(5, level * 2); i++) {
+          const prop = props[Math.floor(Math.random() * props.length)];
+          if (prop && prop.id) {
+            const model = this.modelsLoader.getModel(prop.id);
+            if (model) {
+              const instance = model.scene.clone();
+              const position = this.findSafeSpawnPosition();
+              instance.position.copy(position);
+              instance.scale.setScalar(2);
+              this.scene.add(instance);
+              this.structures.push(instance);
+            }
+          }
+        }
+      }
+
+      console.log(`Harita üretimi tamamlandı - ${this.structures.length} yapı yerleştirildi`);
+      NotificationManager.getInstance().show('Harita başarıyla oluşturuldu!', 'success');
+    } catch (error) {
+      console.error('Harita üretim hatası:', error);
+      NotificationManager.getInstance().show('Harita oluşturulurken hata oluştu!', 'error');
+      throw error;
     }
   }
 
@@ -472,4 +517,4 @@ export class AIManager {
     this.enemies = [];
     this.structures = [];
   }
-    }
+}

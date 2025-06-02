@@ -8,7 +8,7 @@
       "fireRate": 90,
       "damage": 40,
       "effect": "none",
-      "effectDescription": "Hızlı ateş eden standart bir blaster."
+      "effectDescription": "A standard blaster with fast fire rate."
     }
   },
   {
@@ -20,7 +20,7 @@
       "fireRate": 60,
       "damage": 70,
       "effect": "none",
-      "effectDescription": "Yavaş ama güçlü bir blaster."
+      "effectDescription": "A slow but powerful blaster."
     }
   },
   {
@@ -32,7 +32,7 @@
       "fireRate": 80,
       "damage": 50,
       "effect": "slow",
-      "effectDescription": "Düşmanları 1 saniye %30 yavaşlatır."
+      "effectDescription": "Slows enemies by 30% for 1 second."
     }
   },
   {
@@ -44,7 +44,7 @@
       "fireRate": 70,
       "damage": 60,
       "effect": "none",
-      "effectDescription": "Dengeli bir blaster, orta hız ve hasar."
+      "effectDescription": "A balanced blaster with medium speed and damage."
     }
   },
   {
@@ -56,7 +56,7 @@
       "fireRate": 85,
       "damage": 45,
       "effect": "area",
-      "effectDescription": "1 birim yarıçapta küçük bir alan hasarı (50% damage)."
+      "effectDescription": "Small area damage in 1 unit radius (50% damage)."
     }
   },
   {
@@ -68,7 +68,7 @@
       "fireRate": 65,
       "damage": 65,
       "effect": "none",
-      "effectDescription": "Güçlü ve dengeli bir blaster."
+      "effectDescription": "A powerful and balanced blaster."
     }
   },
   {
@@ -80,7 +80,7 @@
       "fireRate": 95,
       "damage": 35,
       "effect": "rapid",
-      "effectDescription": "3 saniye boyunca ateş hızı %50 artar (10 sn cooldown)."
+      "effectDescription": "Fire rate increased by 50% for 3 seconds (10 sec cooldown)."
     }
   }
 ]

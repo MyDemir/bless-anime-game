@@ -20,6 +20,7 @@ highScore: number;
 currentUser: string;
 lastPlayTime: string;
 level: number;
+currentRegion: string;
 }
 
 interface GameResources {
@@ -42,6 +43,7 @@ private platform: THREE.Mesh;
 private lastFrameTime: number = 0;
 private frameCount: number = 0;
 private currentFPS: number = 0;
+private canvas: HTMLCanvasElement;
 
 private gameState: GameState = {
 isStarted: false,
@@ -54,7 +56,8 @@ selectedKit: null,
 highScore: 0,
 currentUser: 'MyDemir',
 lastPlayTime: '2025-05-27 21:10:00',
-level: 1
+level: 1,
+currentRegion: 'default'
 };
 
 private ui = {
@@ -65,8 +68,8 @@ uiContainer: document.getElementById('ui') as HTMLElement,
 loadingScreen: document.getElementById('loading-screen') as HTMLElement,
 finalScore: document.getElementById('final-score') as HTMLElement,
 highScore: document.getElementById('high-score') as HTMLElement,
-task: document.getElementById('task') as HTMLElement,
-crosshair: document.querySelector('.crosshair') as HTMLElement
+crosshair: document.querySelector('.crosshair') as HTMLElement,
+taskContainer: document.getElementById('task') as HTMLElement
 };
 
 private player: THREE.Object3D | null = null;
@@ -118,6 +121,7 @@ constructor(canvas: HTMLCanvasElement) {
 super();
 console.log("Game sınıfı başlatılıyor");
 
+this.canvas = canvas;
 // Pointer kontrollerini başlat
 this.initializePointerControls(canvas);
 
@@ -145,9 +149,19 @@ NotificationManager.getInstance().show('Şehir modelleri yüklenemedi!', 'error'
 private initializePointerControls(canvas: HTMLCanvasElement): void {
   // Pointer Lock API için event listener'lar
   canvas.addEventListener('click', () => {
-    if (!this.gameState.isPaused && document.pointerLockElement !== canvas) {
+    if (!document.pointerLockElement) {
       canvas.requestPointerLock().catch(error => {
         console.warn('Fare kilidi etkinleştirilemedi:', error);
+        // Fare kilidi olmasa da oyunu başlat
+        if (!this.gameState.isStarted) {
+          this.gameState.isStarted = true;
+          this.gameState.isPaused = false;
+          this.updateUI();
+          this.ui.uiContainer.classList.remove('hidden');
+          if (this.menuManager) {
+            this.menuManager.showMenu('none');
+          }
+        }
       });
     }
   });
@@ -158,6 +172,17 @@ private initializePointerControls(canvas: HTMLCanvasElement): void {
       document.addEventListener('mousemove', this.onMouseMove.bind(this));
       canvas.addEventListener('mousedown', this.onMouseDown.bind(this));
       canvas.addEventListener('mouseup', this.onMouseUp.bind(this));
+      
+      // Oyunu başlat
+      if (!this.gameState.isStarted) {
+        this.gameState.isStarted = true;
+        this.gameState.isPaused = false;
+        this.updateUI();
+        this.ui.uiContainer.classList.remove('hidden');
+        if (this.menuManager) {
+          this.menuManager.showMenu('none');
+        }
+      }
     } else {
       document.removeEventListener('mousemove', this.onMouseMove.bind(this));
       canvas.removeEventListener('mousedown', this.onMouseDown.bind(this));
@@ -172,6 +197,16 @@ private initializePointerControls(canvas: HTMLCanvasElement): void {
   document.addEventListener('pointerlockerror', () => {
     console.warn('Fare kilidi hatası oluştu');
     NotificationManager.getInstance().show('Fare kontrolü etkinleştirilemedi!', 'warning');
+    // Fare kilidi olmasa da oyunu başlat
+    if (!this.gameState.isStarted) {
+      this.gameState.isStarted = true;
+      this.gameState.isPaused = false;
+      this.updateUI();
+      this.ui.uiContainer.classList.remove('hidden');
+      if (this.menuManager) {
+        this.menuManager.showMenu('none');
+      }
+    }
   });
 }
 
@@ -266,7 +301,8 @@ highScore: this.gameState.highScore,
 lastPlayTime: this.gameState.lastPlayTime,
 selectedCharacter: this.gameState.selectedCharacter,
 selectedKit: this.gameState.selectedKit,
-level: this.gameState.level
+level: this.gameState.level,
+currentRegion: this.gameState.currentRegion
 };
 localStorage.setItem('gameState', JSON.stringify(stateToSave));
 localStorage.setItem('highScore', this.gameState.highScore.toString());
@@ -694,68 +730,65 @@ private onMouseMove(event: MouseEvent): void {
 }
 
 private updateUI(): void {
-  // Skor, can ve mermi güncellemesi
-  this.ui.score.textContent = `Skor: ${this.gameState.score}`;
-  this.ui.health.textContent = `Can: ${Math.round(this.gameState.health)}%`;
-  this.ui.ammo.textContent = `Mermi: ${this.gameState.ammo}`;
+  try {
+    // Skor, can ve mermi güncellemesi
+    if (this.ui.score) this.ui.score.textContent = `Skor: ${this.gameState.score}`;
+    if (this.ui.health) this.ui.health.textContent = `Can: ${Math.round(this.gameState.health)}%`;
+    if (this.ui.ammo) this.ui.ammo.textContent = `Mermi: ${this.gameState.ammo}`;
 
-  // Can durumuna göre renk değişimi
-  const healthPercent = this.gameState.health;
-  if (healthPercent <= 25) {
-    this.ui.health.style.color = '#ff0000'; // Kritik seviye - kırmızı
-    this.ui.health.style.animation = 'pulse 1s infinite';
-  } else if (healthPercent <= 50) {
-    this.ui.health.style.color = '#ffa500'; // Tehlike seviyesi - turuncu
-    this.ui.health.style.animation = 'none';
-  } else {
-    this.ui.health.style.color = '#ffffff'; // Normal seviye - beyaz
-    this.ui.health.style.animation = 'none';
-  }
-
-  // Mermi durumuna göre renk değişimi
-  if (this.gameState.ammo <= 5) {
-    this.ui.ammo.style.color = '#ff0000'; // Az mermi - kırmızı
-    this.ui.ammo.style.animation = 'pulse 1s infinite';
-  } else if (this.gameState.ammo <= 10) {
-    this.ui.ammo.style.color = '#ffa500'; // Düşük mermi - turuncu
-    this.ui.ammo.style.animation = 'none';
-  } else {
-    this.ui.ammo.style.color = '#ffffff'; // Normal seviye - beyaz
-    this.ui.ammo.style.animation = 'none';
-  }
-
-  // Skor animasyonu
-  if (this.gameState.score > 0) {
-    this.ui.score.classList.add('score-updated');
-    setTimeout(() => {
-      this.ui.score.classList.remove('score-updated');
-    }, 300);
-  }
-
-  // Oyun sonu skorları
-  this.ui.finalScore.textContent = `Son Skor: ${this.gameState.score}`;
-  this.ui.highScore.textContent = `En Yüksek Skor: ${this.gameState.highScore}`;
-
-  // Görev durumu
-  const currentTask = this.aiManager.getCurrentTask();
-  if (currentTask) {
-    this.ui.task.textContent = `Görev: ${currentTask.description} (${currentTask.progress}/${currentTask.target})`;
-    
-    // Görev tamamlanma durumu
-    if (currentTask.progress >= currentTask.target) {
-      this.ui.task.style.color = '#00ff00'; // Tamamlandı - yeşil
-    } else if (currentTask.progress >= currentTask.target * 0.7) {
-      this.ui.task.style.color = '#ffa500'; // Yaklaşıyor - turuncu
-    } else {
-      this.ui.task.style.color = '#ffffff'; // Devam ediyor - beyaz
+    // Can durumuna göre renk değişimi
+    if (this.ui.health) {
+      const healthPercent = this.gameState.health;
+      if (healthPercent <= 25) {
+        this.ui.health.style.color = '#ff0000'; // Kritik seviye - kırmızı
+        this.ui.health.style.animation = 'pulse 1s infinite';
+      } else if (healthPercent <= 50) {
+        this.ui.health.style.color = '#ffa500'; // Tehlike seviyesi - turuncu
+        this.ui.health.style.animation = 'none';
+      } else {
+        this.ui.health.style.color = '#ffffff'; // Normal seviye - beyaz
+        this.ui.health.style.animation = 'none';
+      }
     }
-  }
 
-  // Crosshair görünürlüğü
-  if (this.gameState.isStarted && !this.gameState.isPaused) {
-    this.ui.crosshair.style.display = 'block';
-  } else {
-    this.ui.crosshair.style.display = 'none';
+    // Mermi durumuna göre renk değişimi
+    if (this.ui.ammo) {
+      if (this.gameState.ammo <= 5) {
+        this.ui.ammo.style.color = '#ff0000'; // Az mermi - kırmızı
+        this.ui.ammo.style.animation = 'pulse 1s infinite';
+      } else if (this.gameState.ammo <= 10) {
+        this.ui.ammo.style.color = '#ffa500'; // Düşük mermi - turuncu
+        this.ui.ammo.style.animation = 'none';
+      } else {
+        this.ui.ammo.style.color = '#ffffff'; // Normal seviye - beyaz
+        this.ui.ammo.style.animation = 'none';
+      }
+    }
+
+    // Skor animasyonu
+    if (this.ui.score && this.gameState.score > 0) {
+      this.ui.score.classList.add('score-updated');
+      setTimeout(() => {
+        if (this.ui.score) {
+          this.ui.score.classList.remove('score-updated');
+        }
+      }, 300);
+    }
+
+    // Oyun sonu skorları
+    if (this.ui.finalScore) this.ui.finalScore.textContent = `Son Skor: ${this.gameState.score}`;
+    if (this.ui.highScore) this.ui.highScore.textContent = `En Yüksek Skor: ${this.gameState.highScore}`;
+
+    // Crosshair görünürlüğü
+    if (this.ui.crosshair) {
+      if (this.gameState.isStarted && !this.gameState.isPaused) {
+        this.ui.crosshair.style.display = 'block';
+      } else {
+        this.ui.crosshair.style.display = 'none';
+      }
+    }
+  } catch (error) {
+    console.warn('UI güncellenirken hata oluştu:', error);
   }
 }
 
@@ -812,122 +845,96 @@ this.endGame();
 });
 }
 
-public startGame(): void {
-if (!this.menuManager) {
-NotificationManager.getInstance().show('Menü yöneticisi başlatılmadı!', 'error');
-return;
-}
+public async startGame(): Promise<void> {
+  try {
+    if (!this.gameState.isStarted) {
+      console.log('Oyun başlatılıyor...');
 
-const selectedCharacterId = this.menuManager.getSelectedCharacterId();
-const selectedKitId = this.menuManager.getSelectedKit();
-if (!selectedCharacterId || !selectedKitId) {
-NotificationManager.getInstance().show('Lütfen bir karakter ve silah seçin!', 'error');
-this.menuManager.showMenu('character');
-return;
-}
+      if (!this.gameState.selectedCharacter || !this.gameState.selectedKit) {
+        throw new Error('Karakter veya silah seçilmemiş');
+      }
 
-this.gameState.selectedCharacter = selectedCharacterId;
-this.gameState.selectedKit = selectedKitId;
+      // Menüleri gizle
+      if (this.menuManager) {
+        this.menuManager.showMenu('none');
+      }
 
-Promise.all([
-this.modelsLoader.loadCharacterModels([selectedCharacterId]),
-this.modelsLoader.loadKitModels([selectedKitId])
-]).then(() => {
-const characterModel = this.modelsLoader.getModel(selectedCharacterId);
-const kitModel = this.modelsLoader.getModel(selectedKitId);
-if (!characterModel || !kitModel) {
-throw new Error(`Model yüklenemedi: ${selectedCharacterId}, ${selectedKitId}`);
-}
+      // UI'ı görünür yap
+      this.ui.uiContainer.classList.remove('hidden');
+      this.ui.loadingScreen.classList.add('hidden');
 
-const characterData = this.modelsLoader.getCharacterData(selectedCharacterId);
-const kitData = this.modelsLoader.getKitData(selectedKitId);
-this.characterStats = characterData?.stats ?? null;
-this.kitStats = kitData?.stats ?? null;
-this.gameState.health = this.characterStats?.health || 100;
+      // Karakter ve silah modellerini yükle
+      await Promise.all([
+        this.modelsLoader.loadCharacterModels([this.gameState.selectedCharacter]),
+        this.modelsLoader.loadKitModels([this.gameState.selectedKit])
+      ]);
 
-NotificationManager.getInstance().show(
-`${this.gameState.currentUser} olarak ${selectedCharacterId} ve ${selectedKitId} ile oyuna başlandı!`,
-'success'
-);
+      // Karakteri yükle ve ayarla
+      const characterModel = this.modelsLoader.getModel(this.gameState.selectedCharacter);
+      if (!characterModel) {
+        throw new Error('Karakter modeli yüklenemedi');
+      }
 
-// Mevcut modelleri temizle
-if (this.player) {
-this.resources.scene.remove(this.player);
-}
-if (this.weapon) {
-this.resources.scene.remove(this.weapon);
-}
+      this.player = characterModel.scene.clone();
+      this.player.position.set(0, 2, 0);
+      this.player.scale.set(3, 3, 3);
+      this.player.name = 'player';
+      this.player.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      this.resources.scene.add(this.player);
 
-// Karakteri yükle ve ayarla
-this.player = characterModel.scene.clone();
-if (!this.player) {
-NotificationManager.getInstance().show('Karakter modeli klonlanamadı!', 'error');
-return;
-}
-this.player.name = selectedCharacterId;
+      // Silahı yükle ve ayarla
+      const kitModel = this.modelsLoader.getModel(this.gameState.selectedKit);
+      if (!kitModel) {
+        throw new Error('Silah modeli yüklenmedi');
+      }
 
-// Karakterin başlangıç pozisyonunu ve ölçeğini ayarla
-this.player.position.set(0, 2, 0); // Y pozisyonunu 2 birim yukarı aldım
-this.player.scale.set(3, 3, 3); // Karakterin boyutunu 3 kat büyüttüm
-
-// Karakterin gölge oluşturmasını sağla
-this.player.traverse((child) => {
-  if (child instanceof THREE.Mesh) {
-    child.castShadow = true;
-    child.receiveShadow = true;
+      this.weapon = kitModel.scene.clone();
+      this.weapon.scale.set(0.5, 0.5, 0.5);
+      this.weapon.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      this.resources.scene.add(this.weapon);
+      
+      // Harita üretimi
+      await this.aiManager.generateMap(this.gameState.level, this.gameState.currentRegion);
+      
+      // Oyun durumunu güncelle
+      this.gameState.isStarted = true;
+      this.gameState.isPaused = false;
+      
+      // UI'ı güncelle
+      this.updateUI();
+      
+      // Kamera ayarlarını sıfırla
+      this.cameraRotation = { x: 0, y: 0 };
+      this.updateCamera();
+      
+      // Pointer lock'u etkinleştir
+      const canvas = this.resources.renderer.domElement;
+      canvas.requestPointerLock().catch(error => {
+        console.warn('Fare kilidi etkinleştirilemedi:', error);
+        NotificationManager.getInstance().show('Fare kontrolü etkinleştirilemedi!', 'warning');
+      });
+      
+      // İlk görevi oluştur
+      this.aiManager.generateDynamicTask(this.gameState.level);
+      
+      console.log('Oyun başlatıldı!');
+      NotificationManager.getInstance().show('Oyun başladı!', 'success');
+    }
+  } catch (error) {
+    console.error('Oyun başlatma hatası:', error);
+    NotificationManager.getInstance().show('Oyun başlatılamadı!', 'error');
+    throw error;
   }
-});
-
-this.resources.scene.add(this.player);
-
-// Silahı yükle ve ayarla
-this.weapon = kitModel.scene.clone();
-if (!this.weapon) {
-  NotificationManager.getInstance().show('Silah modeli klonlanamadı!', 'error');
-  return;
-}
-this.weapon.name = selectedKitId;
-
-// Silahın ölçeğini ayarla - daha küçük boyut
-this.weapon.scale.set(0.5, 0.5, 0.5); // Silahın boyutunu karakterin 1/6'sı kadar yap (karakter 3 birim, silah 0.5 birim)
-
-// Silahın gölge oluşturmasını sağla
-this.weapon.traverse((child) => {
-  if (child instanceof THREE.Mesh) {
-    child.castShadow = true;
-    child.receiveShadow = true;
-  }
-});
-
-this.resources.scene.add(this.weapon);
-
-// Oyun durumunu güncelle
-this.gameState.isStarted = true;
-this.gameState.isPaused = false;
-this.gameState.score = 0;
-this.gameState.health = this.characterStats?.health || 100;
-this.gameState.ammo = 50;
-this.gameState.level = 1;
-this.setCurrentDateTime();
-
-// UI'ı güncelle
-this.ui.uiContainer.classList.remove('hidden');
-this.menuManager?.showMenu('none');
-this.aiManager.generateDynamicTask(this.gameState.level);
-this.updateUI();
-
-// Kamerayı karaktere odakla
-this.resources.camera.position.set(
-  this.player.position.x,
-  this.player.position.y + 10,
-  this.player.position.z + 15
-);
-this.resources.camera.lookAt(this.player.position);
-
-}).catch(error => {
-console.error('Model yükleme hatası:', error);
-NotificationManager.getInstance().show('Model yüklenemedi!', 'error');
-});
 }
 
 private shoot(): void {
@@ -1063,7 +1070,8 @@ private restartGame(): void {
     highScore: this.gameState.highScore,
     currentUser: this.gameState.currentUser,
     lastPlayTime: this.gameState.lastPlayTime,
-    level: 1
+    level: 1,
+    currentRegion: 'default'
   };
 
   // ModelsLoader'ı yeniden başlat

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/style.css" />
@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body id="game-body">
-    <!-- WebGL sahnesi - en üstte olmalı -->
+    <!-- WebGL scene - should be at the top -->
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
       <div class="loading-content">
         <div class="loading-spinner"></div>
-        <div class="loading-text">Oyun Yükleniyor...</div>
+        <div class="loading-text">Loading Game...</div>
       </div>
     </div>
 
-    <!-- Ana Menü -->
+    <!-- Main Menu -->
     <div id="main-menu" class="menu-screen">
       <div class="menu-content">
         <div class="game-logo">
@@ -29,89 +29,89 @@
         </div>
         <div class="menu-buttons">
           <button id="startBtn" class="menu-button">
-            <span class="button-text">Oyunu Başlat</span>
+            <span class="button-text">Start Game</span>
             <span class="button-icon">▶</span>
           </button>
           <button id="characterSelectBtn" class="menu-button">
-            <span class="button-text">Karakter Seç</span>
+            <span class="button-text">Select Character</span>
             <span class="button-icon">👤</span>
           </button>
           <button id="scoreboardBtn" class="menu-button">
-            <span class="button-text">Skor Tablosu</span>
+            <span class="button-text">Scoreboard</span>
             <span class="button-icon">🏆</span>
           </button>
           <button id="settingsBtn" class="menu-button">
-            <span class="button-text">Ayarlar</span>
+            <span class="button-text">Settings</span>
             <span class="button-icon">⚙</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Karakter Seçim Menüsü -->
+    <!-- Character Selection Menu -->
     <div id="character-select" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>Karakter Seçimi</h2>
+        <h2>Character Selection</h2>
         <div class="character-grid"></div>
         <div class="menu-buttons">
           <button id="backFromCharSelect" class="menu-button back-button">
             <span class="button-icon">◀</span>
-            <span class="button-text">Geri</span>
+            <span class="button-text">Back</span>
           </button>
           <button id="confirmCharacter" class="menu-button">
-            <span class="button-text">Karakteri Onayla</span>
+            <span class="button-text">Confirm Character</span>
             <span class="button-icon">✓</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Silah Seçim Menüsü -->
+    <!-- Weapon Selection Menu -->
     <div id="kit-select" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>Silah Seçimi</h2>
+        <h2>Weapon Selection</h2>
         <div class="kit-grid"></div>
         <div class="menu-buttons">
           <button id="backFromKitSelect" class="menu-button back-button">
             <span class="button-icon">◀</span>
-            <span class="button-text">Geri</span>
+            <span class="button-text">Back</span>
           </button>
           <button id="confirmKit" class="menu-button">
-            <span class="button-text">Silahı Onayla</span>
+            <span class="button-text">Confirm Weapon</span>
             <span class="button-icon">✓</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Skor Tablosu -->
+    <!-- Scoreboard -->
     <div id="scoreboard" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>En Yüksek Skorlar</h2>
+        <h2>High Scores</h2>
         <div class="scoreboard-list">
-          <!-- Skorlar dinamik olarak eklenecek -->
+          <!-- Scores will be added dynamically -->
         </div>
         <button id="backFromScoreboard" class="menu-button back-button">
           <span class="button-icon">◀</span>
-          <span class="button-text">Geri</span>
+          <span class="button-text">Back</span>
         </button>
       </div>
     </div>
 
-    <!-- Ayarlar Menüsü -->
+    <!-- Settings Menu -->
     <div id="settings" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>Ayarlar</h2>
+        <h2>Settings</h2>
         <div class="settings-group">
           <div class="setting-item">
-            <label for="sfxVolume">Ses Efektleri</label>
+            <label for="sfxVolume">Sound Effects</label>
             <div class="slider-container">
               <input type="range" id="sfxVolume" min="0" max="100" value="100">
               <span class="slider-value">100%</span>
             </div>
           </div>
           <div class="setting-item">
-            <label for="musicVolume">Müzik</label>
+            <label for="musicVolume">Music</label>
             <div class="slider-container">
               <input type="range" id="musicVolume" min="0" max="100" value="100">
               <span class="slider-value">100%</span>
@@ -120,64 +120,64 @@
         </div>
         <button id="backFromSettings" class="menu-button back-button">
           <span class="button-icon">◀</span>
-          <span class="button-text">Geri</span>
+          <span class="button-text">Back</span>
         </button>
       </div>
     </div>
 
-    <!-- Pause Menüsü -->
+    <!-- Pause Menu -->
     <div id="pause-menu" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>Oyun Duraklatıldı</h2>
+        <h2>Game Paused</h2>
         <div class="menu-buttons">
           <button id="resumeBtn" class="menu-button">
-            <span class="button-text">Devam Et</span>
+            <span class="button-text">Resume</span>
             <span class="button-icon">▶</span>
           </button>
           <button id="restartBtn" class="menu-button">
-            <span class="button-text">Yeniden Başlat</span>
+            <span class="button-text">Restart</span>
             <span class="button-icon">🔄</span>
           </button>
           <button id="exitToMainBtn" class="menu-button">
-            <span class="button-text">Ana Menüye Dön</span>
+            <span class="button-text">Back to Main Menu</span>
             <span class="button-icon">🏠</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Game Over Ekranı -->
+    <!-- Game Over Screen -->
     <div id="game-over" class="menu-screen hidden">
       <div class="menu-content">
-        <h2>Oyun Bitti!</h2>
+        <h2>Game Over!</h2>
         <div class="score-display">
-          <div id="final-score">Skor: 0</div>
-          <div id="high-score">En Yüksek Skor: 0</div>
+          <div id="final-score">Score: 0</div>
+          <div id="high-score">High Score: 0</div>
         </div>
         <div class="menu-buttons">
           <button id="restartBtn" class="menu-button">
-            <span class="button-text">Tekrar Oyna</span>
+            <span class="button-text">Play Again</span>
             <span class="button-icon">🔄</span>
           </button>
           <button id="exitToMainBtn" class="menu-button">
-            <span class="button-text">Ana Menüye Dön</span>
+            <span class="button-text">Back to Main Menu</span>
             <span class="button-icon">🏠</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Oyun UI katmanı -->
+    <!-- Game UI layer -->
     <div id="ui" class="hidden">
       <div class="ui-panel">
-        <div id="score">Skor: 0</div>
-        <div id="health">Can: 100</div>
-        <div id="ammo">Mermi: 30</div>
+        <div id="score">Score: 0</div>
+        <div id="health">Health: 100</div>
+        <div id="ammo">Ammo: 30</div>
       </div>
       <div class="crosshair"></div>
     </div>
 
-    <!-- Bildirim sistemi -->
+    <!-- Notification system -->
     <div class="notification-container">
       <div class="notification" id="notification">
         <div class="notification-content">
@@ -188,7 +188,7 @@
       </div>
     </div>
 
-    <!-- ES modül giriş dosyası -->
+    <!-- ES module entry file -->
     <script type="module" src="index.js"></script>
   </body>
 </html>
