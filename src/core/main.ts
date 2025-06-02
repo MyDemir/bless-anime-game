@@ -57,12 +57,27 @@ async function initTensorFlow() {
 // Model check
 async function checkModels(): Promise<boolean> {
   try {
-    await tf.loadLayersModel('localstorage://enemy-selection-model');
-    await tf.loadLayersModel('localstorage://structure-placement-model');
-    console.log('AI models loaded');
-    return true;
+    const modelNames = ['enemy-selection-model', 'structure-placement-model'];
+    const modelPromises = modelNames.map(name => 
+      tf.loadLayersModel(`localstorage://${name}`)
+        .catch(err => {
+          console.warn(`Model ${name} not found:`, err);
+          return null;
+        })
+    );
+    
+    const models = await Promise.all(modelPromises);
+    const allModelsLoaded = models.every(model => model !== null);
+    
+    if (allModelsLoaded) {
+      console.log('All AI models loaded successfully');
+      return true;
+    }
+    
+    console.warn('Some models not found, training will start');
+    return false;
   } catch (error) {
-    console.warn('Models not found, training will start:', error);
+    console.warn('Error checking models:', error);
     ErrorManager.getInstance().handleError(error as Error, 'checkModels');
     return false;
   }
@@ -71,14 +86,21 @@ async function checkModels(): Promise<boolean> {
 // Model training
 async function trainModelsSafely(): Promise<boolean> {
   try {
+    NotificationManager.getInstance().show('Initializing AI training...', 'warning', 5000);
     const canvas = document.querySelector('#webgl-canvas') as HTMLCanvasElement;
+    if (!canvas) {
+      throw new Error('Canvas element not found');
+    }
+    
     const scene = new THREE.Scene();
     const modelsLoader = new ModelsLoader(scene);
+    
     await trainModels(modelsLoader);
-    NotificationManager.getInstance().show('AI models ready!', 'success');
+    NotificationManager.getInstance().show('AI models trained and ready!', 'success');
     return true;
   } catch (error) {
     ErrorManager.getInstance().handleError(error as Error, 'trainModelsSafely');
+    NotificationManager.getInstance().show('AI training failed, retrying...', 'error');
     return false;
   }
 }
@@ -122,19 +144,32 @@ async function main() {
     // Model check and training
     const modelsExist = await checkModels();
     if (!modelsExist) {
-      NotificationManager.getInstance().show('AI models training...', 'warning');
-      const modelsTrained = await trainModelsSafely();
-      if (!modelsTrained) {
-        throw new Error('Model training failed');
+      NotificationManager.getInstance().show('Training AI models...', 'warning', 5000);
+      let retryCount = 0;
+      const maxRetries = 3;
+      
+      while (retryCount < maxRetries) {
+        const modelsTrained = await trainModelsSafely();
+        if (modelsTrained) {
+          break;
+        }
+        retryCount++;
+        if (retryCount < maxRetries) {
+          await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second before retry
+        }
+      }
+      
+      if (retryCount === maxRetries) {
+        throw new Error('Model training failed after multiple attempts');
       }
     }
 
     // Start game
     const game = new Game(canvas);
-    NotificationManager.getInstance().show('Welcome!', 'success');
+    NotificationManager.getInstance().show('Welcome to Bless Anime Game!', 'success');
   } catch (error) {
     console.error('Application startup error:', error);
-    NotificationManager.getInstance().show('Game startup failed!', 'error');
+    NotificationManager.getInstance().show('Game startup failed! Please refresh the page.', 'error', 10000);
     ErrorManager.getInstance().handleError(error as Error, 'main');
   }
 }
