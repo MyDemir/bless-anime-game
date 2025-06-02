@@ -9,11 +9,13 @@ timestamp = "2025-05-17 23:15:00"
 dir = "build"
 command = "npm run build:debug"
 debug = "tsconfig.debug.json"
+module_type = "esm"
 
 [build_release]
 dir = "build"
 command = "npm run build:release"
 release = "tsconfig.release.json"
+module_type = "esm"
 
 [game]
 engineVersion = "1.0.0"
@@ -22,6 +24,8 @@ renderEngine = "three.js"
 [server]
 port = 3_000
 host = "localhost"
+mime_types = { "js" = "application/javascript", "mjs" = "application/javascript" }
+cors_enabled = true
 
 [paths]
 public = "public"
@@ -32,3 +36,10 @@ data = "public/data"
 [deployment]
 permission = "public"
 nodes = 3
+serve_static = true
+content_type = true
+
+[static]
+directory = "public"
+index = "index.html"
+mime_types = { "js" = "application/javascript", "mjs" = "application/javascript" }
