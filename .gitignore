@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.npm
+package-lock.json
+bls.assets.json 
+
+# Build outputs
+build/
+dist/
+*.wasm
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TensorFlow.js WASM files
+public/tfjs-backend-wasm*.wasm
+
+# Draco decoder files
+public/draco/
+
+# Large files
+*.zip
+*.rar
+*.7z
+
+# Temporary files
+*.tmp
+*.temp
+.cache/ 

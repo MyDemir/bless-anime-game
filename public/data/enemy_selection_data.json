@@ -1,0 +1,4502 @@
+[
+  {
+    "level": 7,
+    "enemy_count": 4,
+    "map_density": 0.5753571532049581,
+    "player_health": 78.5595153449124,
+    "player_power": 79.93292420985183,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.14998745790900145,
+    "player_health": 56.73991135726937,
+    "player_power": 66.68543055695109,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.5849549260809972,
+    "player_health": 86.59541126403374,
+    "player_power": 60.61695553391381,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.25212112147976884,
+    "player_health": 61.98051453057903,
+    "player_power": 71.5972509321058,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 16,
+    "map_density": 0.21638567021515212,
+    "player_health": 27.248514762625664,
+    "player_power": 80.91930046665436,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.12322520635999887,
+    "player_health": 68.60358815211507,
+    "player_power": 58.526206184364575,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.5828160165372797,
+    "player_health": 84.67178784931689,
+    "player_power": 65.23068845866854,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.44163175941272914,
+    "player_health": 68.79973262260967,
+    "player_power": 91.65974558680821,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.22938999080000846,
+    "player_health": 73.00178274831856,
+    "player_power": 65.58555380447055,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.3838501639099957,
+    "player_health": 22.505063396444687,
+    "player_power": 92.11423872974993,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.5474136752138244,
+    "player_health": 67.83199830488681,
+    "player_power": 96.09371175115584,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.12261364445526904,
+    "player_health": 46.02642646106115,
+    "player_power": 69.4338644844741,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 8,
+    "map_density": 0.2783766633467947,
+    "player_health": 42.47476077499046,
+    "player_power": 77.13480415791243,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.10781820337059697,
+    "player_health": 53.87211845650957,
+    "player_power": 69.74407590877848,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 15,
+    "map_density": 0.5077307142274171,
+    "player_health": 76.54858750780937,
+    "player_power": 86.45035840204937,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.4255385127509722,
+    "player_health": 93.19677404350246,
+    "player_power": 92.50192888948996,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.13177917514301182,
+    "player_health": 44.878585737252976,
+    "player_power": 66.25916610133736,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.5436063712881632,
+    "player_health": 57.777194012955945,
+    "player_power": 55.97971229691508,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.46086476058243664,
+    "player_health": 38.87879357991646,
+    "player_power": 62.8034161380662,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 15,
+    "map_density": 0.31377050917927485,
+    "player_health": 22.033530139527613,
+    "player_power": 55.39457134966522,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.25717799053816337,
+    "player_health": 60.685655293176225,
+    "player_power": 95.37832369630465,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 13,
+    "map_density": 0.36992054565083654,
+    "player_health": 36.24489797878155,
+    "player_power": 97.14267852789905,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.5648488261712865,
+    "player_health": 84.64963036515336,
+    "player_power": 81.67018782552117,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.5416401294594342,
+    "player_health": 45.94760168042192,
+    "player_power": 56.104397735033665,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.23606612469231766,
+    "player_health": 71.81520964330899,
+    "player_power": 50.02601884976579,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 3,
+    "map_density": 0.10347606526559536,
+    "player_health": 60.85978420620526,
+    "player_power": 70.87055015743894,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.26880758570181396,
+    "player_health": 95.43277631300154,
+    "player_power": 66.16014660103777,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 9,
+    "map_density": 0.30191808552902044,
+    "player_health": 25.191379768718527,
+    "player_power": 62.69577069671723,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 2,
+    "map_density": 0.45613529496222105,
+    "player_health": 31.84695439627199,
+    "player_power": 99.88702425244709,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5883074779163264,
+    "player_health": 52.8829610654585,
+    "player_power": 51.65253664502742,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.41717567235068187,
+    "player_health": 74.45643612438134,
+    "player_power": 76.54672916585682,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.43606777370293925,
+    "player_health": 80.9295692262974,
+    "player_power": 61.881877199619986,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.33515031722301925,
+    "player_health": 98.67385127158744,
+    "player_power": 69.94122212222766,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.17535877198271474,
+    "player_health": 60.65590213925749,
+    "player_power": 84.7906403395441,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.4387821809211412,
+    "player_health": 21.32702631422849,
+    "player_power": 75.60465291496405,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.18718321450249573,
+    "player_health": 75.27501904819728,
+    "player_power": 69.33676731502686,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 1,
+    "map_density": 0.4378450585196404,
+    "player_health": 78.81728953926176,
+    "player_power": 60.45358103688568,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.21427501089864984,
+    "player_health": 33.99639416767489,
+    "player_power": 99.10841716647178,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.22092614545022585,
+    "player_health": 27.44822142447194,
+    "player_power": 94.86078789766634,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.23943567629609094,
+    "player_health": 76.02862639782171,
+    "player_power": 92.3330571119153,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.4899377729288119,
+    "player_health": 71.36253169234303,
+    "player_power": 54.206998249752445,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.43449412735711435,
+    "player_health": 66.45492971491637,
+    "player_power": 68.61413832808715,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.10253079192310935,
+    "player_health": 32.86464411339989,
+    "player_power": 77.4366894683293,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.2121346547302799,
+    "player_health": 76.97433770780287,
+    "player_power": 61.862454374840006,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.4604699621260646,
+    "player_health": 44.64486334819114,
+    "player_power": 77.12701152774497,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.34337107647972753,
+    "player_health": 92.48790301748431,
+    "player_power": 71.71971827552143,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3884519423131796,
+    "player_health": 59.401415505509114,
+    "player_power": 59.76214938990223,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.11215798321572693,
+    "player_health": 71.63778367257342,
+    "player_power": 58.85553397035245,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.28507935012772223,
+    "player_health": 21.236529322309394,
+    "player_power": 96.41592812938626,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 3,
+    "map_density": 0.5901657918580229,
+    "player_health": 26.027700480490257,
+    "player_power": 65.2848509643591,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.25846100257813887,
+    "player_health": 33.5594197348874,
+    "player_power": 77.84006312291751,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.565008417405416,
+    "player_health": 25.633290467963512,
+    "player_power": 60.445935880768005,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.17004200761826202,
+    "player_health": 61.46637218909894,
+    "player_power": 93.86865359639776,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 1,
+    "map_density": 0.1683106657210144,
+    "player_health": 76.71287975280949,
+    "player_power": 77.64099884539539,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 10,
+    "map_density": 0.5050566973395904,
+    "player_health": 89.3657854864083,
+    "player_power": 95.66202762782356,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.413947207474318,
+    "player_health": 35.54191628096338,
+    "player_power": 53.54704584999638,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.3894324477537794,
+    "player_health": 55.07792984144696,
+    "player_power": 83.60130676475997,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.11867409437460721,
+    "player_health": 85.80804485277267,
+    "player_power": 68.00953207056314,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5139345018937943,
+    "player_health": 41.72343326557935,
+    "player_power": 98.26259151953849,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.12584086058430385,
+    "player_health": 62.50837052545184,
+    "player_power": 77.03175608050532,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 4,
+    "map_density": 0.1663727111214849,
+    "player_health": 97.56294936913272,
+    "player_power": 85.7297552089976,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.29941045072239725,
+    "player_health": 54.68165900645936,
+    "player_power": 87.20213214995576,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 5,
+    "map_density": 0.14043648330859884,
+    "player_health": 54.265157995208625,
+    "player_power": 84.42499503826832,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 1,
+    "map_density": 0.3211761148655522,
+    "player_health": 39.18298873259226,
+    "player_power": 54.693664504064586,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.577432640331597,
+    "player_health": 79.03175333566148,
+    "player_power": 77.71770262557004,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 3,
+    "map_density": 0.22386549475057874,
+    "player_health": 48.47781429210093,
+    "player_power": 87.89230552321845,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.25570665469564713,
+    "player_health": 98.36084228972068,
+    "player_power": 58.76651349446693,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 16,
+    "map_density": 0.5034564885253897,
+    "player_health": 47.70434568715206,
+    "player_power": 73.23369064698056,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 10,
+    "map_density": 0.574572865795693,
+    "player_health": 90.93443098384381,
+    "player_power": 63.0446811670857,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.3505199419576296,
+    "player_health": 63.150195872005,
+    "player_power": 84.19818846990705,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 7,
+    "map_density": 0.5721257985625837,
+    "player_health": 89.3759146844003,
+    "player_power": 81.82017987230057,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 12,
+    "map_density": 0.29408496310326093,
+    "player_health": 71.46305747538825,
+    "player_power": 72.91264452457582,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 3,
+    "map_density": 0.510213421885634,
+    "player_health": 72.11878174862304,
+    "player_power": 60.33421799383727,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.1472214803779642,
+    "player_health": 74.64054187330855,
+    "player_power": 53.55943242301145,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 10,
+    "map_density": 0.11163596786791294,
+    "player_health": 85.15747860711487,
+    "player_power": 64.09273873867,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 2,
+    "map_density": 0.41447142338994203,
+    "player_health": 90.19776108216423,
+    "player_power": 86.75355219019428,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 4,
+    "map_density": 0.18871977188986142,
+    "player_health": 80.04918013126867,
+    "player_power": 90.3417369633632,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.22500822460805234,
+    "player_health": 66.44352098751278,
+    "player_power": 93.3558303604861,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.4399223899501229,
+    "player_health": 79.19270083578996,
+    "player_power": 61.91180762019897,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3671637367652817,
+    "player_health": 59.72489525464621,
+    "player_power": 69.48090431096017,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.12674264837368446,
+    "player_health": 96.68331975065587,
+    "player_power": 92.3571572047795,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.5750309835254025,
+    "player_health": 96.04857175500449,
+    "player_power": 78.67189440616431,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 5,
+    "map_density": 0.24660538584903227,
+    "player_health": 46.29316362959328,
+    "player_power": 83.62592280385192,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.49064802523560125,
+    "player_health": 29.07716816139584,
+    "player_power": 96.54645528436463,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 10,
+    "map_density": 0.3207652506866885,
+    "player_health": 91.01633462066398,
+    "player_power": 67.54575062760394,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 10,
+    "map_density": 0.518481937118687,
+    "player_health": 89.34949642486731,
+    "player_power": 91.92403818819926,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 10,
+    "map_density": 0.2983258009771259,
+    "player_health": 91.35175270214214,
+    "player_power": 57.330241084601276,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.5933197892505877,
+    "player_health": 49.941663660489624,
+    "player_power": 68.53210735334454,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5736242886919294,
+    "player_health": 98.88008510582966,
+    "player_power": 87.66890926294708,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.2889937950611272,
+    "player_health": 76.40674914373278,
+    "player_power": 62.4362077215144,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 3,
+    "map_density": 0.22684108693656937,
+    "player_health": 52.41616694251337,
+    "player_power": 78.57365126025053,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 13,
+    "map_density": 0.5113951759383466,
+    "player_health": 79.53693255546384,
+    "player_power": 84.05197135484545,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.14144566084667712,
+    "player_health": 62.26960970377674,
+    "player_power": 71.8167915803278,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.562321665111798,
+    "player_health": 93.52925722229276,
+    "player_power": 62.64950839946206,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.3615489220850744,
+    "player_health": 70.351891050821,
+    "player_power": 84.78743444923086,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.4137790400420317,
+    "player_health": 66.74514495384801,
+    "player_power": 95.05790052454944,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 16,
+    "map_density": 0.5451318919454582,
+    "player_health": 56.45254022285704,
+    "player_power": 81.00662989007684,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.29413419199493607,
+    "player_health": 38.35157965639597,
+    "player_power": 63.29689624821195,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 4,
+    "map_density": 0.5931053722398014,
+    "player_health": 75.85293712157961,
+    "player_power": 76.80481831720601,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.44236558627693967,
+    "player_health": 33.00935514759131,
+    "player_power": 95.54635922469213,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 2,
+    "map_density": 0.30831952886923963,
+    "player_health": 66.49300969446611,
+    "player_power": 95.95882759177798,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 14,
+    "map_density": 0.5330319447502042,
+    "player_health": 23.617493608495153,
+    "player_power": 51.3183487248626,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 1,
+    "map_density": 0.34018504093317736,
+    "player_health": 98.82288405324034,
+    "player_power": 68.83694849689704,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.5191643523555689,
+    "player_health": 57.49545278359762,
+    "player_power": 70.74097511688326,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 6,
+    "map_density": 0.44585719858445605,
+    "player_health": 62.747702002357045,
+    "player_power": 87.49553747349859,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.48449370759025523,
+    "player_health": 95.58125839059424,
+    "player_power": 92.48236953387058,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 9,
+    "map_density": 0.1645797075757475,
+    "player_health": 96.32408218069779,
+    "player_power": 80.308731722544,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.4358503422029284,
+    "player_health": 69.45025923663167,
+    "player_power": 67.90813590164203,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 10,
+    "map_density": 0.34908259332294644,
+    "player_health": 58.09685574312113,
+    "player_power": 91.56857450312506,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3759534193872428,
+    "player_health": 64.87503772283091,
+    "player_power": 93.83268013291726,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.16700761422532037,
+    "player_health": 22.302614105067118,
+    "player_power": 87.75686278368096,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.20648208075445537,
+    "player_health": 30.90971804694158,
+    "player_power": 50.7272332833941,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.41832216081114126,
+    "player_health": 64.38524868337805,
+    "player_power": 54.550104552566516,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.35699474457990543,
+    "player_health": 82.69224101929144,
+    "player_power": 69.8271391160635,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.44882093574673165,
+    "player_health": 83.71774205391019,
+    "player_power": 72.96734039730862,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.22912219414947918,
+    "player_health": 56.7308604990609,
+    "player_power": 99.00162876427385,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.2045653955392571,
+    "player_health": 66.37199475773907,
+    "player_power": 67.07816052282725,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 16,
+    "map_density": 0.17595134675614718,
+    "player_health": 31.10617381195281,
+    "player_power": 82.04373724016074,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 8,
+    "enemy_count": 9,
+    "map_density": 0.548394204953006,
+    "player_health": 57.916931221029785,
+    "player_power": 83.37788692605136,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.12043430813323944,
+    "player_health": 33.514805045773166,
+    "player_power": 63.92951695159793,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.1603179355503004,
+    "player_health": 56.86230144261806,
+    "player_power": 60.31668592028963,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3517086354274285,
+    "player_health": 75.23158629034923,
+    "player_power": 51.965606992054944,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 15,
+    "map_density": 0.35582850677363065,
+    "player_health": 32.5582146172955,
+    "player_power": 68.86429826210363,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.14225850384034097,
+    "player_health": 67.78224658043445,
+    "player_power": 99.31284979334076,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.21805826655870217,
+    "player_health": 80.79643271500686,
+    "player_power": 76.5632876986767,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 14,
+    "map_density": 0.17386954595311335,
+    "player_health": 30.64935428699826,
+    "player_power": 84.35827527016656,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.27707333539656276,
+    "player_health": 51.7731066003266,
+    "player_power": 55.243458326624044,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.2610395827915891,
+    "player_health": 36.91584055972357,
+    "player_power": 66.37486760889573,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.27146343213913016,
+    "player_health": 57.91759531444449,
+    "player_power": 67.75521516396523,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.39209974235708467,
+    "player_health": 78.94579803159303,
+    "player_power": 77.88711329752186,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.38222927126132067,
+    "player_health": 50.30181007610315,
+    "player_power": 66.8723416935959,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 2,
+    "map_density": 0.22217657773232727,
+    "player_health": 59.85981582791521,
+    "player_power": 66.5174240640457,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.21266639885626412,
+    "player_health": 49.22854557392461,
+    "player_power": 74.3904900404369,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 7,
+    "map_density": 0.5211570176490908,
+    "player_health": 24.13083822996103,
+    "player_power": 50.91212407141805,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.5483051314870104,
+    "player_health": 66.0798734244528,
+    "player_power": 95.86978065427658,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 6,
+    "map_density": 0.22895141352246992,
+    "player_health": 33.67100699120527,
+    "player_power": 83.43216099622154,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.36751836602245525,
+    "player_health": 58.12955873011296,
+    "player_power": 91.92912793513125,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.26183961820212187,
+    "player_health": 54.034915089313344,
+    "player_power": 75.38051893422275,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.4053100212208163,
+    "player_health": 43.09044425922046,
+    "player_power": 79.06191107113061,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.3662947162757929,
+    "player_health": 24.145882945794153,
+    "player_power": 66.83021390969603,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.3744609899444886,
+    "player_health": 36.13843698641887,
+    "player_power": 84.22857739399166,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.1694123867210102,
+    "player_health": 20.216871953146374,
+    "player_power": 55.834803207084065,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.30592045707363424,
+    "player_health": 47.90946132343962,
+    "player_power": 96.4764572123913,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.5664690335499774,
+    "player_health": 99.27435811659124,
+    "player_power": 60.25009050266186,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.4705603246450295,
+    "player_health": 65.95784905439295,
+    "player_power": 92.0914388379136,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 5,
+    "map_density": 0.20081366002387227,
+    "player_health": 33.09247542925636,
+    "player_power": 58.21328989654965,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 4,
+    "map_density": 0.25809829114824734,
+    "player_health": 67.06453406360453,
+    "player_power": 84.14910317085662,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 14,
+    "map_density": 0.5498337226460865,
+    "player_health": 69.92812353454701,
+    "player_power": 76.98905309573165,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.21610634757340866,
+    "player_health": 91.96596586196547,
+    "player_power": 69.19456106866056,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 8,
+    "map_density": 0.21451269546239818,
+    "player_health": 63.427944849072716,
+    "player_power": 71.57640715682213,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 3,
+    "map_density": 0.26745280732854304,
+    "player_health": 31.141765813070982,
+    "player_power": 89.7012594635148,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3667305459881608,
+    "player_health": 91.51140664407662,
+    "player_power": 89.42986056122655,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 1,
+    "map_density": 0.45349023062172955,
+    "player_health": 82.28575512406009,
+    "player_power": 57.15639927742348,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.34699074356543136,
+    "player_health": 80.37082334880932,
+    "player_power": 55.14580153720725,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.1637443311659912,
+    "player_health": 51.78298324482938,
+    "player_power": 89.86476828897767,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.4859409902991225,
+    "player_health": 20.97624578544356,
+    "player_power": 79.92213506026135,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.22589952945347638,
+    "player_health": 47.65567948031355,
+    "player_power": 59.079885840071285,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.21367549151499352,
+    "player_health": 53.88774899363863,
+    "player_power": 64.3964808237863,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 13,
+    "map_density": 0.16955809707153094,
+    "player_health": 28.06356824127092,
+    "player_power": 62.80077659268311,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.4950423185620434,
+    "player_health": 21.841808383011,
+    "player_power": 82.5683605494123,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 9,
+    "map_density": 0.312065335651193,
+    "player_health": 78.91553884997782,
+    "player_power": 96.71835073845074,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.15661902292037763,
+    "player_health": 98.78729591698676,
+    "player_power": 91.94490432229671,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.26607320632746945,
+    "player_health": 44.915541123651295,
+    "player_power": 61.36978104385563,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 9,
+    "map_density": 0.4721248259216444,
+    "player_health": 36.446384670051,
+    "player_power": 89.38949443572463,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 3,
+    "map_density": 0.2990843467954717,
+    "player_health": 62.99164823503383,
+    "player_power": 95.99278082063802,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.4687506240548742,
+    "player_health": 56.17743527118457,
+    "player_power": 61.2302411469991,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.34918388636973985,
+    "player_health": 53.514035960363834,
+    "player_power": 95.742295053405,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.10654722829416682,
+    "player_health": 73.08298976133685,
+    "player_power": 58.90179834348757,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.378652684445024,
+    "player_health": 88.85056143125871,
+    "player_power": 76.75348594668293,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.25496846313430543,
+    "player_health": 51.78544923660783,
+    "player_power": 71.33944526683747,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.4124879935255261,
+    "player_health": 50.218075795213544,
+    "player_power": 91.82824066461664,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.4877638083475053,
+    "player_health": 56.26310677984221,
+    "player_power": 76.219513466379,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.300381530437663,
+    "player_health": 64.77122650465743,
+    "player_power": 57.76201229653562,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 13,
+    "map_density": 0.13775168190194462,
+    "player_health": 80.25969765979607,
+    "player_power": 63.61509273601497,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.11269317783017244,
+    "player_health": 32.49220778929523,
+    "player_power": 85.79861144236988,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 1,
+    "map_density": 0.3758612976296699,
+    "player_health": 40.311085123464345,
+    "player_power": 59.80565498467264,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.2696356229480955,
+    "player_health": 65.55548142108003,
+    "player_power": 94.37302412567516,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 2,
+    "map_density": 0.5026574836789526,
+    "player_health": 99.09830255643543,
+    "player_power": 80.15987010884898,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.43404256828532306,
+    "player_health": 36.39874363326568,
+    "player_power": 64.65738651305067,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.41662038745548025,
+    "player_health": 78.87236905568018,
+    "player_power": 92.40640477334418,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.4214627818071266,
+    "player_health": 76.31569081108076,
+    "player_power": 95.5312001770152,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 3,
+    "map_density": 0.22971171671564625,
+    "player_health": 50.375392653381354,
+    "player_power": 79.51474712574039,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.27259607244063777,
+    "player_health": 81.90676185610722,
+    "player_power": 68.13789473329727,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.587273632599435,
+    "player_health": 82.38070198304246,
+    "player_power": 55.711896296019844,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 11,
+    "map_density": 0.5472761134470457,
+    "player_health": 83.98842047578522,
+    "player_power": 71.26067522346167,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.23433867969247305,
+    "player_health": 63.330737172869355,
+    "player_power": 81.67391099130737,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 11,
+    "map_density": 0.3108519672766409,
+    "player_health": 30.58209689002643,
+    "player_power": 95.02861506181928,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.5571494032802495,
+    "player_health": 29.42008663121129,
+    "player_power": 78.82582377571268,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.30262404401384435,
+    "player_health": 59.797191518391244,
+    "player_power": 86.01012908161479,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 6,
+    "map_density": 0.46609228922953116,
+    "player_health": 40.05845284492782,
+    "player_power": 81.65490316787238,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 13,
+    "map_density": 0.5190534815891479,
+    "player_health": 52.350520123921946,
+    "player_power": 88.54556885321352,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.46901680821318525,
+    "player_health": 26.623893434010117,
+    "player_power": 80.1576054733194,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 8,
+    "map_density": 0.3185966981786218,
+    "player_health": 93.24109418335313,
+    "player_power": 86.07664305609528,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.29832468652602717,
+    "player_health": 96.32695492317065,
+    "player_power": 56.75006387106035,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.23495561119609745,
+    "player_health": 63.18742231265547,
+    "player_power": 58.10069389457923,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3481831236006182,
+    "player_health": 67.74742791335115,
+    "player_power": 66.71219454084805,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.27219186602211665,
+    "player_health": 48.123212890737506,
+    "player_power": 70.63967753033762,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 10,
+    "map_density": 0.32984075638056554,
+    "player_health": 26.074672829569767,
+    "player_power": 53.888267203947855,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.15154687300687245,
+    "player_health": 45.16772454475287,
+    "player_power": 90.37151259083805,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5751186769104012,
+    "player_health": 55.68046183663646,
+    "player_power": 59.25664644193098,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 3,
+    "map_density": 0.4661124432047806,
+    "player_health": 84.52489182891598,
+    "player_power": 82.93916833553587,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.22483400442959298,
+    "player_health": 59.15399709145124,
+    "player_power": 61.06047209098011,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.4349587322750196,
+    "player_health": 23.533235016808014,
+    "player_power": 79.41318784849655,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 7,
+    "map_density": 0.11697298929289943,
+    "player_health": 75.7936213797472,
+    "player_power": 64.86745036862754,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.572133244556717,
+    "player_health": 57.9371373325971,
+    "player_power": 93.10213254946567,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.3612172880355845,
+    "player_health": 71.56373205006577,
+    "player_power": 82.50836752216141,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.1602834428886394,
+    "player_health": 26.156256130336732,
+    "player_power": 84.81443879390699,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 12,
+    "map_density": 0.3862138797167328,
+    "player_health": 84.3181583520718,
+    "player_power": 76.92007451903937,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.5429888741180936,
+    "player_health": 69.26905505458436,
+    "player_power": 61.64797373768169,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.5951706566708885,
+    "player_health": 20.019001886070768,
+    "player_power": 59.27364547883612,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.5989670552666687,
+    "player_health": 48.05694523613681,
+    "player_power": 88.35941444655634,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 9,
+    "map_density": 0.39037860361366383,
+    "player_health": 41.73495768552033,
+    "player_power": 69.91436919878177,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 7,
+    "map_density": 0.3612595958172615,
+    "player_health": 78.58174457477162,
+    "player_power": 50.16731810214896,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 8,
+    "enemy_count": 14,
+    "map_density": 0.5264109108459507,
+    "player_health": 77.24426521873936,
+    "player_power": 79.45542672354475,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5551695510287672,
+    "player_health": 23.608054177625853,
+    "player_power": 55.473379933955755,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 4,
+    "map_density": 0.2091269439325321,
+    "player_health": 95.99689471601803,
+    "player_power": 89.3172507207776,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.5395591537810823,
+    "player_health": 95.57856178331282,
+    "player_power": 73.37007556249348,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.47167641144681205,
+    "player_health": 25.198912758631522,
+    "player_power": 70.07901182127438,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.5153212588753123,
+    "player_health": 29.627100962799673,
+    "player_power": 52.34726785739065,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 9,
+    "map_density": 0.19321913107212726,
+    "player_health": 82.36675788534026,
+    "player_power": 67.5062629583365,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.35913018333819613,
+    "player_health": 67.78192579442728,
+    "player_power": 76.25157504301342,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.4791192378520457,
+    "player_health": 75.68164944430337,
+    "player_power": 57.69479531699275,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.4739358020461143,
+    "player_health": 22.78921281870599,
+    "player_power": 94.746072061392,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.5387304313151902,
+    "player_health": 41.24800340709648,
+    "player_power": 56.47574606414021,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.5260967666735039,
+    "player_health": 22.833789473483606,
+    "player_power": 66.45256826849355,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 2,
+    "map_density": 0.3042266065353494,
+    "player_health": 49.81508136098512,
+    "player_power": 62.98768918801631,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 18,
+    "map_density": 0.14052310795382397,
+    "player_health": 37.6146561559849,
+    "player_power": 84.16293818297979,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.13075851311961753,
+    "player_health": 90.6325015309969,
+    "player_power": 75.80395102218083,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.2739046039510965,
+    "player_health": 74.24129220472508,
+    "player_power": 78.28659819978955,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.4987130108034641,
+    "player_health": 72.67614677267403,
+    "player_power": 92.52908645471209,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.518506664181836,
+    "player_health": 75.79771693354269,
+    "player_power": 84.00703858801502,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.5408185663851751,
+    "player_health": 96.9052230547926,
+    "player_power": 73.27350043849918,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 10,
+    "map_density": 0.1644349337367226,
+    "player_health": 46.809508340731355,
+    "player_power": 87.1754128145804,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.516067088978871,
+    "player_health": 60.597418700866896,
+    "player_power": 50.31929358584168,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.3799221561544147,
+    "player_health": 29.267508542420615,
+    "player_power": 68.83476809933994,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 13,
+    "map_density": 0.48992269757557183,
+    "player_health": 28.558451106156674,
+    "player_power": 88.05139512510141,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.270936083019343,
+    "player_health": 70.60975145071585,
+    "player_power": 96.60140527550087,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.4439428611504067,
+    "player_health": 25.42696472841375,
+    "player_power": 65.04817834734081,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 1,
+    "map_density": 0.39108523008813667,
+    "player_health": 47.67064455623654,
+    "player_power": 81.04577588837385,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.5950741863753235,
+    "player_health": 74.08418057494035,
+    "player_power": 72.29791535051608,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.4791315979645113,
+    "player_health": 21.96695331670412,
+    "player_power": 51.106177576449866,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.44164768830325263,
+    "player_health": 55.67221651013987,
+    "player_power": 63.68133331408329,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.1510968098468595,
+    "player_health": 88.33678195692528,
+    "player_power": 76.3512048105931,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.4864113900084023,
+    "player_health": 38.404294642514714,
+    "player_power": 56.566756320468905,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.581618326720066,
+    "player_health": 22.504185099801298,
+    "player_power": 86.56350334868428,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.2987971989813971,
+    "player_health": 41.937216187893604,
+    "player_power": 99.19888239799141,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 6,
+    "map_density": 0.2149773029455431,
+    "player_health": 37.04837632200666,
+    "player_power": 51.55670414422557,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.3357662300512564,
+    "player_health": 63.45862446319665,
+    "player_power": 57.962286913963226,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.14558224520309584,
+    "player_health": 32.29264305288901,
+    "player_power": 72.68468173026413,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.4131101608157077,
+    "player_health": 30.499590214591006,
+    "player_power": 51.6263089745626,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.19272943733832718,
+    "player_health": 56.96778326125285,
+    "player_power": 50.06159175832129,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.37920633629159894,
+    "player_health": 38.04321139549884,
+    "player_power": 58.041273453909504,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.23449670221754884,
+    "player_health": 83.80472805097506,
+    "player_power": 65.51809794617868,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.10581026995405032,
+    "player_health": 25.795751023564712,
+    "player_power": 69.62467782033424,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 11,
+    "map_density": 0.4474909430632713,
+    "player_health": 88.80979177513636,
+    "player_power": 88.99254944466749,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 3,
+    "map_density": 0.15246508920908744,
+    "player_health": 39.363601269002196,
+    "player_power": 99.33312966335733,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 6,
+    "map_density": 0.2051747899594343,
+    "player_health": 47.68132541158717,
+    "player_power": 88.79023678964779,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.35885582169235575,
+    "player_health": 27.02931993158667,
+    "player_power": 67.53134656045904,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.29846163810079807,
+    "player_health": 30.617260323444828,
+    "player_power": 78.3770424130779,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 18,
+    "map_density": 0.5107203640049333,
+    "player_health": 23.294679622341732,
+    "player_power": 83.51927291772061,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.11579307241282102,
+    "player_health": 94.89697969949519,
+    "player_power": 52.59856418257362,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 12,
+    "map_density": 0.5354845618730428,
+    "player_health": 77.12695457059422,
+    "player_power": 90.08640415348958,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 11,
+    "map_density": 0.5474083280302638,
+    "player_health": 63.8073900922989,
+    "player_power": 90.86488849812469,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.18199974049474862,
+    "player_health": 55.08857731916307,
+    "player_power": 86.24132799370292,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.17977234005659418,
+    "player_health": 89.74268532737614,
+    "player_power": 60.960699367902215,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.19105895784434965,
+    "player_health": 83.17588057139832,
+    "player_power": 82.9353887750438,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.45960088913613195,
+    "player_health": 38.2763793065039,
+    "player_power": 99.8166958028371,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.19977122546457257,
+    "player_health": 74.41825939450331,
+    "player_power": 53.60992044895879,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5202262031384668,
+    "player_health": 33.93546692626029,
+    "player_power": 98.03902757434885,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 4,
+    "map_density": 0.4143824091029725,
+    "player_health": 78.82802389326021,
+    "player_power": 88.386194403339,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 2,
+    "map_density": 0.5335157480612243,
+    "player_health": 66.29403268579148,
+    "player_power": 71.93077095947953,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.39886178262793215,
+    "player_health": 83.43648756845053,
+    "player_power": 82.75046694160542,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.5561816728083455,
+    "player_health": 36.85297512045332,
+    "player_power": 81.14832917817414,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.1657838425636299,
+    "player_health": 77.26599717456708,
+    "player_power": 95.45162603328205,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 12,
+    "map_density": 0.28642431859446726,
+    "player_health": 61.00921641646441,
+    "player_power": 70.65155873238484,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 15,
+    "map_density": 0.39645919991589096,
+    "player_health": 66.35319194748007,
+    "player_power": 83.13106395041602,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.2955407683258804,
+    "player_health": 97.552985786823,
+    "player_power": 62.90667163505638,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.48673656284330036,
+    "player_health": 30.469892857467986,
+    "player_power": 98.49105225392724,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.32101218689142874,
+    "player_health": 46.471149039133756,
+    "player_power": 72.43887869157015,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 9,
+    "enemy_count": 1,
+    "map_density": 0.3247169176068688,
+    "player_health": 67.03074968883095,
+    "player_power": 97.42916774257168,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 6,
+    "enemy_count": 4,
+    "map_density": 0.2896792949612119,
+    "player_health": 68.44305261159063,
+    "player_power": 67.83660265200008,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.5220852244845986,
+    "player_health": 84.45361223600426,
+    "player_power": 79.2677182198376,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 11,
+    "map_density": 0.15595980969886394,
+    "player_health": 41.57996892135917,
+    "player_power": 52.854342804465745,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.12584841862076349,
+    "player_health": 71.20023734695309,
+    "player_power": 61.235058848634,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 5,
+    "map_density": 0.15165447856200784,
+    "player_health": 66.7736560354071,
+    "player_power": 84.41039329332978,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 2,
+    "map_density": 0.5825593482180228,
+    "player_health": 20.395198474752767,
+    "player_power": 97.59058927116195,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 7,
+    "map_density": 0.32736992781692953,
+    "player_health": 61.24768228634002,
+    "player_power": 74.44232901284602,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.11498679493633898,
+    "player_health": 44.63439532729527,
+    "player_power": 85.23403813683234,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 8,
+    "map_density": 0.5849560230536353,
+    "player_health": 27.512057263153473,
+    "player_power": 83.63010591125632,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.5816734164101995,
+    "player_health": 40.42452197827455,
+    "player_power": 83.08161751855734,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 11,
+    "map_density": 0.4416240141448229,
+    "player_health": 59.773981120674186,
+    "player_power": 80.8923620100607,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 1,
+    "map_density": 0.11519352984841844,
+    "player_health": 94.47589564055822,
+    "player_power": 84.47633755157806,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.2078375761988586,
+    "player_health": 72.71083761861257,
+    "player_power": 69.69322028270793,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.5997068628853333,
+    "player_health": 23.856963108844482,
+    "player_power": 98.85870921106587,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.24434279776531906,
+    "player_health": 28.728770541259976,
+    "player_power": 82.5255823895858,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.31908617320599386,
+    "player_health": 92.11005196707555,
+    "player_power": 93.89455795206638,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.5089171080875108,
+    "player_health": 29.616724429648677,
+    "player_power": 77.22445489804248,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.28323076743569897,
+    "player_health": 51.69381532874043,
+    "player_power": 84.7733603344931,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 1,
+    "map_density": 0.21877206543716374,
+    "player_health": 49.860143330347206,
+    "player_power": 61.363481363157575,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.479672163961433,
+    "player_health": 60.03562473045932,
+    "player_power": 77.11818324898692,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.557118257975735,
+    "player_health": 85.10130306556691,
+    "player_power": 55.44591709233657,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.22303482939899913,
+    "player_health": 58.13563800329273,
+    "player_power": 69.71826619091752,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 2,
+    "map_density": 0.45774545354963725,
+    "player_health": 61.69873059882675,
+    "player_power": 91.1196709408529,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 5,
+    "map_density": 0.5490152744749934,
+    "player_health": 39.47858372610394,
+    "player_power": 96.35172723981533,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.3395916147218,
+    "player_health": 35.56466585482408,
+    "player_power": 58.31658038715711,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.4350480173054708,
+    "player_health": 94.36847019375914,
+    "player_power": 76.61301066695201,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 4,
+    "map_density": 0.45881789295431474,
+    "player_health": 51.9924165443325,
+    "player_power": 98.83626193312895,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.19071917384781348,
+    "player_health": 62.01307069336481,
+    "player_power": 85.45231308612163,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.38365610981445175,
+    "player_health": 40.525022696109104,
+    "player_power": 98.146343761879,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.5078743217521404,
+    "player_health": 49.88077464307101,
+    "player_power": 76.32495970768905,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 6,
+    "map_density": 0.5095944297133951,
+    "player_health": 90.73651706787263,
+    "player_power": 61.40398859744663,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 10,
+    "map_density": 0.5500115616990056,
+    "player_health": 48.27371034421745,
+    "player_power": 61.8435279487241,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.5255871304263854,
+    "player_health": 73.71397356244915,
+    "player_power": 90.47649878842209,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.32588383936861454,
+    "player_health": 66.92867705403793,
+    "player_power": 58.40071038724317,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.20836990004538783,
+    "player_health": 27.657164441612938,
+    "player_power": 51.18192930231682,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.20309308225921321,
+    "player_health": 71.0368634652776,
+    "player_power": 62.84419238228574,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.2372701270000627,
+    "player_health": 67.76375335165534,
+    "player_power": 83.7920622543688,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.44621807566218485,
+    "player_health": 99.30047949617506,
+    "player_power": 56.41971447270626,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.26861356637771017,
+    "player_health": 92.4419833863739,
+    "player_power": 88.63113637246913,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 5,
+    "map_density": 0.5470954373320591,
+    "player_health": 35.34938597749943,
+    "player_power": 66.16857810577604,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 9,
+    "map_density": 0.40857789169782344,
+    "player_health": 55.39279491845356,
+    "player_power": 91.59315566257109,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 5,
+    "map_density": 0.2355737182500924,
+    "player_health": 67.42495933227381,
+    "player_power": 84.00659655517256,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 3,
+    "map_density": 0.1951624314095339,
+    "player_health": 24.187110062920667,
+    "player_power": 68.92382117429345,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.32317617559882106,
+    "player_health": 46.68556395777603,
+    "player_power": 79.02375033583374,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.18765147117882983,
+    "player_health": 75.20039126565325,
+    "player_power": 60.04668443295282,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 16,
+    "map_density": 0.10061833987970473,
+    "player_health": 44.06824866826041,
+    "player_power": 99.0618187172152,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.5870823143140078,
+    "player_health": 21.602108474065957,
+    "player_power": 86.85901125036216,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.5210166471882106,
+    "player_health": 61.67663818176337,
+    "player_power": 81.17928440013799,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 7,
+    "map_density": 0.5323430960167701,
+    "player_health": 68.67891301278331,
+    "player_power": 75.34192159102413,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.11808019026238106,
+    "player_health": 44.250268475626285,
+    "player_power": 63.155628495542146,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.5684789115155314,
+    "player_health": 64.3041792569901,
+    "player_power": 65.27621553290118,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 10,
+    "map_density": 0.4002971666803087,
+    "player_health": 61.25435421571982,
+    "player_power": 95.96959866072086,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.29552138152908725,
+    "player_health": 60.09223993456078,
+    "player_power": 69.85893887146055,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.29031164673829,
+    "player_health": 90.23794563560556,
+    "player_power": 93.40283450537251,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.5093675020371351,
+    "player_health": 45.80223822771322,
+    "player_power": 51.14469124880601,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.2730498632688928,
+    "player_health": 98.04881606879319,
+    "player_power": 82.04860386726659,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.33967722006892587,
+    "player_health": 45.09821529552768,
+    "player_power": 80.31854722166878,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 4,
+    "map_density": 0.35128303823172125,
+    "player_health": 51.89304222178505,
+    "player_power": 57.31869960811245,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.1129059534747435,
+    "player_health": 30.81330313238582,
+    "player_power": 98.15575557945868,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.23887631187463057,
+    "player_health": 88.11589100410123,
+    "player_power": 50.01662530602447,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.17601242656432406,
+    "player_health": 24.907970168853453,
+    "player_power": 89.038079303422,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.3423007935094323,
+    "player_health": 80.34028354750905,
+    "player_power": 80.97488757037938,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 3,
+    "map_density": 0.1853323792749992,
+    "player_health": 25.970385146966535,
+    "player_power": 89.13480203720746,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.409025837143593,
+    "player_health": 70.65517008107713,
+    "player_power": 61.44473024233068,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 12,
+    "map_density": 0.25312681039330587,
+    "player_health": 69.91166690333108,
+    "player_power": 76.35207319558258,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.49604681688027163,
+    "player_health": 52.383874326815985,
+    "player_power": 82.7037897685999,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 11,
+    "map_density": 0.30706487626446355,
+    "player_health": 86.20303164534994,
+    "player_power": 86.6807190280701,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.30807699908988073,
+    "player_health": 58.50753213082589,
+    "player_power": 50.95961384115284,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.16855485286449953,
+    "player_health": 62.824810516207336,
+    "player_power": 60.76009360086188,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 18,
+    "map_density": 0.4146494030053681,
+    "player_health": 35.90850222202367,
+    "player_power": 53.23083399220431,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.15486809933875176,
+    "player_health": 63.83675911789544,
+    "player_power": 72.71886672799805,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 5,
+    "map_density": 0.3441205685108891,
+    "player_health": 32.00389317551874,
+    "player_power": 66.23379634450299,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.2879441425728847,
+    "player_health": 51.55810228560283,
+    "player_power": 72.97233842029934,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 13,
+    "map_density": 0.16657250208904847,
+    "player_health": 28.171962372603048,
+    "player_power": 82.93460731037217,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.2396838569673582,
+    "player_health": 94.4255107870259,
+    "player_power": 62.652921640039224,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.42967696110289133,
+    "player_health": 91.60941925652291,
+    "player_power": 81.83348410836037,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.133326020280345,
+    "player_health": 61.47264175561632,
+    "player_power": 57.50845004085208,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.32163654372180916,
+    "player_health": 23.826465631528436,
+    "player_power": 51.901092411872746,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.1360421679993367,
+    "player_health": 25.70053822122069,
+    "player_power": 50.605423761744376,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.29379761574138474,
+    "player_health": 56.95575493367646,
+    "player_power": 99.5794204435137,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.19259778393373397,
+    "player_health": 33.92874682672675,
+    "player_power": 54.91978248566986,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.23252321416250202,
+    "player_health": 21.675596882473023,
+    "player_power": 54.10858337382137,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.24772238873871014,
+    "player_health": 81.53785182705069,
+    "player_power": 81.23317844271318,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.16069320907970322,
+    "player_health": 69.20103744310933,
+    "player_power": 88.7316890318894,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 10,
+    "map_density": 0.49935709582728727,
+    "player_health": 43.42576293607718,
+    "player_power": 98.99851646794252,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 2,
+    "map_density": 0.16404787318310002,
+    "player_health": 47.06140047955987,
+    "player_power": 96.40418201630249,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 8,
+    "map_density": 0.31603844147209803,
+    "player_health": 55.15239917555618,
+    "player_power": 80.64697912472627,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 5,
+    "map_density": 0.43799113779317767,
+    "player_health": 59.68382709439092,
+    "player_power": 50.635744499344675,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.5079734694843087,
+    "player_health": 88.90959970907488,
+    "player_power": 92.3257169345139,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.4775209643731392,
+    "player_health": 56.8431597819312,
+    "player_power": 92.09992764450308,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 7,
+    "map_density": 0.4280809188405358,
+    "player_health": 34.19430155757655,
+    "player_power": 77.25134594484692,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.18240740786471857,
+    "player_health": 30.538301876364955,
+    "player_power": 86.29899549926478,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.4664007723831253,
+    "player_health": 63.378976439347866,
+    "player_power": 79.51738452293864,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.1757846857938368,
+    "player_health": 27.50055365164453,
+    "player_power": 78.85863916437751,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 8,
+    "map_density": 0.3307787372098949,
+    "player_health": 20.746529586167462,
+    "player_power": 62.33394322608115,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.23895104862443392,
+    "player_health": 35.51630938142199,
+    "player_power": 93.99082429709694,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 10,
+    "map_density": 0.4711740252862546,
+    "player_health": 85.20947075842943,
+    "player_power": 80.74891201705663,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 4,
+    "map_density": 0.10261480677145637,
+    "player_health": 80.8792608022475,
+    "player_power": 51.76556774701196,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.47933819505550246,
+    "player_health": 74.27030582841135,
+    "player_power": 87.81323289457262,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.3510251067442236,
+    "player_health": 29.97712455291124,
+    "player_power": 69.26879415236809,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 2,
+    "map_density": 0.5430978902325373,
+    "player_health": 67.44354673494273,
+    "player_power": 69.57628490889147,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 8,
+    "map_density": 0.18918629215366492,
+    "player_health": 22.3257104275163,
+    "player_power": 58.34425589274355,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.14649531991156609,
+    "player_health": 67.05618135587125,
+    "player_power": 74.04864449430619,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 5,
+    "map_density": 0.3899918937140656,
+    "player_health": 64.91876703676189,
+    "player_power": 78.03300472080855,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 2,
+    "map_density": 0.39968448283146696,
+    "player_health": 68.17165152419848,
+    "player_power": 51.1466405634021,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.41824532552457705,
+    "player_health": 31.919978891939476,
+    "player_power": 84.77078241640265,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 6,
+    "map_density": 0.20492099742820472,
+    "player_health": 86.01045341328921,
+    "player_power": 76.0148288459327,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.31700968308693767,
+    "player_health": 27.08803437436938,
+    "player_power": 61.03059763556056,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 13,
+    "map_density": 0.18674003713297863,
+    "player_health": 71.00426115761837,
+    "player_power": 74.80831920566098,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 11,
+    "map_density": 0.46999319334280587,
+    "player_health": 96.02502023444734,
+    "player_power": 60.14681837874511,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 18,
+    "map_density": 0.18264705548508728,
+    "player_health": 76.02015675556169,
+    "player_power": 79.2905072985951,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 1,
+    "map_density": 0.5648084614378421,
+    "player_health": 82.60655518810704,
+    "player_power": 52.8068051708105,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.288457082368186,
+    "player_health": 56.93862508899058,
+    "player_power": 74.04530003765348,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.1667399862079719,
+    "player_health": 26.44812110056997,
+    "player_power": 86.39696534868827,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.49010653171505114,
+    "player_health": 20.56233630508953,
+    "player_power": 52.86401255388117,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 4,
+    "map_density": 0.10670131321608281,
+    "player_health": 42.61965516630096,
+    "player_power": 52.22974541864808,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 3,
+    "map_density": 0.2378061693394727,
+    "player_health": 82.97012820812833,
+    "player_power": 98.7417326390556,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.5223947181430108,
+    "player_health": 41.45112160764107,
+    "player_power": 57.8190902201724,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 11,
+    "map_density": 0.13132660172767727,
+    "player_health": 92.51499626755287,
+    "player_power": 56.96226855587976,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.4859288630908106,
+    "player_health": 26.913968861003717,
+    "player_power": 61.83921546556927,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 11,
+    "map_density": 0.5816972171067752,
+    "player_health": 64.81345467694736,
+    "player_power": 96.84112310165459,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 12,
+    "map_density": 0.49385650776385437,
+    "player_health": 69.95403571773824,
+    "player_power": 74.72405656475465,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 3,
+    "map_density": 0.46257786377555743,
+    "player_health": 35.29525611718312,
+    "player_power": 66.91315526661742,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 12,
+    "map_density": 0.27475318604340937,
+    "player_health": 29.12766279103467,
+    "player_power": 57.56234143674673,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 7,
+    "map_density": 0.4418770527885213,
+    "player_health": 63.60844226085597,
+    "player_power": 99.0258411000553,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 10,
+    "enemy_count": 11,
+    "map_density": 0.1338341809500008,
+    "player_health": 76.62680777838149,
+    "player_power": 77.1769108671323,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 6,
+    "enemy_count": 2,
+    "map_density": 0.3423481435650235,
+    "player_health": 33.26196321306206,
+    "player_power": 97.28490735001412,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.14878125511964987,
+    "player_health": 88.95895267234178,
+    "player_power": 73.00811322442198,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 8,
+    "enemy_count": 15,
+    "map_density": 0.3562513243851658,
+    "player_health": 84.51228937862716,
+    "player_power": 72.96199387984791,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 1,
+    "map_density": 0.2006818910679872,
+    "player_health": 40.6896667910431,
+    "player_power": 58.235317671614794,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.47705384015808205,
+    "player_health": 21.435654285479345,
+    "player_power": 56.31268913963067,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 4,
+    "map_density": 0.5352892125230034,
+    "player_health": 39.10369691052314,
+    "player_power": 72.56196720904941,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 17,
+    "map_density": 0.11358371061277991,
+    "player_health": 25.216367300839366,
+    "player_power": 73.19656884061664,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.29536418280680665,
+    "player_health": 83.86753505794627,
+    "player_power": 68.59663339584324,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 11,
+    "map_density": 0.48780592546266377,
+    "player_health": 97.15813231206494,
+    "player_power": 60.188322956384454,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 8,
+    "enemy_count": 12,
+    "map_density": 0.49642720951691965,
+    "player_health": 66.2074692704926,
+    "player_power": 81.72912087751519,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 15,
+    "map_density": 0.19792040629345944,
+    "player_health": 91.75663443388275,
+    "player_power": 76.00952616257771,
+    "enemy_type": 3,
+    "spawn_count": 2
+  },
+  {
+    "level": 6,
+    "enemy_count": 2,
+    "map_density": 0.25838083853376337,
+    "player_health": 88.57434055990024,
+    "player_power": 95.30716273828833,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 6,
+    "map_density": 0.1703557640243792,
+    "player_health": 36.1612534721992,
+    "player_power": 59.21124196190131,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.49929663619137565,
+    "player_health": 97.42047016827111,
+    "player_power": 92.84369680375471,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 1,
+    "map_density": 0.3088804896375499,
+    "player_health": 98.72882552291982,
+    "player_power": 83.39599994018135,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.589891228927261,
+    "player_health": 72.49072144164646,
+    "player_power": 56.49132244758588,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 3,
+    "map_density": 0.3636998110613382,
+    "player_health": 77.54828978953269,
+    "player_power": 94.51290265089011,
+    "enemy_type": 1,
+    "spawn_count": 2
+  },
+  {
+    "level": 5,
+    "enemy_count": 3,
+    "map_density": 0.19370597204879111,
+    "player_health": 88.65416425257311,
+    "player_power": 90.95317569308281,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 3,
+    "map_density": 0.4797912050573159,
+    "player_health": 99.04524533222192,
+    "player_power": 95.06480053873244,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 2,
+    "map_density": 0.5096275524357305,
+    "player_health": 90.38575311613562,
+    "player_power": 76.27174562728464,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 10,
+    "map_density": 0.15031873926176667,
+    "player_health": 39.189929020475574,
+    "player_power": 57.09859948804969,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.47441316848165327,
+    "player_health": 72.09180679053392,
+    "player_power": 81.04642837392156,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.52072377654238,
+    "player_health": 57.70297339185316,
+    "player_power": 98.95524690075773,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.16313237078225137,
+    "player_health": 74.09420496603472,
+    "player_power": 66.25520077158495,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 12,
+    "map_density": 0.44083474120081,
+    "player_health": 33.3705609176977,
+    "player_power": 82.76412048458292,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 7,
+    "map_density": 0.23963804422720522,
+    "player_health": 71.43055280469662,
+    "player_power": 84.70752867549155,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.11659467728121312,
+    "player_health": 44.31571209925791,
+    "player_power": 82.65813952656416,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.21638157355064438,
+    "player_health": 84.5916824271961,
+    "player_power": 52.95469450391266,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.5535975153529149,
+    "player_health": 73.65858495246673,
+    "player_power": 78.02203154902199,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.3301791356009631,
+    "player_health": 89.16508876181359,
+    "player_power": 77.33241100938943,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.31127421415597234,
+    "player_health": 23.361974013712423,
+    "player_power": 86.99520603834651,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 7,
+    "map_density": 0.1637269797114345,
+    "player_health": 76.61506610644949,
+    "player_power": 98.63881614460429,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.5024533884207193,
+    "player_health": 21.44052444803636,
+    "player_power": 98.1405178537013,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.24076059920746498,
+    "player_health": 89.82030716529023,
+    "player_power": 55.62901952059685,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 4,
+    "map_density": 0.1482672350977204,
+    "player_health": 39.35150626070712,
+    "player_power": 50.62020181386574,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.5122674040435161,
+    "player_health": 25.939269839070917,
+    "player_power": 61.317574717074294,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 4,
+    "map_density": 0.13224563562458377,
+    "player_health": 90.17915657297604,
+    "player_power": 93.86308814130898,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 6,
+    "enemy_count": 9,
+    "map_density": 0.594514179175087,
+    "player_health": 70.09409372745105,
+    "player_power": 76.56582602840295,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.24264516917865822,
+    "player_health": 54.33460747170855,
+    "player_power": 63.38883377441671,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 2,
+    "enemy_count": 1,
+    "map_density": 0.3607228445217947,
+    "player_health": 25.091272742931388,
+    "player_power": 91.5686757192855,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.46878287454641343,
+    "player_health": 62.01918060161282,
+    "player_power": 51.63228387728343,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.1323434467575658,
+    "player_health": 96.46595869766018,
+    "player_power": 51.25709791386364,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 12,
+    "map_density": 0.5553382897175698,
+    "player_health": 57.15465889804342,
+    "player_power": 56.87618874085077,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 8,
+    "map_density": 0.5740541600857211,
+    "player_health": 55.61968898278305,
+    "player_power": 89.44011319526797,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 7,
+    "enemy_count": 7,
+    "map_density": 0.16584671923601926,
+    "player_health": 38.73475574523886,
+    "player_power": 89.33751675772184,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 2,
+    "map_density": 0.23578438237551994,
+    "player_health": 57.83177062487239,
+    "player_power": 99.19201564277189,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 6,
+    "map_density": 0.13546610806688672,
+    "player_health": 40.35132646734776,
+    "player_power": 68.09265466025693,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 10,
+    "map_density": 0.5536900823564235,
+    "player_health": 39.10853283215421,
+    "player_power": 73.48208873403544,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.4112598478648726,
+    "player_health": 57.5795010392547,
+    "player_power": 72.3734070661229,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 1,
+    "map_density": 0.3582863142229895,
+    "player_health": 20.440463932833666,
+    "player_power": 50.383201632461265,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 8,
+    "enemy_count": 11,
+    "map_density": 0.521962306305862,
+    "player_health": 42.792641722476866,
+    "player_power": 73.14259775079253,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.20925491717706515,
+    "player_health": 51.743747766905315,
+    "player_power": 52.21938860854272,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 5,
+    "map_density": 0.24228115088144878,
+    "player_health": 85.4565334998598,
+    "player_power": 76.57997323022154,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 9,
+    "map_density": 0.11483411153236991,
+    "player_health": 74.03361660376714,
+    "player_power": 52.24267840117843,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.2949361764707721,
+    "player_health": 78.38882470787827,
+    "player_power": 94.11292780474238,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 1,
+    "map_density": 0.5118951921106474,
+    "player_health": 96.40484091879911,
+    "player_power": 91.05991412751132,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 14,
+    "map_density": 0.12556769072105037,
+    "player_health": 40.60857762669775,
+    "player_power": 52.97623501738858,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 2,
+    "map_density": 0.15724381903295256,
+    "player_health": 50.707110643598355,
+    "player_power": 72.8118254477771,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 3,
+    "map_density": 0.39816075943018414,
+    "player_health": 63.966692537771486,
+    "player_power": 95.01606340371357,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 19,
+    "map_density": 0.2773856459179921,
+    "player_health": 95.33805692951401,
+    "player_power": 83.42863233614571,
+    "enemy_type": 0,
+    "spawn_count": 2
+  },
+  {
+    "level": 2,
+    "enemy_count": 3,
+    "map_density": 0.39683039560426925,
+    "player_health": 20.81049472221947,
+    "player_power": 81.80480232047711,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 7,
+    "map_density": 0.5368492967331725,
+    "player_health": 77.9178444372875,
+    "player_power": 56.02792082018451,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 3,
+    "map_density": 0.3669837362738819,
+    "player_health": 31.370969903476613,
+    "player_power": 50.5853305365452,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 3,
+    "map_density": 0.3430002468988015,
+    "player_health": 66.17599093876407,
+    "player_power": 52.186953615447365,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.2080256825058436,
+    "player_health": 57.32862277577727,
+    "player_power": 90.83616012792723,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.5259206184369738,
+    "player_health": 52.3118291336099,
+    "player_power": 53.880732236572044,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 6,
+    "map_density": 0.49449257996039664,
+    "player_health": 55.71356131212657,
+    "player_power": 89.91901702591763,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.38963317691026345,
+    "player_health": 80.74808206020904,
+    "player_power": 54.94368088203177,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 4,
+    "map_density": 0.2964871126726456,
+    "player_health": 62.0650079098659,
+    "player_power": 75.58406932907559,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 4,
+    "map_density": 0.12238922525233412,
+    "player_health": 80.95254561059323,
+    "player_power": 97.33222169967732,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 18,
+    "map_density": 0.4184511587273716,
+    "player_health": 47.248333326503335,
+    "player_power": 53.58559444238255,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.15062995730757947,
+    "player_health": 87.7711591755028,
+    "player_power": 76.55426724426215,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 4,
+    "map_density": 0.37984422241897,
+    "player_health": 28.42073481576099,
+    "player_power": 58.3679866569314,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 8,
+    "map_density": 0.5887260589951839,
+    "player_health": 62.55301652194107,
+    "player_power": 56.78945235319686,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 11,
+    "map_density": 0.2939933799734348,
+    "player_health": 32.801994917055524,
+    "player_power": 51.167604816409295,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 5,
+    "map_density": 0.5177401181911638,
+    "player_health": 49.631758902024515,
+    "player_power": 68.74017838908982,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 6,
+    "map_density": 0.40147143823973075,
+    "player_health": 86.136588779319,
+    "player_power": 99.2006581605232,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.2927559523684612,
+    "player_health": 47.230968340360455,
+    "player_power": 77.07038036737926,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.36612876557448804,
+    "player_health": 33.466956473530416,
+    "player_power": 62.345371333379276,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 2,
+    "map_density": 0.5134074868982095,
+    "player_health": 76.72109794296254,
+    "player_power": 58.858546263593276,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.37241382877259344,
+    "player_health": 33.219364035408255,
+    "player_power": 79.14922130823012,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 5,
+    "map_density": 0.41311716071053195,
+    "player_health": 59.11182654339611,
+    "player_power": 70.08894003271621,
+    "enemy_type": 0,
+    "spawn_count": 1
+  },
+  {
+    "level": 3,
+    "enemy_count": 4,
+    "map_density": 0.2502446928002162,
+    "player_health": 46.06584940515599,
+    "player_power": 89.62606959814596,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 5,
+    "enemy_count": 7,
+    "map_density": 0.2975688716321593,
+    "player_health": 23.156762631271945,
+    "player_power": 73.77730187434133,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 3,
+    "map_density": 0.16618618951748623,
+    "player_health": 67.4411600288478,
+    "player_power": 79.95602925201626,
+    "enemy_type": 1,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 5,
+    "map_density": 0.472930019313506,
+    "player_health": 63.945798352253924,
+    "player_power": 52.88705259345869,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 1,
+    "map_density": 0.5385452905090945,
+    "player_health": 95.52336750603183,
+    "player_power": 57.43979847025578,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 10,
+    "enemy_count": 16,
+    "map_density": 0.1468362103529551,
+    "player_health": 80.36969772788734,
+    "player_power": 74.59655500528645,
+    "enemy_type": 2,
+    "spawn_count": 2
+  },
+  {
+    "level": 4,
+    "enemy_count": 6,
+    "map_density": 0.3612220727027322,
+    "player_health": 65.01693592178714,
+    "player_power": 72.06118568276632,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 9,
+    "enemy_count": 17,
+    "map_density": 0.5327885728122761,
+    "player_health": 98.45914748667435,
+    "player_power": 70.37921042869084,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 4,
+    "enemy_count": 7,
+    "map_density": 0.5780235718059665,
+    "player_health": 36.037961242272225,
+    "player_power": 55.46321051548107,
+    "enemy_type": 3,
+    "spawn_count": 1
+  },
+  {
+    "level": 1,
+    "enemy_count": 1,
+    "map_density": 0.42009915577981194,
+    "player_health": 43.874792988950134,
+    "player_power": 62.019119434974186,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 6,
+    "enemy_count": 3,
+    "map_density": 0.3241595276847111,
+    "player_health": 60.83459912033858,
+    "player_power": 81.32962555466051,
+    "enemy_type": 2,
+    "spawn_count": 1
+  },
+  {
+    "level": 7,
+    "enemy_count": 2,
+    "map_density": 0.3384217341589085,
+    "player_health": 75.01776339444486,
+    "player_power": 86.13534788491143,
+    "enemy_type": 1,
+    "spawn_count": 1
+  }
+]

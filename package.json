@@ -1,0 +1,44 @@
+{
+  "name": "bless-anime-game",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Anime style game using Blockless SDK",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "node -e \"const fs=require('fs');const path=require('path');const rimraf=require('rimraf');rimraf.sync(path.join(process.cwd(),'build','*'));rimraf.sync(path.join(process.cwd(),'public','tfjs-backend-wasm*.wasm'));\"",
+    "clean:all": "node scripts/clean-all.js",
+    "copy:wasm": "copyfiles -f node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm*.wasm public/",
+    "copy:draco": "copyfiles -f node_modules/three/examples/jsm/libs/draco/* public/draco/",
+    "copy:public": "copyfiles -u 1 \"public/**/*\" build/",
+    "prebuild": "node -e \"const fs=require('fs');const mkdirp=require('mkdirp');mkdirp.sync('build');mkdirp.sync('public');\"",
+    "build:debug": "npm run prebuild && npm run copy:wasm && npm run copy:draco && esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --log-level=info && npm run copy:public && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+    "build:release": "npm run prebuild && npm run copy:wasm && npm run copy:draco && esbuild src/core/main.ts --bundle --outfile=public/index.js --platform=browser --target=es2020 --minify --log-level=info && npm run copy:public && bls-sdk-ts build ./index.ts -o ./build -f release.wasm",
+    "preview": "blessnet preview build/debug.wasm",
+    "serve": "http-server ./public -p 8080 -c-1",
+    "dev": "npm run build:debug && npm run serve",
+    "postinstall": "npm run copy:wasm && npm run copy:draco"
+  },
+  "dependencies": {
+    "@blockless/sdk-ts": "^1.0.5",
+    "@tensorflow/tfjs": "^4.17.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.17.0",
+    "mkdirp": "^3.0.1",
+    "three": "^0.162.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.162.0",
+    "@blockless/sdk-ts": "^1.0.5",
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.20.1",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.2"
+  },
+  "bls": {
+    "functionId": "bless-function_bless-anime-game-1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

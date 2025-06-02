@@ -1,0 +1,34 @@
+[project]
+name = "bless-anime-game"
+version = "1.0.0"
+description = "3D anime-style action game with AI-powered mechanics"
+author = "MyDemir"
+timestamp = "2025-05-17 23:15:00"
+
+[build]
+dir = "build"
+command = "npm run build:debug"
+debug = "tsconfig.debug.json"
+
+[build_release]
+dir = "build"
+command = "npm run build:release"
+release = "tsconfig.release.json"
+
+[game]
+engineVersion = "1.0.0"
+renderEngine = "three.js"
+
+[server]
+port = 3_000
+host = "localhost"
+
+[paths]
+public = "public"
+source = "src"
+assets = "public/models"
+data = "public/data"
+
+[deployment]
+permission = "public"
+nodes = 3

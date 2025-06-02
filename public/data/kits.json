@@ -1,0 +1,86 @@
+[
+  {
+    "id": "blaster_a",
+    "name": "Blaster A",
+    "modelPath": "/models/kit/blaster-a.glb",
+    "photoPath": "/models/kit/photo/blaster-a.png",
+    "stats": {
+      "fireRate": 90,
+      "damage": 40,
+      "effect": "none",
+      "effectDescription": "Hızlı ateş eden standart bir blaster."
+    }
+  },
+  {
+    "id": "blaster_b",
+    "name": "Blaster B",
+    "modelPath": "/models/kit/blaster-b.glb",
+    "photoPath": "/models/kit/photo/blaster-b.png",
+    "stats": {
+      "fireRate": 60,
+      "damage": 70,
+      "effect": "none",
+      "effectDescription": "Yavaş ama güçlü bir blaster."
+    }
+  },
+  {
+    "id": "blaster_c",
+    "name": "Blaster C",
+    "modelPath": "/models/kit/blaster-c.glb",
+    "photoPath": "/models/kit/photo/blaster-c.png",
+    "stats": {
+      "fireRate": 80,
+      "damage": 50,
+      "effect": "slow",
+      "effectDescription": "Düşmanları 1 saniye %30 yavaşlatır."
+    }
+  },
+  {
+    "id": "blaster_d",
+    "name": "Blaster D",
+    "modelPath": "/models/kit/blaster-d.glb",
+    "photoPath": "/models/kit/photo/blaster-d.png",
+    "stats": {
+      "fireRate": 70,
+      "damage": 60,
+      "effect": "none",
+      "effectDescription": "Dengeli bir blaster, orta hız ve hasar."
+    }
+  },
+  {
+    "id": "blaster_e",
+    "name": "Blaster E",
+    "modelPath": "/models/kit/blaster-e.glb",
+    "photoPath": "/models/kit/photo/blaster-e.png",
+    "stats": {
+      "fireRate": 85,
+      "damage": 45,
+      "effect": "area",
+      "effectDescription": "1 birim yarıçapta küçük bir alan hasarı (50% damage)."
+    }
+  },
+  {
+    "id": "blaster_f",
+    "name": "Blaster F",
+    "modelPath": "/models/kit/blaster-f.glb",
+    "photoPath": "/models/kit/photo/blaster-f.png",
+    "stats": {
+      "fireRate": 65,
+      "damage": 65,
+      "effect": "none",
+      "effectDescription": "Güçlü ve dengeli bir blaster."
+    }
+  },
+  {
+    "id": "blaster_g",
+    "name": "Blaster G",
+    "modelPath": "/models/kit/blaster-g.glb",
+    "photoPath": "/models/kit/photo/blaster-g.png",
+    "stats": {
+      "fireRate": 95,
+      "damage": 35,
+      "effect": "rapid",
+      "effectDescription": "3 saniye boyunca ateş hızı %50 artar (10 sn cooldown)."
+    }
+  }
+]

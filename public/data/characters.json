@@ -1,0 +1,158 @@
+[
+  {
+    "id": "female_a",
+    "name": "Ninja Kızı",
+    "modelPath": "/models/character/character-female-a.glb",
+    "photoPath": "/models/character/photo/character-female-a.png",
+    "stats": {
+      "speed": 90,
+      "power": 70,
+      "health": 100,
+      "ability": "invisibility",
+      "abilityDescription": "3 saniye görünmez olur, düşmanlar hedef alamaz, hız +20%."
+    }
+  },
+  {
+    "id": "male_a",
+    "name": "Samuray Adam",
+    "modelPath": "/models/character/character-male-a.glb",
+    "photoPath": "/models/character/photo/character-male-a.png",
+    "stats": {
+      "speed": 70,
+      "power": 90,
+      "health": 110,
+      "ability": "sword_slash",
+      "abilityDescription": "Yakındaki tüm düşmanlara 150% güç hasarı verir (3 birim yarıçap)."
+    }
+  },
+  {
+    "id": "female_b",
+    "name": "Mini Karakter A",
+    "modelPath": "/models/character/character-female-b.glb",
+    "photoPath": "/models/character/photo/character-female-b.png",
+    "stats": {
+      "speed": 85,
+      "power": 75,
+      "health": 95,
+      "ability": "dash_leap",
+      "abilityDescription": "5 birim ileri sıçrar, 1 saniye düşman hasarından korunur."
+    }
+  },
+  {
+    "id": "female_c",
+    "name": "Mini Karakter B",
+    "modelPath": "/models/character/character-female-c.glb",
+    "photoPath": "/models/character/photo/character-female-c.png",
+    "stats": {
+      "speed": 75,
+      "power": 85,
+      "health": 100,
+      "ability": "energy_burst",
+      "abilityDescription": "2 birim yarıçapta alan hasarı (100% güç), düşmanları 1 saniye yavaşlatır."
+    }
+  },
+  {
+    "id": "female_d",
+    "name": "Mini Karakter C",
+    "modelPath": "/models/character/character-female-d.glb",
+    "photoPath": "/models/character/photo/character-female-d.png",
+    "stats": {
+      "speed": 95,
+      "power": 65,
+      "health": 90,
+      "ability": "trap_setup",
+      "abilityDescription": "Yere 5 saniye süren bir tuzak kurar, düşmanlar temas ederse 50 hasar alır."
+    }
+  },
+  {
+    "id": "female_e",
+    "name": "Mini Karakter D",
+    "modelPath": "/models/character/character-female-e.glb",
+    "photoPath": "/models/character/photo/character-female-e.png",
+    "stats": {
+      "speed": 65,
+      "power": 95,
+      "health": 105,
+      "ability": "power_shield",
+      "abilityDescription": "5 saniye boyunca gelen hasarı %50 azaltır."
+    }
+  },
+  {
+    "id": "female_f",
+    "name": "Mini Karakter E",
+    "modelPath": "/models/character/character-female-f.glb",
+    "photoPath": "/models/character/photo/character-female-f.png",
+    "stats": {
+      "speed": 80,
+      "power": 70,
+      "health": 100,
+      "ability": "double_shot",
+      "abilityDescription": "Bir sonraki blaster atışı 2 mermi ateşler, her biri %75 hasar verir."
+    }
+  },
+  {
+    "id": "male_b",
+    "name": "Mini Karakter F",
+    "modelPath": "/models/character/character-male-b.glb",
+    "photoPath": "/models/character/photo/character-male-b.png",
+    "stats": {
+      "speed": 70,
+      "power": 80,
+      "health": 110,
+      "ability": "seismic_strike",
+      "abilityDescription": "Yere vurarak 3 birim yarıçapta 120% güç hasarı verir, düşmanları sersemletir (1 sn)."
+    }
+  },
+  {
+    "id": "male_c",
+    "name": "Mini Karakter G",
+    "modelPath": "/models/character/character-male-c.glb",
+    "photoPath": "/models/character/photo/character-male-c.png",
+    "stats": {
+      "speed": 90,
+      "power": 60,
+      "health": 95,
+      "ability": "speed_surge",
+      "abilityDescription": "5 saniye boyunca hız +50%, ancak güç -20%."
+    }
+  },
+  {
+    "id": "male_d",
+    "name": "Mini Karakter H",
+    "modelPath": "/models/character/character-male-d.glb",
+    "photoPath": "/models/character/photo/character-male-d.png",
+    "stats": {
+      "speed": 60,
+      "power": 90,
+      "health": 115,
+      "ability": "heavy_strike",
+      "abilityDescription": "Tek bir düşmana 200% güç hasarı verir, ancak 2 saniye hareketsiz kalır."
+    }
+  },
+  {
+    "id": "male_e",
+    "name": "Mini Karakter I",
+    "modelPath": "/models/character/character-male-e.glb",
+    "photoPath": "/models/character/photo/character-male-e.png",
+    "stats": {
+      "speed": 85,
+      "power": 65,
+      "health": 100,
+      "ability": "smoke_bomb",
+      "abilityDescription": "3 birim yarıçapta duman bulutu oluşturur, düşmanlar 3 saniye hedef alamaz."
+    }
+  },
+  {
+    "id": "male_f",
+    "name": "Mini Karakter J",
+    "modelPath": "/models/character/character-male-f.glb",
+    "photoPath": "/models/character/photo/character-male-f.png",
+    "stats": {
+      "speed": 65,
+      "power": 85,
+      "health": 105,
+      "ability": "life_steal",
+      "abilityDescription": "Bir düşmana 100% güç hasarı verir, hasarın %50’si sağlık olarak geri döner."
+    }
+  }
+]

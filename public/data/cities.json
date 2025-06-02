@@ -1,0 +1,92 @@
+{
+  "buildings": [
+    {
+      "id": "building-type-a",
+      "name": "Küçük Ev",
+      "modelPath": "/models/city-kit/building-type-a.glb",
+      "type": "house",
+      "size": { "width": 5, "height": 3, "depth": 5 },
+      "region": ["suburb"]
+    },
+    {
+      "id": "building-type-b",
+      "name": "House",
+      "modelPath": "/models/city-kit/building-type-b.glb",
+      "type": "house",
+      "size": { "width": 6, "height": 3, "depth": 6 },
+      "region": ["suburb"]
+    },
+    {
+      "id": "building-type-c",
+      "name": "Modern Bina",
+      "modelPath": "/models/city-kit/building-type-c.glb",
+      "type": "building",
+      "size": { "width": 8, "height": 10, "depth": 8 },
+      "region": ["suburb"]
+    },
+    {
+      "id": "building-type-d",
+      "name": "Ofis Binası",
+      "modelPath": "/models/city-kit/building-type-d.glb",
+      "type": "building",
+      "size": { "width": 10, "height": 12, "depth": 10 },
+      "region": ["city_center"]
+    }
+  ],
+  "roads": [
+    {
+      "id": "path-long",
+      "name": "Uzun Yol",
+      "modelPath": "/models/city-kit/path-long.glb",
+      "type": "road",
+      "size": { "width": 4, "height": 0.2, "depth": 10 },
+      "region": ["city_center", "suburb"]
+    },
+    {
+      "id": "path-short",
+      "name": "Kısa Yol",
+      "modelPath": "/models/city-kit/path-short.glb",
+      "type": "road",
+      "size": { "width": 4, "height": 0.2, "depth": 8 },
+      "region": ["city_center", "suburb"]
+    }
+  ],
+  "props": [
+    {
+      "id": "tree-small",
+      "name": "Küçük Ağaç",
+      "modelPath": "/models/city-kit/tree-small.glb",
+      "type": "prop",
+      "size": { "width": 2, "height": 4, "depth": 2 },
+      "region": ["suburb"]
+    },
+    {
+      "id": "tree-large",
+      "name": "Büyük Ağaç",
+      "modelPath": "/models/city-kit/tree-large.glb",
+      "type": "prop",
+      "size": { "width": 2, "height": 4, "depth": 2 },
+      "region": ["suburb"]
+    },
+    {
+      "id": "detail-parasol",
+      "name": "Sağlık Kiti Sandığı",
+      "modelPath": "/models/city-kit/cityv2/detail-parasol-a.glb",
+      "type": "prop",
+      "size": { "width": 1, "height": 1, "depth": 1 },
+      "region": ["city_center", "suburb"],
+      "effect": "health_kit",
+      "effectDescription": "20 sağlık puanı yeniler."
+    },
+    {
+      "id": "building-h",
+      "name": "Dükkan",
+      "modelPath": "/models/city-kit/cityv2/building-h.glb",
+      "type": "prop",
+      "size": { "width": 6, "height": 4, "depth": 6 },
+      "region": ["city_center"],
+      "effect": "quest",
+      "effectDescription": "Görev verir (örneğin, 3 düşman yen, 50 XP)."
+    }
+  ]
+}
